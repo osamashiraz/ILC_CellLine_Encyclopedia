@@ -3,86 +3,61 @@ ICLE_Data_Analysis
 Osama Shiraz Shah
 2026-02-18
 
-- [Publication and Data
-  Availability](#publication-and-data-availability)
-- [Analysis overview and downstream
-  workflow](#analysis-overview-and-downstream-workflow)
+- [ICLE\_Data\_Analysis](#icle_data_analysis)
+- [Publication and Data Availability](#publication-and-data-availability)
+- [Analysis overview and downstream workflow](#analysis-overview-and-downstream-workflow)
 - [Future directions](#future-directions)
 - [1. Preparation](#1-preparation)
   - [Analysis Options](#analysis-options)
   - [Setup Environment](#setup-environment)
   - [Load All Data](#load-all-data)
 - [2. Manuscript Figures](#2-manuscript-figures)
-  - [a. ICLE Characterization & Molecular
-    Subtyping](#a-icle-characterization--molecular-subtyping)
+  - [a. ICLE Characterization \& Molecular Subtyping](#a-icle-characterization--molecular-subtyping)
     - [SupFig 1: Genotypic Similarity](#supfig-1-genotypic-similarity)
     - [Perform Molecular Subtyping](#perform-molecular-subtyping)
-    - [Figure 1B: Overview of Multiomics
-      Subtypes](#figure-1b-overview-of-multiomics-subtypes)
+    - [Figure 1B: Overview of Multiomics Subtypes](#figure-1b-overview-of-multiomics-subtypes)
     - [Figure 1C: SET Signature](#figure-1c-set-signature)
     - [Figure 1D: Multiomics Overview](#figure-1d-multiomics-overview)
     - [Fig 1E: IGV Plot](#fig-1e-igv-plot)
-    - [Figure 1F: Alteration Frequency
-      Barplots](#figure-1f-alteration-frequency-barplots)
-    - [SupFig 5: Key ILC vs NST Alterations (Patient
-      Tumors)](#supfig-5-key-ilc-vs-nst-alterations-patient-tumors)
-    - [SupFig 6: Alterations in Key Pathways
-      (ICLE)](#supfig-6-alterations-in-key-pathways-icle)
+    - [Figure 1F: Alteration Frequency Barplots](#figure-1f-alteration-frequency-barplots)
+    - [SupFig 5: Key ILC vs NST Alterations (Patient Tumors)](#supfig-5-key-ilc-vs-nst-alterations-patient-tumors)
+    - [SupFig 6: Alterations in Key Pathways (ICLE)](#supfig-6-alterations-in-key-pathways-icle)
   - [b. CDH1 Alteration Landscape](#b-cdh1-alteration-landscape)
     - [Figure 2B: Novel SV in ICLE](#figure-2b-novel-sv-in-icle)
-    - [Figure 2C: Exonic Deletions in
-      ICLE](#figure-2c-exonic-deletions-in-icle)
-    - [Figure 2D: CDH1 Alterations (Foundation Medicine
-      Dataset)](#figure-2d-cdh1-alterations-foundation-medicine-dataset)
-    - [Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs
-      Cell
-      Lines)](#figure-2e-cdh1-mutation-lollipop-plots-tcga-patient-tumors-vs-cell-lines)
-    - [Figure 2F: CDH1 Allele Frequency in Cell
-      Lines](#figure-2f-cdh1-allele-frequency-in-cell-lines)
-    - [Figure 2G: CDH1 Alterations (Patient Tumors vs Cell
-      Lines)](#figure-2g-cdh1-alterations-patient-tumors-vs-cell-lines)
-    - [Figure 2H: CDH1 Molecular Alteration Landscape
-      Summary](#figure-2h-cdh1-molecular-alteration-landscape-summary)
-  - [c. SV Analysis](#c-sv-analysis)
-    - [Figure 3A (left): ICLE Genomic Instability
-      Metrics](#figure-3a-left-icle-genomic-instability-metrics)
-    - [Figure 3A (right): ICLE SV
-      Overview](#figure-3a-right-icle-sv-overview)
-    - [Figure 3B: Chromosomal Topography of Translocation
-      Breakpoints](#figure-3b-chromosomal-topography-of-translocation-breakpoints)
-    - [Figure 3C: Chromothripsis
-      Landscape](#figure-3c-chromothripsis-landscape)
-    - [Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and
-      ZR7530](#figure-3d-generate-cricos-plots-for-bck4-600mpe-hcc2185-and-zr7530)
-    - [Figure 3E: Fusions Distribution in Cell Lines vs Patient
-      Tumors](#figure-3e-fusions-distribution-in-cell-lines-vs-patient-tumors)
-    - [Figure 3F: GOE and LOE Functional Fusions
-      Circos](#figure-3f-goe-and-loe-functional-fusions-circos)
-    - [SupFig 8A: Mutation vs SV Count,
-      Size](#supfig-8a-mutation-vs-sv-count-size)
+    - [Figure 2C: Exonic Deletions in ICLE](#figure-2c-exonic-deletions-in-icle)
+    - [Figure 2D: CDH1 Alterations (Foundation Medicine Dataset)](#figure-2d-cdh1-alterations-foundation-medicine-dataset)
+    - [Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs Cell Lines)](#figure-2e-cdh1-mutation-lollipop-plots-tcga-patient-tumors-vs-cell-lines)
+    - [Figure 2F: CDH1 Allele Frequency in Cell Lines](#figure-2f-cdh1-allele-frequency-in-cell-lines)
+    - [Figure 2G: CDH1 Alterations (Patient Tumors vs Cell Lines)](#figure-2g-cdh1-alterations-patient-tumors-vs-cell-lines)
+    - [Figure 2H: CDH1 Molecular Alteration Landscape Summary](#figure-2h-cdh1-molecular-alteration-landscape-summary)
+  - [c. SV Analysis](#csv-analysis)
+    - [Figure 3A (left): ICLE Genomic Instability Metrics](#figure-3a-left-icle-genomic-instability-metrics)
+    - [Figure 3A (right): ICLE SV Overview](#figure-3a-right-icle-sv-overview)
+    - [Figure 3B: Chromosomal Topography of Translocation Breakpoints](#figure-3b-chromosomal-topography-of-translocation-breakpoints)
+    - [Figure 3C: Chromothripsis Landscape](#figure-3c-chromothripsis-landscape)
+    - [Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and ZR7530](#figure-3d-generate-cricos-plots-for-bck4-600mpe-hcc2185-and-zr7530)
+    - [Figure 3E: Fusions Distribution in Cell Lines vs Patient Tumors](#figure-3e-fusions-distribution-in-cell-lines-vs-patient-tumors)
+    - [Figure 3F: GOE and LOE Functional Fusions Circos](#figure-3f-goe-and-loe-functional-fusions-circos)
+    - [SupFig 8A: Mutation vs SV Count, Size](#supfig-8a-mutation-vs-sv-count-size)
     - [SupFig 8B: TMB vs SV Burden](#supfig-8b-tmb-vs-sv-burden)
-    - [SupFig 8C: SV~Chr Size - SV Count by
-      Chr](#supfig-8c-svchr-size---sv-count-by-chr)
-    - [SupFig 8D: Mutation ~ Chr Size - Mutation Count by
-      Chr](#supfig-8d-mutation--chr-size---mutation-count-by-chr)
-    - [SupFig 9: Generate Cricos Plots for all ICLE cell
-      lines](#supfig-9-generate-cricos-plots-for-all-icle-cell-lines)
+    - [SupFig 8C: SV~Chr Size - SV Count by Chr](#supfig-8c-svchr-size---sv-count-by-chr)
+    - [SupFig 8D: Mutation ~ Chr Size - Mutation Count by Chr](#supfig-8d-mutation--chr-size---mutation-count-by-chr)
+    - [SupFig 9: Generate Cricos Plots for all ICLE cell lines](#supfig-9-generate-cricos-plots-for-all-icle-cell-lines)
     - [SupFig 10: Functional Fusions](#supfig-10-functional-fusions)
-  - [d. DNAm Analysis](#d-dnam-analysis)
+  - [d. DNAm Analysis](#ddnam-analysis)
+      - [SupFig 11: DNAm Index by Across Histological and PAM50 Subtypes](#supfig-11-dnam-index-by-across-histological-and-pam50-subtypes)
+      - [Figure 4A: DNAm Index by Specimen Type](#figure-4a-dnam-index-by-specimen-type)
+      - [Figure 4B: DNAm-mRNA Alterations](#figure-4b-dnam-mrna-alterations)
+      - [Figure 4C: Consensus DNAm-mRNA Alterations Heatmap](#figure-4c-consensus-dnam-mrna-alterations-heatmap)
+      - [Figure 4D: MSI1 \& TFAP2B Barplots](#figure-4d-msi1--tfap2b-barplots)
   - [e. RNAi Analysis](#e-rnai-analysis)
-    - [Figure 5B: Consensus Differential
-      Dependencies](#figure-5b-consensus-differential-dependencies)
-    - [SupFig 12: Consensus Differential Dependencies
-      Heatmap](#supfig-12-consensus-differential-dependencies-heatmap)
-    - [Figure 5C: Over represented
-      Pathways](#figure-5c-over-represented-pathways)
-    - [Figure 5D: Pathway level Dependencies
-      Heatmap](#figure-5d-pathway-level-dependencies-heatmap)
-    - [Figure 5E: Top Druggable Dependencies
-      Heatmap](#figure-5e-top-druggable-dependencies-heatmap)
-  - [f. Cell Line Scoring](#f-cell-line-scoring)
-    - [Figure 6: CL-Tumor Concordance/Resemblance
-      Score](#figure-6-cl-tumor-concordanceresemblance-score)
+    - [Figure 5B: Consensus Differential Dependencies](#figure-5b-consensus-differential-dependencies)
+    - [SupFig 12: Consensus Differential Dependencies Heatmap](#supfig-12-consensus-differential-dependencies-heatmap)
+    - [Figure 5C: Over represented Pathways](#figure-5c-over-represented-pathways)
+    - [Figure 5D: Pathway level Dependencies Heatmap](#figure-5d-pathway-level-dependencies-heatmap)
+    - [Figure 5E: Top Druggable Dependencies Heatmap](#figure-5e-top-druggable-dependencies-heatmap)
+  - [f. Cell Line Scoring](#fcell-line-scoring)
+    - [Figure 6: CL-Tumor Concordance/Resemblance Score](#figure-6-cl-tumor-concordanceresemblance-score)
 
 # Publication and Data Availability
 
@@ -568,7 +543,7 @@ dev.off()
 draw(supFig_1, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig1_genotype-1.png)<!-- -->
+![](index/figure-gfm/supfig1_genotype-1.png)<!-- -->
 
 ### Perform Molecular Subtyping
 
@@ -716,7 +691,7 @@ ggsave(file.path(DIRS$results_sub$molecular_subtyping, "Fig1B_MolecularSubtypes.
 fig1b_sankey
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig1b_multiomics_sankey-1.png)<!-- -->
+![](index/figure-gfm/fig1b_multiomics_sankey-1.png)<!-- -->
 
 ### Figure 1C: SET Signature
 
@@ -736,7 +711,7 @@ dev.off()
 draw(fig1c_setheatmap, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig1c_set-1.png)<!-- -->
+![](index/figure-gfm/fig1c_set-1.png)<!-- -->
 
 ### Figure 1D: Multiomics Overview
 
@@ -808,7 +783,7 @@ dev.off()
 fig1d_multiomics_overview
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig1d_multiomics-1.png)<!-- -->
+![](index/figure-gfm/fig1d_multiomics-1.png)<!-- -->
 
 ### Fig 1E: IGV Plot
 
@@ -931,7 +906,7 @@ ggsave(filename = output_file, fig1f_alteration_barplot, width = 6, height = 5)
 fig1f_alteration_barplot
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig1f_alterations-1.png)<!-- -->
+![](index/figure-gfm/fig1f_alterations-1.png)<!-- -->
 
 ### SupFig 5: Key ILC vs NST Alterations (Patient Tumors)
 
@@ -959,7 +934,7 @@ write.table(freq_tbl, file.path(DIRS$results, "SupFig5_BRCA_Tumor_Top_Alteration
 supfigs5_tumor_alterations
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig5_ilc_nst-1.png)<!-- -->
+![](index/figure-gfm/supfig5_ilc_nst-1.png)<!-- -->
 
 ### SupFig 6: Alterations in Key Pathways (ICLE)
 
@@ -992,7 +967,7 @@ write.table(pathway_alt_mat, file.path(DIRS$results, "SupFig6_Pathway_Alteration
 draw(SupFigS6, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig6_pathway-1.png)<!-- -->
+![](index/figure-gfm/supfig6_pathway-1.png)<!-- -->
 
 ## b. CDH1 Alteration Landscape
 
@@ -1099,7 +1074,7 @@ dev.off()
 draw(fig2c_cdh1_exonic_del_heatmap)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig2c_exonic-1.png)<!-- -->
+![](index/figure-gfm/fig2c_exonic-1.png)<!-- -->
 
 ### Figure 2D: CDH1 Alterations (Foundation Medicine Dataset)
 
@@ -1123,7 +1098,7 @@ gt::gtsave(gt::gt(fig2d_fmi_alts_tbl_pval) %>%
 fig2d_fmi_alts
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig2d_fmi-1.png)<!-- -->
+![](index/figure-gfm/fig2d_fmi-1.png)<!-- -->
 
 ### Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs Cell Lines)
 
@@ -1140,7 +1115,7 @@ ggsave(file.path(DIRS$results_sub$cdh1, "Fig2F_CL_CDH1_AF_Barplot_histology_shap
 fig2f_cdh1_af
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig2f_cdh1_af-1.png)<!-- -->
+![](index/figure-gfm/fig2f_cdh1_af-1.png)<!-- -->
 
 ### Figure 2G: CDH1 Alterations (Patient Tumors vs Cell Lines)
 
@@ -1157,7 +1132,7 @@ suppressMessages({
 ggarrange(plotlist = list(fig2g_cl_cdh1_alts + fig2g_tcga_cdh1_alts), widths = c(1, 0.6))
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig2g_allele_freq-1.png)<!-- -->
+![](index/figure-gfm/fig2g_allele_freq-1.png)<!-- -->
 
 ### Figure 2H: CDH1 Molecular Alteration Landscape Summary
 
@@ -1186,13 +1161,13 @@ dev.off()
 draw(fig2h_tcga, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig2h_landscape-1.png)<!-- -->
+![](index/figure-gfm/fig2h_landscape-1.png)<!-- -->
 
 ``` r
 draw(fig2h_cl, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig2h_landscape-2.png)<!-- -->
+![](index/figure-gfm/fig2h_landscape-2.png)<!-- -->
 
 ## c. SV Analysis
 
@@ -1485,7 +1460,7 @@ dev.off()
 fig3a_genomic_instability
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig3a_left-1.png)<!-- -->
+![](index/figure-gfm/fig3a_left-1.png)<!-- -->
 
 ### Figure 3A (right): ICLE SV Overview
 
@@ -1494,7 +1469,7 @@ ggsave(file.path(DIRS$results_sub$ogm, "Fig3A_right_SV_Distribution.pdf"), fig3a
 fig3a_sv_distribution
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig3a_right-1.png)<!-- -->
+![](index/figure-gfm/fig3a_right-1.png)<!-- -->
 
 ### Figure 3B: Chromosomal Topography of Translocation Breakpoints
 
@@ -1511,7 +1486,7 @@ dev.off()
 fig3b_transloc_breakpoints_ht
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig3b-1.png)<!-- -->
+![](index/figure-gfm/fig3b-1.png)<!-- -->
 
 ### Figure 3C: Chromothripsis Landscape
 
@@ -1529,7 +1504,7 @@ dev.off()
 draw(fig3c_thripsis_ht, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig3c-1.png)<!-- -->
+![](index/figure-gfm/fig3c-1.png)<!-- -->
 
 ### Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and ZR7530
 
@@ -1580,25 +1555,25 @@ circos_zr7530 <- save_circos_to_pdf(trk_zr, "ZR7530", DIRS$results_sub$ogm)
 circos_bck4
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-13-1.png)<!-- -->
 
 ``` r
 circos_600mpe
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-14-1.png)<!-- -->
 
 ``` r
 circos_hcc2185
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-15-1.png)<!-- -->
 
 ``` r
 circos_zr7530
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-16-1.png)<!-- -->
 
 ### Figure 3E: Fusions Distribution in Cell Lines vs Patient Tumors
 
@@ -1616,7 +1591,7 @@ write.table(fusions_df, file.path(DIRS$results_sub$ogm, "SupTable12_fusion_df.ts
 ggarrange(plotlist = list(fig3e_1, fig3e_2))
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig3e_fusions-1.png)<!-- -->
+![](index/figure-gfm/fig3e_fusions-1.png)<!-- -->
 
 ### Figure 3F: GOE and LOE Functional Fusions Circos
 
@@ -1647,7 +1622,7 @@ write.table(sv_tmb_summary, file.path(DIRS$results_sub$ogm, "SupTable_SV_TMB_sum
 SupFig8A
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig8a-1.png)<!-- -->
+![](index/figure-gfm/supfig8a-1.png)<!-- -->
 
 ### SupFig 8B: TMB vs SV Burden
 
@@ -1656,7 +1631,7 @@ ggsave(file.path(DIRS$results_sub$ogm, "SupFig8B_TMB_vs_SV_Burden_Correlation.pd
 SupFig8B
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig8b-1.png)<!-- -->
+![](index/figure-gfm/supfig8b-1.png)<!-- -->
 
 ``` r
 ggsave(file.path(DIRS$results_sub$ogm, "SupFig8B_TMB_vs_SV_Burden_Correlation_NoOutliers.pdf"), SupFig8B_no_outliers, width = 5.5, height = 5)
@@ -1665,7 +1640,7 @@ write.table(alt_count_chr, file.path(DIRS$results_sub$ogm, "SupTable_alt_count_p
 ggarrange(plotlist = list(SupFig8B +SupFig8B_no_outliers))
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig8b-2.png)<!-- -->
+![](index/figure-gfm/supfig8b-2.png)<!-- -->
 
 ### SupFig 8C: SV~Chr Size - SV Count by Chr
 
@@ -1674,7 +1649,7 @@ ggsave(file.path(DIRS$results_sub$ogm, "SupFig8D_SV_Per_Chr.pdf"), SupFig8C, wid
 SupFig8C
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig8c-1.png)<!-- -->
+![](index/figure-gfm/supfig8c-1.png)<!-- -->
 
 ### SupFig 8D: Mutation ~ Chr Size - Mutation Count by Chr
 
@@ -1683,7 +1658,7 @@ ggsave(file.path(DIRS$results_sub$ogm, "SupFig8_Mutations_Per_Chr.pdf"), SupFig8
 SupFig8D
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig8d-1.png)<!-- -->
+![](index/figure-gfm/supfig8d-1.png)<!-- -->
 
 ### SupFig 9: Generate Cricos Plots for all ICLE cell lines
 
@@ -1809,7 +1784,7 @@ dev.off()
 draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig10-1.png)<!-- -->
+![](index/figure-gfm/supfig10-1.png)<!-- -->
 
 ``` r
 # SupFig 10B: Recurring fusions expression heatmap
@@ -1825,7 +1800,7 @@ dev.off()
 draw(supfig10b_recurring_fusions_ht, merge_legends = TRUE)
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-19-1.png)<!-- -->
 
 ``` r
 # SupFig 10C: Recurring gene circos plots
@@ -2073,7 +2048,7 @@ dev.off()
 tumor_pam50
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig11a_tumor_pam50-1.png)<!-- -->
+![](index/figure-gfm/supfig11a_tumor_pam50-1.png)<!-- -->
 
 ``` r
 ggsave(file.path(dnam_dir, "SupFig11B_DMI_CL_PAM50.pdf"), cl_pam50, width = 5, height = 3)
@@ -2090,7 +2065,7 @@ dev.off()
 cl_pam50
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig11b_cl_pam50-1.png)<!-- -->
+![](index/figure-gfm/supfig11b_cl_pam50-1.png)<!-- -->
 
 ``` r
 ggsave(file.path(dnam_dir, "SupFig11C_DMI_Tumor_CL_Histology.pdf"), tumor_cl_histology_LumA, width = 4, height = 3)
@@ -2107,7 +2082,7 @@ dev.off()
 tumor_cl_histology_LumA
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig11c_tumor_cl_histology-1.png)<!-- -->
+![](index/figure-gfm/supfig11c_tumor_cl_histology-1.png)<!-- -->
 
 #### Figure 4A: DNAm Index by Specimen Type
 
@@ -2123,7 +2098,7 @@ gt::gtsave(tissue_dmi_pval, file.path(DIRS$results_sub$dna_methylation, "Fig4A_D
 tissue_dmi
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig4a-1.png)<!-- -->
+![](index/figure-gfm/fig4a-1.png)<!-- -->
 
 #### Figure 4B: DNAm-mRNA Alterations
 
@@ -2133,7 +2108,7 @@ ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4B_Tumor_RNA_DNAm_Alterat
 dnma_lfc_plt
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig4b-1.png)<!-- -->
+![](index/figure-gfm/fig4b-1.png)<!-- -->
 
 #### Figure 4C: Consensus DNAm-mRNA Alterations Heatmap
 
@@ -2150,7 +2125,7 @@ dev.off()
 draw(fig4c_ht, merge_legends = TRUE, gap = unit(0.1, "cm"))
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig4c-1.png)<!-- -->
+![](index/figure-gfm/fig4c-1.png)<!-- -->
 
 #### Figure 4D: MSI1 & TFAP2B Barplots
 
@@ -2159,7 +2134,7 @@ ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4D_Top_Alterations_Barplo
 fig4e
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig4d-1.png)<!-- -->
+![](index/figure-gfm/fig4d-1.png)<!-- -->
 
 ## e. RNAi Analysis
 
@@ -2267,7 +2242,7 @@ ggsave(file.path(DIRS$results_sub$dependencies, "Fig5b_Differential_Dependencies
 fig5b_consensus_dep_plt
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
+![](index/figure-gfm/unnamed-chunk-21-1.png)<!-- -->
 
 ### SupFig 12: Consensus Differential Dependencies Heatmap
 
@@ -2285,7 +2260,7 @@ dev.off()
 draw(supfig12_dep_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/supfig12-1.png)<!-- -->
+![](index/figure-gfm/supfig12-1.png)<!-- -->
 
 ### Figure 5C: Over represented Pathways
 
@@ -2294,7 +2269,7 @@ ggsave(file.path(DIRS$results_sub$dependencies, "Fig5C_KEGG_ORA.pdf"), fig5c_pat
 fig5c_pathway_plt
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig5c-1.png)<!-- -->
+![](index/figure-gfm/fig5c-1.png)<!-- -->
 
 ### Figure 5D: Pathway level Dependencies Heatmap
 
@@ -2311,7 +2286,7 @@ dev.off()
 draw(fig5d_pathway_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig5d-1.png)<!-- -->
+![](index/figure-gfm/fig5d-1.png)<!-- -->
 
 ### Figure 5E: Top Druggable Dependencies Heatmap
 
@@ -2328,7 +2303,7 @@ dev.off()
 draw(fig5e_drug_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig5e-1.png)<!-- -->
+![](index/figure-gfm/fig5e-1.png)<!-- -->
 
 ## f. Cell Line Scoring
 
@@ -2500,7 +2475,7 @@ draw(fig6_resemblance_ht, merge_legends = TRUE, annotation_legend_side = "right"
      heatmap_legend_side = "right")
 ```
 
-![](Main_Data_Analysis_files/figure-gfm/fig6_display-1.png)<!-- -->
+![](index/figure-gfm/fig6_display-1.png)<!-- -->
 
 ``` r
 sessionInfo()
