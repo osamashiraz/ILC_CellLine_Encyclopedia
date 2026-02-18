@@ -1,6 +1,20 @@
-# ignore 1-Datasets
+# --- Large Data & Results (Zenodo) ---
 1-Datasets/External
 1-Datasets/ICLE
-5-DataSharing
+3-Results/
+# If you want to keep the directory structure on GitHub, 
+# you can "unignore" the READMEs specifically:
+!1-Datasets/README.md
+!3-Results/README.md
+
+# --- Data Sharing & Sensitive Info ---
+5-DataSharing/
+*.ai
+*.RData
+*.Rhistory
+
+# --- OS/Editor Trash ---
+.DS_Store
+.Rproj.user/
 .vscode
 .cursor
