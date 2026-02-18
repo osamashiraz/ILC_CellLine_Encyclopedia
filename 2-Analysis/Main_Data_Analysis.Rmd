@@ -1,5 +1,5 @@
 ---
-title: "ICLE_Data_Analysis"
+title: "ILC Cell Line Encylopedia (ICLE) Data Analysis"
 author: "Osama Shiraz Shah"
 date: "`r Sys.Date()`"
 output: 
@@ -71,6 +71,15 @@ SUPPRESS_PKG_MESSAGES <- TRUE   # FALSE = show package startup messages
 SUPPRESS_WARNINGS <- TRUE       # FALSE = show warnings
 SUPPRESS_FEATURE_SELECTION_PLOTS <- TRUE  # FALSE = show intermediate plots from FSbyMAD/FSbyVar
 SUPPRESS_CONSENSUS_CLUSTER_PLOTS <- TRUE  # FALSE = show intermediate plots from ConsensusClusterPlus
+
+knitr::opts_chunk$set(
+  dev = "png",
+  dpi = 300,
+  fig.width = 6,
+  fig.height = 4,       
+  out.width = "70%", 
+  fig.align = "center"
+)
 ```
 
 ## Setup Environment
