@@ -2,10 +2,7 @@
 1-Datasets/External
 1-Datasets/ICLE
 3-Results/
-# If you want to keep the directory structure on GitHub, 
-# you can "unignore" the READMEs specifically:
-!1-Datasets/README.md
-!3-Results/README.md
+
 
 # --- Data Sharing & Sensitive Info ---
 5-DataSharing/
