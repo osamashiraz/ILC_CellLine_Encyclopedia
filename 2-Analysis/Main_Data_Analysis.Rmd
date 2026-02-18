@@ -6,56 +6,25 @@ output:
   github_document:
     toc: true
     toc_depth: 3
-  html_document:
-    toc: true
-    toc_depth: 3
-    toc_float: true
-    number_sections: true
-    code_folding: "show"
-    fig_caption: true
-    theme: flatly
-    highlight: tango
 editor_options: 
   chunk_output_type: inline
 ---
 
 # Publication and Data Availability
 
-This analysis accompanies the ICLE manuscript. PubMed:
+This analysis accompanies the ICLE manuscript (PubMed: )
 
 Raw sequence files are deposited under Bioproject PRJNA1406296.
 
-Processed data and/or analysis code will be deposited under ZENODO (https://zenodo.org/record/XXXXX).
+Processed data and/or analysis code will be deposited under ZENODO (<https://zenodo.org/record/XXXXX>).
 
-ICLE or derived datasets will be deposited in cBioPortal:
+ICLE and Integrated BRCA cell line datasets generated in this study are uploaded to local instance of cBioPortal for
+data sharing and analysis:
 
 -   [ICLE Dataset](https://cbioportal.crc.pitt.edu/study/summary?id=ILC_Cell_Line_Encyclopedia) (N=17)
 
--   [Integrated BRCA Cell Line](https://cbioportal.crc.pitt.edu/study/summary?id=BRCA_Cell_Line_Integrated) (ICLE Integrated with Public Datasets, N=56)
-
-# Additional Datasets
-
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-| Datasets     | Data types                                    | Notes                                                 |
-+==============+===============================================+=======================================================+
-| ICLE         | Bionano, CytoSNP, SNV, DNAm, RNA, RPPA        | `1-Datasets/ICLE/` (this study)                       |
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-| Marcotte     | SNP, RPPA, RNAi                               | `1-Datasets/External/Marcotte/RNAi/README.txt`        |
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-| CCLE         |                                               |                                                       |
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-| Sanger       |                                               |                                                       |
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-| TCGA BRCA    | RNA-seq, SNV, DNAm, RPPA, Fusions             | PubMed 26209429, 26451490, 30364927, 29996110         |
-|              |                                               |                                                       |
-|              |                                               | `1-Datasets/External/TCGA/README.txt`                 |
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-| MSK          | MSK-IMPACT, breast_ink4_msk_2021 (cBioPortal) | PubMed 34544752; `1-Datasets/External/MSK/Readme.txt` |
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-| FMI          |                                               |                                                       |
-+--------------+-----------------------------------------------+-------------------------------------------------------+
-
-Ensure all required data files are present in `1-Datasets/` before running this analysis.
+-   [Integrated BRCA Cell Line](https://cbioportal.crc.pitt.edu/study/summary?id=BRCA_Cell_Line_Integrated) (ICLE
+    Integrated with Public Datasets, N=56)
 
 # Analysis overview and downstream workflow
 
@@ -64,27 +33,38 @@ This R Markdown document orchestrates the complete multiomics analysis pipeline 
 **2-Analysis/ layout:**
 
 -   **config.R** – Project root, `DIRS`, `FILES`; run from `2-Analysis/`.
--   **Helper_Scripts/** – Data loading (`Data_Loading/00_load_annotations.R`, `01_load_all_data.R`, 02–09) and figure scripts. Fig 1: 01, 02 (sources 03_Fig1C), 04–07. Fig 2: orchestrator `08_Fig2_CDH1_Alteration_Landscape_All.R` (sources 08_Fig2C–13_Fig2H). Fig 3: orchestrator `14_Fig3_SV_All.R` (sources 14_SupFig8, 15–20; 17–18 sourced by 19–20). Fig 4–6: 21, 22, 23.
+-   **Helper_Scripts/** – Data loading (`Data_Loading/00_load_annotations.R`, `01_load_all_data.R`, 02–09) and figure
+    scripts. Fig 1: 01, 02 (sources 03_Fig1C), 04–07. Fig 2: orchestrator `08_Fig2_CDH1_Alteration_Landscape_All.R`
+    (sources 08_Fig2C–13_Fig2H). Fig 3: orchestrator `14_Fig3_SV_All.R` (sources 14_SupFig8, 15–20; 17–18 sourced by
+    19–20). Fig 4–6: 21, 22, 23.
 -   **SCRIPT_INDEX.md** – Full script index and data-load order.
--   **Main_Data_Analysis.Rmd** – Master document: sources config and helpers, loads data once, then runs figure scripts in order and writes outputs to `3-Results/`.
+-   **Main_Data_Analysis.Rmd** – Master document: sources config and helpers, loads data once, then runs figure scripts
+    in order and writes outputs to `3-Results/`.
 
 **Downstream flow:**
 
-1.  **Preparation** – Options, `config.R`, `Helper_Functions.R`, then `01_load_all_data.R` and `load_all_icle_data(load_external = TRUE)` to load ICLE + external data.
-2.  **Manuscript figures (in order)** – Source helper scripts 01–23; each chunk produces one or more figures and may save to `DIRS$results` / `DIRS$results_sub`. Figure 1 (SupFig 1, subtyping, SupFig 2–6, Fig 1B–1F); Figure 2 (Fig 2C–2H, CDH1); Figure 3 (SupFig 8, Fig 3A–3F, SupFig 9–10); Figure 4 & SupFig 11 (DNAm/DMI); Figure 5 (RNAi dependencies); Figure 6 (patient signatures, resemblance scores).
-3.  **Outputs** – All written under `3-Results/` and subfolders (e.g. molecular_subtyping, cdh1, ogm, dna_methylation, dependencies, molecular_resemblance).
+1.  **Preparation** – Options, `config.R`, `Helper_Functions.R`, then `01_load_all_data.R` and
+    `load_all_icle_data(load_external = TRUE)` to load ICLE + external data.
+2.  **Manuscript figures (in order)** – Source helper scripts 01–23; each chunk produces one or more figures and may
+    save to `DIRS$results` / `DIRS$results_sub`. Figure 1 (SupFig 1, subtyping, SupFig 2–6, Fig 1B–1F); Figure 2 (Fig
+    2C–2H, CDH1); Figure 3 (SupFig 8, Fig 3A–3F, SupFig 9–10); Figure 4 & SupFig 11 (DNAm/DMI); Figure 5 (RNAi
+    dependencies); Figure 6 (patient signatures, resemblance scores).
+3.  **Outputs** – All written under `3-Results/` and subfolders (e.g. molecular_subtyping, cdh1, ogm, dna_methylation,
+    dependencies, molecular_resemblance).
 
 # Future directions
 
-*Coming soon:* A package and/or web application to provide easy access to the Cell Line model scoring framework described in this study.
+*Coming soon:* A package and/or web application to provide easy access to the Cell Line model scoring framework
+described in this study.
 
-------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------
 
 # 1. Preparation
 
 ## Analysis Options
 
-Set these to `TRUE` to reduce console noise during knitting. Set to `FALSE` to show package startup messages and warnings.
+Set these to `TRUE` to reduce console noise during knitting. Set to `FALSE` to show package startup messages and
+warnings.
 
 ```{r options, include=T}
 SUPPRESS_PKG_MESSAGES <- TRUE   # FALSE = show package startup messages
@@ -138,7 +118,8 @@ draw(supFig_1, merge_legends = TRUE)
 
 ### Perform Molecular Subtyping
 
-Run molecular subtyping (PAM50, mRNA/RPPA/DNAm consensus), SupFig 2-4 (heatmaps, PCAs, Sankey), Fig 1C (SET signature), and Fig 1B (multiomics Sankey) via a single script. Assigns `fig1b_sankey` and `fig1c_setheatmap` to the session.
+Run molecular subtyping (PAM50, mRNA/RPPA/DNAm consensus), SupFig 2-4 (heatmaps, PCAs, Sankey), Fig 1C (SET signature),
+and Fig 1B (multiomics Sankey) via a single script. Assigns `fig1b_sankey` and `fig1c_setheatmap` to the session.
 
 ```{r, message=T, warning=F}
 source(file.path(DIRS$scripts$helpers, "02_Fig1_SupFig2_3_4_Molecular_Subtyping.R"), 
