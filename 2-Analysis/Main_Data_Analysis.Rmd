@@ -1,0 +1,699 @@
+---
+title: "ICLE_Data_Analysis"
+author: "Osama Shiraz Shah"
+date: "`r Sys.Date()`"
+output: 
+  github_document:
+    toc: true
+    toc_depth: 3
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    number_sections: true
+    code_folding: "show"
+    fig_caption: true
+    theme: flatly
+    highlight: tango
+editor_options: 
+  chunk_output_type: inline
+---
+
+# Publication and Data Availability
+
+This analysis accompanies the ICLE manuscript. PubMed:
+
+Raw sequence files are deposited under Bioproject PRJNA1406296.
+
+Processed data and/or analysis code will be deposited under ZENODO (https://zenodo.org/record/XXXXX).
+
+ICLE or derived datasets will be deposited in cBioPortal:
+
+-   [ICLE Dataset](https://cbioportal.crc.pitt.edu/study/summary?id=ILC_Cell_Line_Encyclopedia) (N=17)
+
+-   [Integrated BRCA Cell Line](https://cbioportal.crc.pitt.edu/study/summary?id=BRCA_Cell_Line_Integrated) (ICLE Integrated with Public Datasets, N=56)
+
+# Additional Datasets
+
++--------------+-----------------------------------------------+-------------------------------------------------------+
+| Datasets     | Data types                                    | Notes                                                 |
++==============+===============================================+=======================================================+
+| ICLE         | Bionano, CytoSNP, SNV, DNAm, RNA, RPPA        | `1-Datasets/ICLE/` (this study)                       |
++--------------+-----------------------------------------------+-------------------------------------------------------+
+| Marcotte     | SNP, RPPA, RNAi                               | `1-Datasets/External/Marcotte/RNAi/README.txt`        |
++--------------+-----------------------------------------------+-------------------------------------------------------+
+| CCLE         |                                               |                                                       |
++--------------+-----------------------------------------------+-------------------------------------------------------+
+| Sanger       |                                               |                                                       |
++--------------+-----------------------------------------------+-------------------------------------------------------+
+| TCGA BRCA    | RNA-seq, SNV, DNAm, RPPA, Fusions             | PubMed 26209429, 26451490, 30364927, 29996110         |
+|              |                                               |                                                       |
+|              |                                               | `1-Datasets/External/TCGA/README.txt`                 |
++--------------+-----------------------------------------------+-------------------------------------------------------+
+| MSK          | MSK-IMPACT, breast_ink4_msk_2021 (cBioPortal) | PubMed 34544752; `1-Datasets/External/MSK/Readme.txt` |
++--------------+-----------------------------------------------+-------------------------------------------------------+
+| FMI          |                                               |                                                       |
++--------------+-----------------------------------------------+-------------------------------------------------------+
+
+Ensure all required data files are present in `1-Datasets/` before running this analysis.
+
+# Analysis overview and downstream workflow
+
+This R Markdown document orchestrates the complete multiomics analysis pipeline for the ICLE project.
+
+**2-Analysis/ layout:**
+
+-   **config.R** – Project root, `DIRS`, `FILES`; run from `2-Analysis/`.
+-   **Helper_Scripts/** – Data loading (`Data_Loading/00_load_annotations.R`, `01_load_all_data.R`, 02–09) and figure scripts. Fig 1: 01, 02 (sources 03_Fig1C), 04–07. Fig 2: orchestrator `08_Fig2_CDH1_Alteration_Landscape_All.R` (sources 08_Fig2C–13_Fig2H). Fig 3: orchestrator `14_Fig3_SV_All.R` (sources 14_SupFig8, 15–20; 17–18 sourced by 19–20). Fig 4–6: 21, 22, 23.
+-   **SCRIPT_INDEX.md** – Full script index and data-load order.
+-   **Main_Data_Analysis.Rmd** – Master document: sources config and helpers, loads data once, then runs figure scripts in order and writes outputs to `3-Results/`.
+
+**Downstream flow:**
+
+1.  **Preparation** – Options, `config.R`, `Helper_Functions.R`, then `01_load_all_data.R` and `load_all_icle_data(load_external = TRUE)` to load ICLE + external data.
+2.  **Manuscript figures (in order)** – Source helper scripts 01–23; each chunk produces one or more figures and may save to `DIRS$results` / `DIRS$results_sub`. Figure 1 (SupFig 1, subtyping, SupFig 2–6, Fig 1B–1F); Figure 2 (Fig 2C–2H, CDH1); Figure 3 (SupFig 8, Fig 3A–3F, SupFig 9–10); Figure 4 & SupFig 11 (DNAm/DMI); Figure 5 (RNAi dependencies); Figure 6 (patient signatures, resemblance scores).
+3.  **Outputs** – All written under `3-Results/` and subfolders (e.g. molecular_subtyping, cdh1, ogm, dna_methylation, dependencies, molecular_resemblance).
+
+# Future directions
+
+*Coming soon:* A package and/or web application to provide easy access to the Cell Line model scoring framework described in this study.
+
+------------------------------------------------------------------------
+
+# 1. Preparation
+
+## Analysis Options
+
+Set these to `TRUE` to reduce console noise during knitting. Set to `FALSE` to show package startup messages and warnings.
+
+```{r options, include=T}
+SUPPRESS_PKG_MESSAGES <- TRUE   # FALSE = show package startup messages
+SUPPRESS_WARNINGS <- TRUE       # FALSE = show warnings
+SUPPRESS_FEATURE_SELECTION_PLOTS <- TRUE  # FALSE = show intermediate plots from FSbyMAD/FSbyVar
+SUPPRESS_CONSENSUS_CLUSTER_PLOTS <- TRUE  # FALSE = show intermediate plots from ConsensusClusterPlus
+```
+
+## Setup Environment
+
+```{r setup}
+# Load configuration
+source("config.R")
+
+# Load helper functions
+suppressPackageStartupMessages(suppressWarnings(source(file.path(DIRS$scripts$helpers, "Helper_Functions.R"))))
+```
+
+## Load All Data
+
+This section uses the refactored modular data loading system to load all ICLE and external datasets.
+
+```{r, message=T, warning=F}
+# Load all ICLE data using the master orchestrator
+source(file.path(DIRS$scripts$helpers, "Data_Loading", "01_load_all_data.R"))
+
+# Load all data (ICLE + external datasets)
+# Note: All datasets are loaded directly into global environment
+load_all_icle_data(load_external = TRUE, verbose = TRUE)
+```
+
+# 2. Manuscript Figures
+
+## a. ICLE Characterization & Molecular Subtyping
+
+### SupFig 1: Genotypic Similarity
+
+Compare ICLE genotypes with Marcotte et al. dataset.
+
+```{r, message=T, warning=F}
+source(file.path(DIRS$scripts$helpers, "01_SupFig1_Genotype_Similarity.R"), chdir = TRUE)
+```
+
+```{r supfig1_genotype, fig.width=8, fig.height=6, message=T, warning=F}
+pdf(file = file.path(DIRS$results, "SupFig1_Genotype_Similarity.pdf"), width = 8, height = 6)
+  draw(supFig_1, merge_legends = TRUE)
+dev.off()
+
+draw(supFig_1, merge_legends = TRUE)
+```
+
+### Perform Molecular Subtyping
+
+Run molecular subtyping (PAM50, mRNA/RPPA/DNAm consensus), SupFig 2-4 (heatmaps, PCAs, Sankey), Fig 1C (SET signature), and Fig 1B (multiomics Sankey) via a single script. Assigns `fig1b_sankey` and `fig1c_setheatmap` to the session.
+
+```{r, message=T, warning=F}
+source(file.path(DIRS$scripts$helpers, "02_Fig1_SupFig2_3_4_Molecular_Subtyping.R"), 
+       chdir = TRUE)
+```
+
+### Figure 1B: Overview of Multiomics Subtypes
+
+Sankey diagram (produced by the subtyping script above). Save to PDF and display.
+
+```{r fig1b_multiomics_sankey, fig.width=7, fig.height=5, message=T, warning=F, results='markup'}
+ggsave(file.path(DIRS$results_sub$molecular_subtyping, "Fig1B_MolecularSubtypes.pdf"), fig1b_sankey, width = 7, height = 5)
+
+fig1b_sankey
+```
+
+### Figure 1C: SET Signature
+
+`fig1c_setheatmap` is produced by the subtyping script above. Save to PDF and display.
+
+```{r fig1c_set, fig.width=8, fig.height=6,message=T, warning=F}
+pdf(file.path(DIRS$results_sub$molecular_subtyping, "Fig1C_SET_Signature.pdf"), width = 8, height = 6)
+  draw(fig1c_setheatmap, merge_legends = TRUE)
+dev.off()
+
+draw(fig1c_setheatmap, merge_legends = TRUE)
+```
+
+### Figure 1D: Multiomics Overview
+
+Generate comprehensive multiomics heatmap.
+
+```{r,message=T, warning=F}
+source(file.path(DIRS$scripts$helpers, "04_Fig1D_Multiomics_Overview.R"), chdir = T)
+```
+
+```{r fig1d_multiomics, fig.width=6, fig.height=8,message=T, warning=F}
+pdf(file.path(DIRS$results, "Fig1D_Multiome_Overview.pdf"), width = 6, height = 8)
+draw(fig1d_multiomics_overview, merge_legends = TRUE, 
+    annotation_legend_side = "right", heatmap_legend_side = "right")
+dev.off()
+
+fig1d_multiomics_overview
+```
+
+### Fig 1E: IGV Plot
+
+```{r,message=T, warning=F}
+# prepare primary ILC patient tumor CN segments
+TCGA_BRCA_CN_SEG <- read.delim(file.path(DIRS$external$tcga, "CN", "TCGA_logRR_DNAcopy.seg"))
+TCGA_BRCA_CN_SEG$ID <- substr(TCGA_BRCA_CN_SEG$ID, 1, 15)
+ILC_cases <- subset(TCGA_Annots, `Final Pathology` == "ILC")$Case.ID
+ILC_seg <- subset(TCGA_BRCA_CN_SEG, ID %in% ILC_cases)
+write.table(ILC_seg, file = file.path(DIRS$external$tcga, "CN", "TCGA_logRR_ILC_127.seg"), row.names = FALSE, quote = FALSE, sep = "\t")
+
+# prepare metastatic ILC patient tumor CN segments
+MSK_BRCA_CN_SEG <- read.delim(file.path(DIRS$external$msk, "CN", "MSK_BRCA_CN.seg"))
+ILC_met_cases <- subset(MSK_Annots, ONCOTREE_CODE == "ILC")$SAMPLE_ID
+ILC_met_seg <- subset(MSK_BRCA_CN_SEG, ID %in% ILC_met_cases)
+write.table(ILC_met_seg, file = file.path(DIRS$external$msk, "MSK_CN_ILC_202.seg"), row.names = FALSE, quote = FALSE, sep = "\t")
+
+# prepare ICLE CN segments by subtype
+ICLE_cells <- subset(CL_Annots, Study == "ICLE")
+ICLE_cells <- split(ICLE_cells$Name, ICLE_cells$`mRNA Subtypes`)
+ICLE_cells$HER2 = "SKBR3-M" # borrow information on SKRB3 from Marcotte
+ICLE_cells$Other <- c(ICLE_cells$HER2, ICLE_cells$Basal)
+ICLE_cells <- ICLE_cells[-c(3,4)]
+
+BRCA_CL_CN_SEG <- read.delim(FILES$cnv_seg)
+
+BRCA_CL_CN_SEG_subtype <- sapply(ICLE_cells, FUN = function(x){
+  subset(BRCA_CL_CN_SEG, ID %in% x)
+}, simplify = F)
+
+sapply(names(BRCA_CL_CN_SEG_subtype), FUN = function(x){
+  seg = BRCA_CL_CN_SEG_subtype[[x]]
+  x = gsub("[//]", "_", x)
+  write.table(seg, file = file.path(DIRS$icle$cytosnp, "3_Segmentation", paste0(x, "_ICLE_CL_LogRR_DNACopy.seg")), row.names = FALSE, quote = FALSE, sep = "\t")
+  1
+})
+```
+
+### Figure 1F: Alteration Frequency Barplots
+
+Compare alteration frequencies across cell lines, primary, and metastatic tumors.
+
+```{r,message=T, warning=F}
+suppressWarnings(source(file.path(DIRS$scripts$helpers, "05_Fig1F_Alteration_barplots.R")))
+```
+
+```{r fig1f_alterations, fig.width=6, fig.height=5,message=T, warning=F}
+output_file <- file.path(DIRS$results, "Molecular_Resemblance", "Fig1F_Alteration_Barplot.pdf")
+ggsave(filename = output_file, fig1f_alteration_barplot, width = 6, height = 5)
+
+fig1f_alteration_barplot
+```
+
+### SupFig 5: Key ILC vs NST Alterations (Patient Tumors)
+
+```{r,message=T, warning=F}
+source(file.path(DIRS$scripts$helpers, "06_SupFig5_ILC_NST_Alterations.R"), chdir = TRUE)
+```
+
+```{r supfig5_ilc_nst, fig.width=8, fig.height=5,message=T, warning=F}
+ggsave(file.path(DIRS$results, "SupFig5_BRCA_Tumor_Top_Alterations.pdf"), supfigs5_tumor_alterations, width = 8, height = 5)
+
+write.table(freq_tbl, file.path(DIRS$results, "SupFig5_BRCA_Tumor_Top_Alterations.tsv"),
+            sep = "\t", quote = FALSE, row.names = FALSE)
+
+supfigs5_tumor_alterations
+```
+
+### SupFig 6: Alterations in Key Pathways (ICLE)
+
+```{r,message=T, warning=F}
+source(file.path(DIRS$scripts$helpers, "07_SupFig6_Pathway_Alterations.R"), chdir = TRUE)
+```
+
+```{r supfig6_pathway, fig.width=7.5, fig.height=8,message=T, warning=F}
+pdf(file.path(DIRS$results, "SupFig6_Pathway_Alterations.pdf"), width = 7.5, height = 8)
+draw(SupFigS6, merge_legends = TRUE)
+dev.off()
+
+write.table(pathway_alt_mat, file.path(DIRS$results, "SupFig6_Pathway_Alterations.tsv"),
+            sep = "\t", quote = FALSE, col.names = NA)
+
+draw(SupFigS6, merge_legends = TRUE)
+```
+
+## b. CDH1 Alteration Landscape
+
+### Figure 2B: Novel SV in ICLE
+
+```{r}
+# Visualizations generated using Bionano Access software by loading SV files
+```
+
+```{r ,message=T, warning=F}
+source(file.path(DIRS$scripts$helpers, "08_Fig2_CDH1_Alteration_Landscape_All.R"), chdir = TRUE)
+```
+
+### Figure 2C: Exonic Deletions in ICLE
+
+```{r fig2c_exonic, fig.width=4, fig.height=4.5,message=T, warning=F}
+pdf(file.path(DIRS$results_sub$cdh1, "Fig2C_CDH1_Exonic_Deletions_ICLE.pdf"), width = 4, height = 4.5)
+draw(fig2c_cdh1_exonic_del_heatmap)
+dev.off()
+
+draw(fig2c_cdh1_exonic_del_heatmap)
+```
+
+### Figure 2D: CDH1 Alterations (Foundation Medicine Dataset)
+
+```{r fig2d_fmi, fig.width=6, fig.height=4,message=T, warning=F}
+ggsave(file.path(DIRS$results_sub$cdh1, "Fig2D_FMI_CDH1_Alterations_Barplot.pdf"), fig2d_fmi_alts, width = 6, height = 4)
+gt::gtsave(gt::gt(fig2d_fmi_alts_tbl), file.path(DIRS$results_sub$cdh1, "Fig2D_FMI_CDH1_Alterations_Table.pdf"))
+gt::gtsave(gt::gt(fig2d_fmi_alts_tbl_pval) %>%
+               gt::cols_width(starts_with("local") ~ px(100),starts_with("distant") ~ px(100)) %>% 
+             gt::tab_options(table.width = px(600), column_labels.font.size = px(10)), 
+           file.path(DIRS$results_sub$cdh1, "Fig2D_FMI_CDH1_Alterations_ILCvsNST_Event_pval.pdf"))
+
+fig2d_fmi_alts
+```
+
+### Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs Cell Lines)
+
+```{r}
+# CDH1 protein paint plot for TCGA (generated by Fig 2 orchestrator)
+# queries files plotted using https://proteinpaint.stjude.org/
+```
+
+### Figure 2F: CDH1 Allele Frequency in Cell Lines
+
+```{r, fig2f_cdh1_af, fig.height=4, fig.width=5,message=T, warning=F}
+ggsave(file.path(DIRS$results_sub$cdh1, "Fig2F_CL_CDH1_AF_Barplot_histology_shape.pdf"), fig2f_cdh1_af, width = 4.5, height = 4)
+
+fig2f_cdh1_af
+```
+
+### Figure 2G: CDH1 Alterations (Patient Tumors vs Cell Lines)
+
+```{r fig2g_allele_freq, fig.width=6, fig.height=4,message=T, warning=F}
+ggsave(file.path(DIRS$results_sub$cdh1, "Fig2G_CL_CDH1_Alt_barplot.pdf"), fig2g_cl_cdh1_alts, width = 5, height = 5)
+ggsave(file.path(DIRS$results_sub$cdh1, "Fig2G_TCGA_CDH1_Alt_barplot.pdf"), fig2g_tcga_cdh1_alts, width = 4, height = 5)
+suppressMessages({
+  gt::gtsave(gt::gt(fig2g_cl_cdh1_alts_tbl), file.path(DIRS$results_sub$cdh1, "Fig2G_CL_CDH1_Alterations_Table.pdf"))
+  gt::gtsave(gt::gt(fig2g_cl_cdh1_alts_tbl_pval), file.path(DIRS$results_sub$cdh1, "Fig2G_CL_CDH1_Alterations_ILCvsNST_Event_pval.pdf"))
+  gt::gtsave(gt::gt(fig2g_tcga_cdh1_alts_tbl), file.path(DIRS$results_sub$cdh1, "Fig2G_TCGA_CDH1_Alterations_Table.pdf"))
+  gt::gtsave(gt::gt(fig2g_tcga_cdh1_alts_tbl_pval), file.path(DIRS$results_sub$cdh1, "Fig2G_TCGA_CDH1_Alterations_ILCvsNST_Event_pval.pdf"))
+})
+
+ggarrange(plotlist = list(fig2g_cl_cdh1_alts + fig2g_tcga_cdh1_alts), widths = c(1, 0.6))
+```
+
+### Figure 2H: CDH1 Molecular Alteration Landscape Summary
+
+```{r fig2h_landscape, fig.width=7, fig.height=4,message=T, warning=F}
+write.table(TCGA_CDH1_df, file.path(DIRS$results_sub$cdh1, "Fig2H_TCGA_CDH1_Alteration_Landscape.tsv"), sep = "\t", row.names = FALSE)
+write.table(CL_CDH1_df, file.path(DIRS$results_sub$cdh1, "Fig2HCellLines_CDH1_Alteration_Landscape.tsv"), sep = "\t", row.names = FALSE)
+
+pdf(file.path(DIRS$results_sub$cdh1, "Fig2H_TCGA_CDH1_Alteration_Heatmap.pdf"), width = 8, height = 10)
+  draw(fig2h_tcga, merge_legends = TRUE)
+dev.off()
+
+pdf(file.path(DIRS$results_sub$cdh1, "Fig2H_CellLine_CDH1_Alteration_Heatmap.pdf"), width = 8, height = 10)
+  draw(fig2h_cl, merge_legends = TRUE)
+dev.off()
+
+draw(fig2h_tcga, merge_legends = TRUE)
+draw(fig2h_cl, merge_legends = TRUE)
+```
+
+## c. SV Analysis
+
+Run all Figure 3 and SupFig 8–10 scripts in order (TMB/SV prep, Fig 3A–3F, SupFig 8–10).
+
+```{r ,message=T, warning=F}
+source(file.path(DIRS$scripts$helpers, "14_Fig3_SV_All.R"), chdir = TRUE)
+```
+
+### Figure 3A (left): ICLE Genomic Instability Metrics
+
+```{r fig3a_left, fig.width=4, fig.height=4}
+pdf(file.path(DIRS$results_sub$ogm, "Fig3A_left_Metrics_of_GenomicInstability.pdf"), width = 4, height = 4)
+draw(fig3a_genomic_instability)
+dev.off()
+
+fig3a_genomic_instability
+```
+
+### Figure 3A (right): ICLE SV Overview
+
+```{r fig3a_right, fig.width=6, fig.height=4.5}
+ggsave(file.path(DIRS$results_sub$ogm, "Fig3A_right_SV_Distribution.pdf"), fig3a_sv_distribution, width = 6, height = 5)
+fig3a_sv_distribution
+```
+
+### Figure 3B: Chromosomal Topography of Translocation Breakpoints
+
+```{r fig3b, fig.width=6.5, fig.height=5}
+pdf(file.path(DIRS$results_sub$ogm, "Fig3B_Translocation_Distribution.pdf"), width = 6.5, height = 5)
+draw(fig3b_transloc_breakpoints_ht, merge_legends = TRUE)
+dev.off()
+fig3b_transloc_breakpoints_ht
+```
+
+### Figure 3C: Chromothripsis Landscape
+
+```{r fig3c, fig.width=6, fig.height=5}
+write.table(shatterseek_outs$chromothripsis_df, file.path(DIRS$results_sub$ogm, "SupTable11_shatterseek_chromothripsis_results.tsv"), sep = "\t", col.names = NA)
+pdf(file.path(DIRS$results_sub$ogm, "Fig3C_chromothripsis_heatmap.pdf"), width = 5, height = 5)
+draw(fig3c_thripsis_ht, merge_legends = TRUE)
+dev.off()
+
+draw(fig3c_thripsis_ht, merge_legends = TRUE)
+```
+
+### Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and ZR7530
+
+```{r fig3d, fig.width=8, fig.height=8}
+# Load required libraries for HTML widget to PDF conversion
+library(htmlwidgets)
+library(webshot2)
+
+# Save all four circos plots to PDF
+message("Saving circos plots to PDF...")
+circos_bck4 <- save_circos_to_pdf(trk_bck4, "BCK4", DIRS$results_sub$ogm)
+circos_600mpe <- save_circos_to_pdf(trk_600, "600MPE", DIRS$results_sub$ogm)
+circos_hcc2185 <- save_circos_to_pdf(trk_hcc, "HCC2185", DIRS$results_sub$ogm)
+circos_zr7530 <- save_circos_to_pdf(trk_zr, "ZR7530", DIRS$results_sub$ogm)
+```
+
+```{r}
+circos_bck4
+```
+
+```{r}
+circos_600mpe
+```
+
+```{r}
+circos_hcc2185
+```
+
+```{r}
+circos_zr7530
+```
+
+### Figure 3E: Fusions Distribution in Cell Lines vs Patient Tumors
+
+```{r fig3e_fusions, fig.width=6, fig.height=4}
+# Save fusion distribution plots
+ggsave(file.path(DIRS$results_sub$ogm, "Fig3E_right_FusionDistribution_ICLE.pdf"), 
+       fig3e_1, width = 3, height = 4)
+ggsave(file.path(DIRS$results_sub$ogm, "Fig3E_right_FusionDistribution_PatientTumor.pdf"), 
+       fig3e_2+scale_x_continuous(breaks = c(0,25,50,75), limits = c(0,75)), width = 3, height = 4)
+
+# Save fusion data table
+write.table(fusions_df, file.path(DIRS$results_sub$ogm, "SupTable12_fusion_df.tsv"), 
+            quote = FALSE, sep = "\t", row.names = FALSE)
+
+ggarrange(plotlist = list(fig3e_1, fig3e_2))
+```
+
+### Figure 3F: GOE and LOE Functional Fusions Circos
+
+```{r}
+pdf(file = file.path(DIRS$results_sub$ogm, "Fig3F_left_GOE_Fusions.pdf"), width = 7, height = 7)
+fig3f_left_goe_fusions_circos
+dev.off()
+
+pdf(file = file.path(DIRS$results_sub$ogm, "Fig3F_right_LOE_Fusions.pdf"), width = 7, height = 7)
+fig3f_right_loe_fusions_circos
+dev.off()
+```
+
+### SupFig 8A: Mutation vs SV Count, Size
+
+```{r supfig8a, fig.width=5.5, fig.height=5}
+ggsave(file.path(DIRS$results_sub$ogm, "SupFig8A_TMB_SV_Burden_Correlation.pdf"), SupFig8A, width = 5.5, height = 5)
+write.table(sv_tmb_summary, file.path(DIRS$results_sub$ogm, "SupTable_SV_TMB_summary.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
+
+SupFig8A
+```
+
+### SupFig 8B: TMB vs SV Burden
+
+```{r supfig8b, fig.width=10, fig.height=5}
+ggsave(file.path(DIRS$results_sub$ogm, "SupFig8B_TMB_vs_SV_Burden_Correlation.pdf"), SupFig8B, width = 5.5, height = 5)
+SupFig8B
+
+ggsave(file.path(DIRS$results_sub$ogm, "SupFig8B_TMB_vs_SV_Burden_Correlation_NoOutliers.pdf"), SupFig8B_no_outliers, width = 5.5, height = 5)
+write.table(alt_count_chr, file.path(DIRS$results_sub$ogm, "SupTable_alt_count_per_chr.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
+
+ggarrange(plotlist = list(SupFig8B +SupFig8B_no_outliers))
+```
+
+### SupFig 8C: SV\~Chr Size - SV Count by Chr
+
+```{r supfig8c, fig.width=7, fig.height=5}
+ggsave(file.path(DIRS$results_sub$ogm, "SupFig8D_SV_Per_Chr.pdf"), SupFig8C, width = 7, height = 5)
+SupFig8C
+```
+
+### SupFig 8D: Mutation \~ Chr Size - Mutation Count by Chr
+
+```{r supfig8d, fig.width=4, fig.height=5}
+ggsave(file.path(DIRS$results_sub$ogm, "SupFig8_Mutations_Per_Chr.pdf"), SupFig8D, width = 4, height = 5)
+SupFig8D
+```
+
+### SupFig 9: Generate Cricos Plots for all ICLE cell lines
+
+```{r}
+draw_circos_plot_for_all(shatterseek_outs$sv_df, shatterseek_outs$cnv_df, shatterseek_outs$chromothripsis_df, out_dir = file.path(DIRS$results_sub$ogm, "SupFig9_OGM_Circos"))
+```
+
+### SupFig 10: Functional Fusions
+
+```{r supfig10, fig.width=6.5, fig.height=5}
+# SupFig 10A: Fusion Breakpoints Heatmap
+pdf(file.path(DIRS$results_sub$ogm, "SupFig10A_Functional_Fusions_Chr_Heatmap.pdf"), width = 6.5, height = 5)
+draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
+dev.off()
+
+draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
+```
+
+```{r, fig.width=12, fig.height=5}
+# SupFig 10B: Recurring fusions expression heatmap
+pdf(file.path(DIRS$results_sub$ogm, "SupFig10B_Recurring_Functional_Fusions.pdf"), width = 15, height = 5)
+  draw(supfig10b_recurring_fusions_ht, merge_legends = TRUE)
+dev.off()
+
+draw(supfig10b_recurring_fusions_ht, merge_legends = TRUE)
+```
+
+```{r, fig.width=6.5, fig.height=5}
+# SupFig 10C: Recurring gene circos plots
+gene_names <- names(recurring_gene_circos)
+for (i in seq_along(gene_names)) {
+    gene <- gene_names[i]
+    pdf_file <- file.path(DIRS$results_sub$ogm, 
+                         paste0("SupFig10C_", gene, "_Fusions.pdf"))
+    pdf(pdf_file, width = 7, height = 7)
+    print(recurring_gene_circos[[gene]])
+    dev.off()
+}
+```
+
+## d. DNAm Analysis
+
+#### SupFig 11: DNAm Index by Across Histological and PAM50 Subtypes
+
+```{r supfig11, fig.width=5, fig.height=4}
+source(file.path(DIRS$scripts$helpers, "21_Fig4_SupFig11_DNAm_Alterations.R"), chdir = TRUE)
+```
+
+```{r supfig11a_tumor_pam50, fig.height=4, fig.width=6}
+ggsave(file.path(dnam_dir, "SupFig11A_DMI_Tumor_PAM50.pdf"), tumor_pam50, width = 5, height = 3)
+
+pdf(file.path(dnam_dir, "SupFig11A_DMI_Tumor_PAM50_pvalue_table.pdf"), width = 10, height = 10)
+  gridExtra::grid.table(signif(SupFig11A_pval_table, 1))
+dev.off()
+
+tumor_pam50
+```
+
+```{r supfig11b_cl_pam50, fig.height=4, fig.width=6}
+ggsave(file.path(dnam_dir, "SupFig11B_DMI_CL_PAM50.pdf"), cl_pam50, width = 5, height = 3)
+
+pdf(file.path(dnam_dir, "SupFig11B_DMI_CL_PAM50_pvalue_table.pdf"), width = 10, height = 10)
+  gridExtra::grid.table(signif(SupFig11B_pval_table, 1))
+dev.off()
+
+cl_pam50
+```
+
+```{r supfig11c_tumor_cl_histology, fig.height=4, fig.width=6}
+ggsave(file.path(dnam_dir, "SupFig11C_DMI_Tumor_CL_Histology.pdf"), tumor_cl_histology_LumA, width = 4, height = 3)
+
+pdf(file.path(dnam_dir, "SupFig11C_DMI_Tumor_CL_Histology_pvalues_table.pdf"), width = 10, height = 10)
+  gridExtra::grid.table(signif(SupFig11C_pval_table, 1))
+dev.off()
+
+tumor_cl_histology_LumA
+```
+
+#### Figure 4A: DNAm Index by Specimen Type
+
+```{r fig4a, fig.width=6, fig.height=4}
+ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4A_DMI_Normal_Tumor_CL.pdf"), 
+       tissue_dmi, width = 5, height = 3)
+gt::gtsave(tissue_dmi_pval, file.path(DIRS$results_sub$dna_methylation, "Fig4A_DMI_Normal_Tumor_CL_pvalue_table.pdf"))
+tissue_dmi
+```
+
+#### Figure 4B: DNAm-mRNA Alterations
+
+```{r fig4b, fig.width=6.5, fig.height=5.5}
+ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4B_Tumor_RNA_DNAm_Alterations_small_height.pdf"),
+       dnma_lfc_plt, width = 6, height = 5)
+dnma_lfc_plt
+```
+
+#### Figure 4C: Consensus DNAm-mRNA Alterations Heatmap
+
+```{r fig4c, fig.width=10, fig.height=5}
+pdf(file.path(DIRS$results_sub$dna_methylation, "Fig4C_Alterations_Heatmap.pdf"), width = 10, height = 5)
+  draw(fig4c_ht, merge_legends = TRUE, gap = unit(0.1, "cm"))
+dev.off()
+
+draw(fig4c_ht, merge_legends = TRUE, gap = unit(0.1, "cm"))
+```
+
+#### Figure 4D: MSI1 & TFAP2B Barplots
+
+```{r fig4d, fig.width=12, fig.height=10}
+ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4D_Top_Alterations_Barplots.pdf"), fig4e, width = 12, height = 10)
+fig4e
+```
+
+## e. RNAi Analysis
+
+### Figure 5B: Consensus Differential Dependencies
+
+```{r fig5b, fig.width=8, fig.height=4.5}
+source(file.path(DIRS$scripts$helpers, "22_Fig5_RNAi_Differential_Dependencies.R"), chdir = TRUE)
+```
+
+```{r, fig.height=5, fig.width=8}
+ggsave(file.path(DIRS$results_sub$dependencies, "Fig5b_Differential_Dependencies.pdf"), 
+       fig5b_consensus_dep_plt, width = 8, height = 4.5)
+fig5b_consensus_dep_plt
+```
+
+### SupFig 12: Consensus Differential Dependencies Heatmap
+
+```{r supfig12, fig.width=5.5, fig.height=16}
+pdf(file.path(DIRS$results_sub$dependencies, "SupFig12_Consensus_Dependencies_Heatmap.pdf"), 
+    width = 7.5, height = 16)
+  draw(supfig12_dep_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
+dev.off()
+
+draw(supfig12_dep_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
+```
+
+### Figure 5C: Over represented Pathways
+
+```{r fig5c, fig.width=6, fig.height=3.5}
+ggsave(file.path(DIRS$results_sub$dependencies, "Fig5C_KEGG_ORA.pdf"), fig5c_pathway_plt, width = 6, height = 3.5)
+fig5c_pathway_plt
+```
+
+### Figure 5D: Pathway level Dependencies Heatmap
+
+```{r fig5d, fig.width=6.5, fig.height=5}
+pdf(file.path(DIRS$results_sub$dependencies, "Fig5D_Pathway_Scores.pdf"), width = 7.5, height = 5)
+  draw(fig5d_pathway_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
+dev.off()
+draw(fig5d_pathway_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
+```
+
+### Figure 5E: Top Druggable Dependencies Heatmap
+
+```{r fig5e, fig.width=7.5, fig.height=5}
+pdf(file.path(DIRS$results_sub$dependencies, "Fig5E_ILC_Druggable_Dependencies.pdf"), width = 7.5, height = 5)
+  draw(fig5e_drug_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
+dev.off()
+draw(fig5e_drug_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
+```
+
+## f. Cell Line Scoring
+
+### Figure 6: CL-Tumor Concordance/Resemblance Score
+
+```{r fig6_run, fig.width=12, fig.height=5}
+# Generate resemblance scores between cell lines and tumors
+source(file.path(DIRS$scripts$helpers, "23_Fig6_Patient_Signatures_Resemblance_Scores.R"), chdir = TRUE)
+```
+
+```{r fig6_save_signatures}
+pdf(file = file.path(DIRS$results_sub$molecular_resemblance, "Fig6_ILC_CN_Signature.pdf"), width = 6, height = 6)
+draw(cn_sig_ht)
+dev.off()
+
+pdf(file = file.path(DIRS$results_sub$molecular_resemblance, "Fig6_ILC_Alteration_Signature.pdf"), width = 6, height = 6)
+draw(mut_sig_ht)
+dev.off()
+
+pdf(file = file.path(DIRS$results_sub$molecular_resemblance, "Fig6_ILC_DNAm_Signature.pdf"), width = 6, height = 6)
+draw(dnam_sign_ht)
+dev.off()
+
+pdf(file = file.path(DIRS$results_sub$molecular_resemblance, "Fig6_ILC_RNA_Signature.pdf"), width = 6, height = 6)
+draw(rna_sign_ht)
+dev.off()
+
+pdf(file = file.path(DIRS$results_sub$molecular_resemblance, "Fig6_ILC_rppa_Signature.pdf"), width = 6, height = 6)
+draw(rppa_sig_ht)
+dev.off()
+```
+
+```{r fig6_display, fig.width=6, fig.height=5}
+# Save Fig 6
+pdf(file.path(DIRS$results_sub$molecular_resemblance, "Fig6_Resemblance_Scores.pdf"), width = 6, height = 5)
+   draw(fig6_resemblance_ht, merge_legends = TRUE, annotation_legend_side = "right", 
+        heatmap_legend_side = "right")
+dev.off()
+  
+# Display figure
+draw(fig6_resemblance_ht, merge_legends = TRUE, annotation_legend_side = "right", 
+     heatmap_legend_side = "right")
+```
+
+```{r}
+sessionInfo()
+```

@@ -1,0 +1,689 @@
+DMI	SampleID	TissueSource	Histology	PAM50	HistologyGroup	HistologySubtype	DMI_zscore	Histology_TissueSource
+4404.93864727707	TCGA-A1-A0SB-01	Patient Tumors	Other	Normal	Other-Patient Tumors	Other-Normal	4.54806053907455	Other | Patient Tumors
+3855.38952119077	TCGA-A1-A0SE-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.60494156145366	ILC | Patient Tumors
+4605.16210768337	TCGA-A1-A0SF-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.89167776328692	NST | Patient Tumors
+3401.69598741037	TCGA-A1-A0SH-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	2.82632694554217	mDLC | Patient Tumors
+4444.80855368927	TCGA-A1-A0SI-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.61648402223265	NST | Patient Tumors
+5515.7524117241	TCGA-A1-A0SJ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.45440428911078	NST | Patient Tumors
+6312.63320497546	TCGA-A1-A0SK-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	7.82198611818083	Other | Patient Tumors
+5538.15532974634	TCGA-A1-A0SM-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.49285147451771	NST | Patient Tumors
+6554.81655003818	TCGA-A1-A0SN-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.23761358067722	NST | Patient Tumors
+4270.2835230947	TCGA-A1-A0SP-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.31696963742083	NST | Patient Tumors
+6576.93320788332	TCGA-A1-A0SQ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	8.27556949534466	NST | Patient Tumors
+7897.90193999702	TCGA-A2-A04R-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	10.5425746109248	NST | Patient Tumors
+4442.16589577381	TCGA-A2-A0CK-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.61194877558567	ILC | Patient Tumors
+5075.35199656843	TCGA-A2-A0CO-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.69860290654211	ILC | Patient Tumors
+4484.72435922299	TCGA-A2-A0CR-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.68498627602381	ILC | Patient Tumors
+8765.78792149871	TCGA-A2-A0CT-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	12.0320133175143	mDLC | Patient Tumors
+4050.77229163387	TCGA-A2-A0EN-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.94025134534384	ILC | Patient Tumors
+3730.54150558491	TCGA-A2-A0EP-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.39068131201109	ILC | Patient Tumors
+5568.46938011128	TCGA-A2-A0EU-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.54487549717669	NST | Patient Tumors
+4109.87339768743	TCGA-A2-A0ST-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.04167881028123	NST | Patient Tumors
+3425.75007071572	TCGA-A2-A0SU-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.86760780903133	NST | Patient Tumors
+5285.16621213508	TCGA-A2-A0SV-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.05867948401714	NST | Patient Tumors
+6708.0941687006	TCGA-A2-A0SW-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.50066382339994	NST | Patient Tumors
+3545.43211728415	TCGA-A2-A0SX-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.07300238440449	NST | Patient Tumors
+5605.9125124564	TCGA-A2-A0SY-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.6091342267788	ILC | Patient Tumors
+3567.83406754162	TCGA-A2-A0T0-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.11144790896387	NST | Patient Tumors
+4073.48272819925	TCGA-A2-A0T1-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	3.97922628443145	NST | Patient Tumors
+4800.33964328173	TCGA-A2-A0T2-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.22663532957223	NST | Patient Tumors
+4460.20905749316	TCGA-A2-A0T4-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.64291388393729	ILC | Patient Tumors
+4465.4438243393	TCGA-A2-A0T5-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.65189762664867	NST | Patient Tumors
+5274.65147874333	TCGA-A2-A0T6-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.04063442828753	ILC | Patient Tumors
+3585.23014516284	TCGA-A2-A0T7-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.14130251187732	NST | Patient Tumors
+5629.06105295945	TCGA-A2-A0YC-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.64886102610632	NST | Patient Tumors
+4053.51554466275	TCGA-A2-A0YD-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.94495923017004	ILC | Patient Tumors
+5995.25608668043	TCGA-A2-A0YF-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.27731345996307	NST | Patient Tumors
+6904.06250516528	TCGA-A2-A0YG-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.83697853733439	NST | Patient Tumors
+4233.11815903563	TCGA-A2-A0YH-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.2531876050411	NST | Patient Tumors
+4418.37181956321	TCGA-A2-A0YI-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	4.57111412811932	mDLC | Patient Tumors
+3691.51579194889	TCGA-A2-A0YK-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	3.32370660602358	ILC | Patient Tumors
+3175.99671782596	TCGA-A2-A0YL-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.43898893647981	ILC | Patient Tumors
+5790.93221705999	TCGA-A2-A0YM-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	6.92665924203658	NST | Patient Tumors
+6815.55329836021	TCGA-A2-A0YT-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.68508181205613	NST | Patient Tumors
+9381.76405321999	TCGA-A2-A1FV-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	13.0891322392112	ILC | Patient Tumors
+7532.78488436484	TCGA-A2-A1FW-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	9.91597216926118	Other | Patient Tumors
+6233.35592227718	TCGA-A2-A1FX-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	7.68593293156322	Other | Patient Tumors
+4306.81050970476	TCGA-A2-A1FZ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.3796561064406	NST | Patient Tumors
+3515.30935358678	TCGA-A2-A1G0-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.0213066419261	NST | Patient Tumors
+4844.31289589456	TCGA-A2-A1G1-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.30210084680857	NST | Patient Tumors
+6580.7004188558	TCGA-A2-A1G4-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.28203466468474	NST | Patient Tumors
+2122.05486128492	TCGA-A2-A1G6-01	Patient Tumors	NST	Normal	NST-Patient Tumors	NST-Normal	0.63024697142253	NST | Patient Tumors
+3143.49109867572	TCGA-A2-A259-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.38320381219395	NST | Patient Tumors
+3724.77525295157	TCGA-A2-A25A-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	3.38078545005788	ILC | Patient Tumors
+6677.85387713748	TCGA-A2-A25B-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.44876638328375	NST | Patient Tumors
+4449.02598747619	TCGA-A2-A25C-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.62372184984895	NST | Patient Tumors
+5403.04447466269	TCGA-A2-A25D-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.26097846178187	ILC | Patient Tumors
+5525.81762812378	TCGA-A2-A25E-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	6.47167789787439	mDLC | Patient Tumors
+4614.60629317532	TCGA-A2-A25F-01	Patient Tumors	mDLC	Basal	mDLC-Patient Tumors	mDLC-Basal	4.90788557828075	mDLC | Patient Tumors
+4757.66453071623	TCGA-A2-A3KC-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.15339763957851	ILC | Patient Tumors
+3467.94751412462	TCGA-A2-A3KD-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	2.94002573819706	Other | Patient Tumors
+4574.95727659008	TCGA-A2-A3XS-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	4.83984117931709	Other | Patient Tumors
+4006.60292069568	TCGA-A2-A3XT-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.86444925598733	NST | Patient Tumors
+5768.35891730449	TCGA-A2-A3XU-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	6.88791965284179	NST | Patient Tumors
+6987.41571517154	TCGA-A2-A3XV-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	8.98002670258645	NST | Patient Tumors
+3148.78217115763	TCGA-A2-A3XW-01	Patient Tumors	NST	Normal	NST-Patient Tumors	NST-Normal	2.39228418487181	NST | Patient Tumors
+3953.46560585163	TCGA-A2-A3XX-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.77325666251323	NST | Patient Tumors
+3636.39617271698	TCGA-A2-A3XY-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.22911204391943	NST | Patient Tumors
+3917.07061625244	TCGA-A2-A3XZ-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	3.7107967226244	NST | Patient Tumors
+4098.78835737181	TCGA-A2-A3Y0-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.02265501169236	NST | Patient Tumors
+4454.03773764896	TCGA-A2-A4RW-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.63232285833876	ILC | Patient Tumors
+3158.42044793514	TCGA-A2-A4RX-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	2.40882509324369	Other | Patient Tumors
+2831.74078054338	TCGA-A2-A4RY-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	1.84818769197218	ILC | Patient Tumors
+4435.67339206984	TCGA-A2-A4S0-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	4.60080654431858	Other | Patient Tumors
+4874.29066903092	TCGA-A2-A4S2-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.3535477610327	ILC | Patient Tumors
+4127.59701521803	TCGA-A2-A4S3-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.07209552691628	NST | Patient Tumors
+1640.34351767871	TCGA-A7-A0CE-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.196450931139381	Normal
+1756.89615359963	TCGA-A7-A0CH-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.00357304781150163	Normal
+5729.20133691772	TCGA-A7-A0D9-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.82071864127167	NST | Patient Tumors
+2552.1252088778	TCGA-A7-A0DB-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.36832021596657	Normal
+1962.55334135063	TCGA-A7-A0DC-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.356515464503926	Normal
+4819.72852606466	TCGA-A7-A13D-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.25990992221452	NST | Patient Tumors
+7560.51658970351	TCGA-A7-A13E-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	9.96356445236234	NST | Patient Tumors
+1801.46480103441	TCGA-A7-A13E-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.0800603629710769	Normal
+7454.84980208975	TCGA-A7-A13F-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	9.7822224249216	mDLC | Patient Tumors
+1166.36458720585	TCGA-A7-A13F-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-1.00987870875212	Normal
+5314.53203761131	TCGA-A7-A13G-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.10907619285621	NST | Patient Tumors
+3401.39027253702	TCGA-A7-A13H-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.82580228726303	ILC | Patient Tumors
+5626.06611467581	TCGA-A7-A26E-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.64372120693817	ILC | Patient Tumors
+5521.07109489032	TCGA-A7-A26F-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	6.46353204637924	Other | Patient Tumors
+3580.33461510243	TCGA-A7-A26G-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	3.13290095669996	Other | Patient Tumors
+5380.24669652166	TCGA-A7-A26H-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	6.22185362982096	mDLC | Patient Tumors
+3826.51983362601	TCGA-A7-A26I-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.55539630894054	NST | Patient Tumors
+6163.67735880614	TCGA-A7-A26J-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.56635276589012	NST | Patient Tumors
+5213.69983427696	TCGA-A7-A2KD-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.9360311273546	NST | Patient Tumors
+3047.89348492871	TCGA-A7-A3IY-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	2.21914218519772	Other | Patient Tumors
+7760.45860600396	TCGA-A7-A3IZ-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	10.3066986710257	ILC | Patient Tumors
+5124.92250398401	TCGA-A7-A3J0-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	5.78367425695417	Other | Patient Tumors
+4196.40883956756	TCGA-A7-A3J1-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.19018822208793	ILC | Patient Tumors
+5630.13670851786	TCGA-A7-A3RF-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	6.65070703244565	Other | Patient Tumors
+4287.41835365157	TCGA-A7-A425-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	4.34637589631454	Other | Patient Tumors
+3777.27711622062	TCGA-A7-A426-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.47088750146523	ILC | Patient Tumors
+3635.48868375001	TCGA-A7-A4SA-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.22755463981103	ILC | Patient Tumors
+5159.34037479959	TCGA-A7-A4SB-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.84274112758437	ILC | Patient Tumors
+4535.44363668647	TCGA-A7-A4SD-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.77202910956935	NST | Patient Tumors
+3467.0202878057	TCGA-A7-A4SE-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	2.93843446146417	NST | Patient Tumors
+7662.95046562917	TCGA-A7-A4SF-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	10.1393582581405	NST | Patient Tumors
+7438.20944938564	TCGA-A7-A5ZV-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	9.75366477341315	Other | Patient Tumors
+2868.98142015473	TCGA-A7-A5ZW-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	1.91209890989427	Other | Patient Tumors
+3661.04254617217	TCGA-A7-A5ZX-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.2714093771909	ILC | Patient Tumors
+4422.64931716508	TCGA-A8-A075-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.57845503537139	NST | Patient Tumors
+4851.45739947774	TCGA-A8-A08O-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.31436201982319	NST | Patient Tumors
+6031.72826453865	TCGA-A8-A0AD-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	7.3399058679216	Other | Patient Tumors
+5048.99253592263	TCGA-AC-A23C-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.65336562675249	NST | Patient Tumors
+4682.99747381007	TCGA-AC-A23E-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	5.02525637789949	Other | Patient Tumors
+3197.07629979512	TCGA-AC-A23G-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.47516505404915	ILC | Patient Tumors
+9490.51541435345	TCGA-AC-A23H-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	13.2757679150015	NST | Patient Tumors
+4445.0350002896	TCGA-AC-A2B8-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.6168726427873	ILC | Patient Tumors
+6515.54001059024	TCGA-AC-A2BK-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	8.17020841529659	NST | Patient Tumors
+5631.41523502341	TCGA-AC-A2BM-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.65290119954288	NST | Patient Tumors
+3972.24055141552	TCGA-AC-A2FB-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.80547763535182	ILC | Patient Tumors
+1472.67834901418	TCGA-AC-A2FB-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.484192636015985	Normal
+5428.58669529141	TCGA-AC-A2FE-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.3048132198809	ILC | Patient Tumors
+2511.99003212012	TCGA-AC-A2FF-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	1.29944148415981	ILC | Patient Tumors
+1752.73217143223	TCGA-AC-A2FF-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.00357304781150202	Normal
+4399.13640958727	TCGA-AC-A2FG-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.53810292069585	ILC | Patient Tumors
+1832.36740759259	TCGA-AC-A2FG-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.133094447313137	Normal
+1733.21313932398	TCGA-AC-A2FK-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	-0.0370709986447319	ILC | Patient Tumors
+8465.89681958311	TCGA-AC-A2FM-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	11.5173496122866	mDLC | Patient Tumors
+1561.90252971943	TCGA-AC-A2FM-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.331068894950163	Normal
+4676.53463262527	TCGA-AC-A2FO-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.01416505251763	ILC | Patient Tumors
+5999.18752175245	TCGA-AC-A2QH-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	7.2840604655531	Other | Patient Tumors
+5214.66799675806	TCGA-AC-A2QI-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.93769265744536	ILC | Patient Tumors
+4211.95633621824	TCGA-AC-A2QJ-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	4.2168703483069	Other | Patient Tumors
+3979.53911177321	TCGA-AC-A3BB-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.818003195772	ILC | Patient Tumors
+7065.21443630017	TCGA-AC-A3EH-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	9.11354242820244	ILC | Patient Tumors
+3356.78612841744	TCGA-AC-A3HN-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.74925405380608	ILC | Patient Tumors
+5014.57250093602	TCGA-AC-A3OD-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.59429504203984	ILC | Patient Tumors
+3148.63198836802	TCGA-AC-A3QP-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.39202644587767	ILC | Patient Tumors
+4425.58068947468	TCGA-AC-A3TM-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.58348576460818	NST | Patient Tumors
+6182.77195982543	TCGA-AC-A3TN-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	7.59912232139764	ILC | Patient Tumors
+5248.51071846903	TCGA-AC-A3W5-01	Patient Tumors	Other	Her2	Other-Patient Tumors	Other-Her2	5.99577247521755	Other | Patient Tumors
+3921.52205477451	TCGA-AC-A3W6-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.71843614182931	ILC | Patient Tumors
+4594.89627161664	TCGA-AC-A3W7-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	4.87405985734166	mDLC | Patient Tumors
+2521.24372790846	TCGA-AC-A3YI-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	1.31532238669762	ILC | Patient Tumors
+4557.5913839988	TCGA-AC-A5XS-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.8100383790055	ILC | Patient Tumors
+4157.21182721198	TCGA-AC-A62Y-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.12291953860943	ILC | Patient Tumors
+4087.16605799434	TCGA-AN-A0XU-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.00270918594874	NST | Patient Tumors
+4557.05038310696	TCGA-AO-A128-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	4.80910993023943	Other | Patient Tumors
+1941.2529742775	TCGA-AO-A1KO-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	0.319960442462436	ILC | Patient Tumors
+7088.08231565753	TCGA-AO-A1KP-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	9.15278756567261	NST | Patient Tumors
+5278.35423944676	TCGA-AO-A1KR-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	6.04698899009689	NST | Patient Tumors
+5394.21323510855	TCGA-AO-A1KS-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	6.24582256538597	mDLC | Patient Tumors
+6658.49447037795	TCGA-AO-A1KT-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.41554237646853	NST | Patient Tumors
+10284.4004158432	TCGA-AQ-A04H-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	14.6382084601913	mDLC | Patient Tumors
+7444.66913508323	TCGA-AQ-A04L-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	9.7647506834468	NST | Patient Tumors
+5354.38320414945	TCGA-AQ-A0Y5-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	6.17746751523007	mDLC | Patient Tumors
+6885.71947446762	TCGA-AQ-A1H2-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	8.80549880324537	NST | Patient Tumors
+4848.57418522146	TCGA-AQ-A1H3-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.30941393792737	NST | Patient Tumors
+6354.32235573592	TCGA-AQ-A54N-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	7.89353173144217	NST | Patient Tumors
+4603.48715468301	TCGA-AQ-A54O-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.88880326147028	NST | Patient Tumors
+3791.81989420301	TCGA-AR-A0TX-01	Patient Tumors	Other	Her2	Other-Patient Tumors	Other-Her2	3.49584536101129	Other | Patient Tumors
+6114.73036994745	TCGA-AR-A0U2-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.48235147847333	NST | Patient Tumors
+7625.77449307985	TCGA-AR-A0U3-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	10.0755580198024	NST | Patient Tumors
+4393.11123720603	TCGA-AR-A1AI-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	4.5277627087904	Other | Patient Tumors
+3988.52389774251	TCGA-AR-A1AJ-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.83342260371074	NST | Patient Tumors
+4134.95786493289	TCGA-AR-A1AK-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.08472798637799	ILC | Patient Tumors
+3708.54582451528	TCGA-AR-A1AL-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.35293301389224	ILC | Patient Tumors
+3120.74444126765	TCGA-AR-A1AM-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.34416671203192	ILC | Patient Tumors
+3868.60090401226	TCGA-AR-A1AN-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.62761452237399	NST | Patient Tumors
+2717.98153404485	TCGA-AR-A1AO-01	Patient Tumors	Other	Normal	Other-Patient Tumors	Other-Normal	1.65295764035389	Other | Patient Tumors
+6447.41370778095	TCGA-AR-A1AP-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	8.05329219069595	Other | Patient Tumors
+4573.32415610892	TCGA-AR-A1AQ-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.83703846915815	NST | Patient Tumors
+4296.61353772055	TCGA-AR-A1AR-01	Patient Tumors	mDLC	Basal	mDLC-Patient Tumors	mDLC-Basal	4.36215638287437	mDLC | Patient Tumors
+5919.44067385026	TCGA-AR-A1AS-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.147201425857	NST | Patient Tumors
+3813.15927375474	TCGA-AR-A1AU-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.5324673350452	NST | Patient Tumors
+7792.30838956272	TCGA-AR-A1AV-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	10.3613582708349	NST | Patient Tumors
+5478.06641849357	TCGA-AR-A1AW-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	6.38972876927267	Other | Patient Tumors
+3344.0943117092	TCGA-AR-A1AX-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.72747275595693	NST | Patient Tumors
+5748.93531205777	TCGA-AR-A1AY-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	6.85458547059595	NST | Patient Tumors
+7387.78997715448	TCGA-AR-A24H-01	Patient Tumors	ILC	LumB	ILC-Patient Tumors	ILC-LumB	9.66713645620614	ILC | Patient Tumors
+6670.2660141031	TCGA-AR-A24K-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.43574433068169	NST | Patient Tumors
+4065.47911489002	TCGA-AR-A24L-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.96549073424465	NST | Patient Tumors
+4920.4267651673	TCGA-AR-A24M-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.43272508250247	NST | Patient Tumors
+7566.34716624574	TCGA-AR-A24N-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	9.97357070499094	NST | Patient Tumors
+3276.73058466855	TCGA-AR-A24O-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	2.61186523997785	mDLC | Patient Tumors
+4736.52097853874	TCGA-AR-A24P-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.11711173834357	NST | Patient Tumors
+4013.30141237113	TCGA-AR-A24Q-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.87594499735178	NST | Patient Tumors
+6352.10559458876	TCGA-AR-A24R-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.88972739547385	NST | Patient Tumors
+4838.71315790146	TCGA-AR-A24S-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.29249075205943	NST | Patient Tumors
+5332.11433613783	TCGA-AR-A24T-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.13925038224788	ILC | Patient Tumors
+5760.78263593472	TCGA-AR-A2LE-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.87491747632937	ILC | Patient Tumors
+3738.97008508706	TCGA-AR-A2LH-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	3.40514617585225	ILC | Patient Tumors
+2979.83131479182	TCGA-AR-A2LJ-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.1023360230784	ILC | Patient Tumors
+6560.68801594649	TCGA-AR-A2LK-01	Patient Tumors	ILC	LumB	ILC-Patient Tumors	ILC-LumB	8.24769000635368	ILC | Patient Tumors
+3835.55408168422	TCGA-AR-A2LM-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.57090060216527	ILC | Patient Tumors
+3904.8435942159	TCGA-AR-A2LN-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.68981309081594	ILC | Patient Tumors
+3627.03290098177	TCGA-AR-A2LO-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.21304309057764	ILC | Patient Tumors
+2653.54081702002	TCGA-AR-A2LQ-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	1.54236650250523	ILC | Patient Tumors
+5266.21303016623	TCGA-B6-A0IK-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	6.02615262744941	NST | Patient Tumors
+4829.52800974899	TCGA-B6-A0RE-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.2767274888248	NST | Patient Tumors
+6871.11352086032	TCGA-B6-A0RG-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	8.78043252367288	NST | Patient Tumors
+5134.92829910419	TCGA-B6-A0RI-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.80084588878122	NST | Patient Tumors
+6488.81359407313	TCGA-B6-A0RN-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	8.1243413773475	mDLC | Patient Tumors
+4838.63779611679	TCGA-B6-A0RO-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.29236141852774	NST | Patient Tumors
+5256.70239753559	TCGA-B6-A0RP-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	6.0098307779598	mDLC | Patient Tumors
+4177.25993898417	TCGA-B6-A0RT-01	Patient Tumors	mDLC	Basal	mDLC-Patient Tumors	mDLC-Basal	4.15732547937122	mDLC | Patient Tumors
+3067.01376161117	TCGA-B6-A0RU-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	2.25195580447323	Other | Patient Tumors
+3886.21788469346	TCGA-B6-A0RV-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.65784823219198	ILC | Patient Tumors
+4577.10807441629	TCGA-B6-A0WT-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.84353231110248	NST | Patient Tumors
+5908.2207120983	TCGA-B6-A0WV-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.1279460793299	NST | Patient Tumors
+6440.52255702321	TCGA-B6-A0WW-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.04146581385579	NST | Patient Tumors
+3648.29407429028	TCGA-B6-A0WX-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	3.24953084950929	Other | Patient Tumors
+3400.12204486123	TCGA-B6-A0WY-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.82362579469448	NST | Patient Tumors
+5124.17792895365	TCGA-B6-A0WZ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.78239644063518	NST | Patient Tumors
+5232.21181507349	TCGA-B6-A0X4-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.96780080830541	NST | Patient Tumors
+9526.6809683037	TCGA-B6-A0X5-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	13.3378341046242	NST | Patient Tumors
+4324.22682807087	TCGA-B6-A0X7-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.40954544588574	ILC | Patient Tumors
+6414.69455495156	TCGA-B6-A1KC-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.99714060660585	NST | Patient Tumors
+6495.46330927877	TCGA-B6-A1KF-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	8.13575341006398	NST | Patient Tumors
+3917.19281778885	TCGA-B6-A1KI-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.71100644106922	NST | Patient Tumors
+6679.7136411358	TCGA-B6-A1KN-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.45195805193985	NST | Patient Tumors
+5536.4005280172	TCGA-B6-A2IU-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.48983993881662	ILC | Patient Tumors
+4156.72581902116	TCGA-BH-A0AU-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.12208546659241	NST | Patient Tumors
+1670.92641965478	TCGA-BH-A0AU-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.143965513775941	Normal
+5257.20516001	TCGA-BH-A0AW-01	Patient Tumors	mDLC	Her2	mDLC-Patient Tumors	mDLC-Her2	6.01069360315292	mDLC | Patient Tumors
+1420.52467277105	TCGA-BH-A0AY-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.573697139767797	Normal
+3771.40761142495	TCGA-BH-A0AZ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.46081444138878	NST | Patient Tumors
+1651.81932849773	TCGA-BH-A0AZ-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.176756504466219	Normal
+1420.53052215288	TCGA-BH-A0B2-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.573687101242121	Normal
+3657.91031755765	TCGA-BH-A0B3-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.26603394466199	NST | Patient Tumors
+1758.53323921315	TCGA-BH-A0B3-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.00638256280627024	Normal
+5770.09697785177	TCGA-BH-A0B5-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.89090245785154	ILC | Patient Tumors
+4428.03664633478	TCGA-BH-A0B6-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.58770060075845	NST | Patient Tumors
+2294.20212177095	TCGA-BH-A0B8-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.925680701735339	Normal
+3971.78731829129	TCGA-BH-A0B9-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.80469981087635	NST | Patient Tumors
+5729.32004342835	TCGA-BH-A0BA-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.82092236166286	ILC | Patient Tumors
+1724.79699358439	TCGA-BH-A0BA-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.0515145240524752	Normal
+3838.51396508986	TCGA-BH-A0BC-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	3.57598026125103	mDLC | Patient Tumors
+1568.26150595942	TCGA-BH-A0BC-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.320155819329631	Normal
+4594.74116821811	TCGA-BH-A0BF-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.87379367375279	NST | Patient Tumors
+1477.78332191195	TCGA-BH-A0BF-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.475431641608792	Normal
+3205.84631045437	TCGA-BH-A0BJ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.49021587133564	NST | Patient Tumors
+1693.80453349818	TCGA-BH-A0BJ-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.104702812201751	Normal
+4029.95317371528	TCGA-BH-A0BM-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	3.90452222801054	mDLC | Patient Tumors
+1849.79074150877	TCGA-BH-A0BM-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.162995826625318	Normal
+4756.33648422826	TCGA-BH-A0BS-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.15111848784026	NST | Patient Tumors
+1289.5594182682	TCGA-BH-A0BS-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.79845560278315	Normal
+1584.56564463873	TCGA-BH-A0BT-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.292175167787647	Normal
+1825.87094751502	TCGA-BH-A0BV-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.121945426241725	Normal
+6508.6361087377	TCGA-BH-A0BZ-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	8.15836015542738	Other | Patient Tumors
+1432.69108525401	TCGA-BH-A0BZ-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.55281752417463	Normal
+5050.33247252985	TCGA-BH-A0C0-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.65566518394054	NST | Patient Tumors
+1808.40141760864	TCGA-BH-A0C0-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.0919647668197773	Normal
+3415.290171821	TCGA-BH-A0C3-01	Patient Tumors	ILC	LumB	ILC-Patient Tumors	ILC-LumB	2.84965685854604	ILC | Patient Tumors
+1868.9382892799	TCGA-BH-A0C3-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.195856247688052	Normal
+7498.73780401016	TCGA-BH-A0DD-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	9.85754163759287	NST | Patient Tumors
+3858.97627546834	TCGA-BH-A0DG-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.61109703667264	NST | Patient Tumors
+1389.11068548779	TCGA-BH-A0DG-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.627608839674556	Normal
+8024.89597529444	TCGA-BH-A0DH-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	10.7605177920679	Other | Patient Tumors
+1931.27282904051	TCGA-BH-A0DH-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.302832830160601	Normal
+3953.08079966179	TCGA-BH-A0DI-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	3.77259627019683	mDLC | Patient Tumors
+6777.78411319051	TCGA-BH-A0DK-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	8.62026352082073	NST | Patient Tumors
+2464.37199106874	TCGA-BH-A0DK-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.21772089529723	Normal
+4794.43572093759	TCGA-BH-A0DP-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.21650320317834	ILC | Patient Tumors
+4590.03481382521	TCGA-BH-A0DQ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.8657167759239	NST | Patient Tumors
+1818.24118695544	TCGA-BH-A0DQ-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.108851470420725	Normal
+7027.55736144284	TCGA-BH-A0DS-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	9.04891653716961	NST | Patient Tumors
+2673.98444135328	TCGA-BH-A0DV-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	1.57745120952199	mDLC | Patient Tumors
+2044.87708751852	TCGA-BH-A0DV-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.497796896198138	Normal
+1927.2812722171	TCGA-BH-A0DZ-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.295982645506102	Normal
+4736.62266304885	TCGA-BH-A0E0-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.11728624611123	NST | Patient Tumors
+1786.31231617969	TCGA-BH-A0E0-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.0540561436097089	Normal
+4931.04529796191	TCGA-BH-A0E1-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.45094827551235	NST | Patient Tumors
+2106.25988376637	TCGA-BH-A0E1-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.60314012629855	Normal
+5633.75649611806	TCGA-BH-A0E2-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.65691919841708	NST | Patient Tumors
+4996.03245807843	TCGA-BH-A0GY-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.56247720185979	NST | Patient Tumors
+5487.96176089178	TCGA-BH-A0GZ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.40671084560182	NST | Patient Tumors
+6602.28339675476	TCGA-BH-A0H0-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.3190746945635	NST | Patient Tumors
+3666.81000907836	TCGA-BH-A0H3-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.28130731617642	NST | Patient Tumors
+4878.67260859344	TCGA-BH-A0H6-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	5.36106790830259	Other | Patient Tumors
+7105.75866137555	TCGA-BH-A0H7-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	9.18312315590525	NST | Patient Tumors
+2479.37393978291	TCGA-BH-A0H7-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.24346676925465	Normal
+4694.3460632492	TCGA-BH-A0H9-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.04473247122985	NST | Patient Tumors
+2457.44925278028	TCGA-BH-A0H9-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.20584030892737	Normal
+4963.01370039099	TCGA-BH-A0HA-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.50581144530721	NST | Patient Tumors
+1717.24126110836	TCGA-BH-A0HA-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.0644814351978413	Normal
+5047.93105027974	TCGA-BH-A0HB-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.65154393837786	NST | Patient Tumors
+4028.46604005236	TCGA-BH-A0HI-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.90197005585125	NST | Patient Tumors
+8346.04934175372	TCGA-BH-A0HK-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	11.3116711289709	ILC | Patient Tumors
+1469.37913064517	TCGA-BH-A0HK-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.489854651125151	Normal
+4279.23202689052	TCGA-BH-A0HP-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.33232677903118	ILC | Patient Tumors
+5461.54858781237	TCGA-BH-A0HX-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.36138138621794	NST | Patient Tumors
+7740.18344500698	TCGA-BH-A0HY-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	10.271903075504	NST | Patient Tumors
+3724.75521490501	TCGA-BH-A0RX-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	3.38075106139071	Other | Patient Tumors
+5791.57866476807	TCGA-BH-A0W3-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.9277686553221	NST | Patient Tumors
+3925.2311200832	TCGA-BH-A0W4-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	3.72480152340453	Other | Patient Tumors
+3532.83615388218	TCGA-BH-A0W5-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.05138558699382	NST | Patient Tumors
+3762.80399739155	TCGA-BH-A0WA-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	3.44604918877376	Other | Patient Tumors
+8270.02062458185	TCGA-BH-A1EN-01	Patient Tumors	Other	Her2	Other-Patient Tumors	Other-Her2	11.1811930286423	Other | Patient Tumors
+1677.60200292278	TCGA-BH-A1EN-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.132509087102004	Normal
+5688.13328519298	TCGA-BH-A1EO-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	6.7502389386992	Other | Patient Tumors
+2428.05699539645	TCGA-BH-A1EO-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.15539823847732	Normal
+5917.80361787633	TCGA-BH-A1ES-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.14439196172876	NST | Patient Tumors
+1693.70912532467	TCGA-BH-A1ES-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.104866548717356	Normal
+4880.29213675139	TCGA-BH-A1ET-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.36384729174266	NST | Patient Tumors
+1232.79714559506	TCGA-BH-A1ET-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.895869235213383	Normal
+3395.34965561339	TCGA-BH-A1EU-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	2.81543556991824	mDLC | Patient Tumors
+1906.64274905101	TCGA-BH-A1EU-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.26056345922403	Normal
+5554.60587013394	TCGA-BH-A1EV-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	6.52108337608065	NST | Patient Tumors
+1234.32907429355	TCGA-BH-A1EV-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.893240187218716	Normal
+4415.12991677288	TCGA-BH-A1EW-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.56555047620901	NST | Patient Tumors
+2023.78095102984	TCGA-BH-A1EW-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.461592368281506	Normal
+4898.78663718186	TCGA-BH-A1EX-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.39558697343738	NST | Patient Tumors
+4930.00563543729	TCGA-BH-A1EY-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.44916403928898	NST | Patient Tumors
+1318.78773967866	TCGA-BH-A1EY-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.74829487410996	Normal
+3538.27018774148	TCGA-BH-A1F0-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.06071130550464	NST | Patient Tumors
+1335.48343061922	TCGA-BH-A1F0-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.719642252855378	Normal
+5713.33335491273	TCGA-BH-A1F2-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.79348650813731	NST | Patient Tumors
+1360.03924387195	TCGA-BH-A1F2-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.677500336163601	Normal
+5107.52281220412	TCGA-BH-A1F5-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.75381345153494	NST | Patient Tumors
+2005.68489431484	TCGA-BH-A1F5-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.430536483197023	Normal
+5008.59024855888	TCGA-BH-A1F6-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.58402848809956	NST | Patient Tumors
+1409.10340704659	TCGA-BH-A1F6-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.593297957860073	Normal
+6357.78288739075	TCGA-BH-A1F8-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.89947058735406	NST | Patient Tumors
+1151.28286419179	TCGA-BH-A1F8-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-1.03576148886149	Normal
+1516.63504948478	TCGA-BH-A1FB-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.408755525047126	Normal
+5978.69186906509	TCGA-BH-A1FC-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	7.24888646910652	Other | Patient Tumors
+1759.59106141313	TCGA-BH-A1FC-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.00819796409505887	Normal
+1311.24652394659	TCGA-BH-A1FD-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.76123687207454	Normal
+3811.27579544117	TCGA-BH-A1FE-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.52923496862491	NST | Patient Tumors
+1463.88755613179	TCGA-BH-A1FE-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.499279119102149	Normal
+4763.32243709301	TCGA-BH-A1FG-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.16310756108369	NST | Patient Tumors
+1344.03481858361	TCGA-BH-A1FG-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.704966628982312	Normal
+2013.39790216604	TCGA-BH-A1FH-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	0.443773305409454	NST | Patient Tumors
+1218.13832040475	TCGA-BH-A1FH-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.921026251338709	Normal
+7874.22030726648	TCGA-BH-A1FJ-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	10.501932935433	Other | Patient Tumors
+1263.44982466696	TCGA-BH-A1FJ-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.843264068586139	Normal
+6130.73707195055	TCGA-BH-A1FL-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	7.5098216785185	mDLC | Patient Tumors
+6437.73462293303	TCGA-BH-A1FM-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.03668124879329	NST | Patient Tumors
+1414.58398248457	TCGA-BH-A1FM-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.583892366151371	Normal
+4707.10326576926	TCGA-BH-A1FN-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.06662598215891	NST | Patient Tumors
+1435.4917872538	TCGA-BH-A1FN-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.548011047226028	Normal
+4388.75430059263	TCGA-BH-A1FR-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	4.52028547079777	Other | Patient Tumors
+1268.00776670462	TCGA-BH-A1FR-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.835441871387446	Normal
+3033.54913606375	TCGA-BH-A1FU-01	Patient Tumors	Other	Normal	Other-Patient Tumors	Other-Normal	2.19452486348072	Other | Patient Tumors
+3756.73040715442	TCGA-BH-A201-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.43562588366231	NST | Patient Tumors
+4831.41562076789	TCGA-BH-A202-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.27996694766439	NST | Patient Tumors
+5564.06282655768	TCGA-BH-A203-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	6.53731310814716	NST | Patient Tumors
+1476.86504895153	TCGA-BH-A203-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.477007552868584	Normal
+9326.50746099446	TCGA-BH-A204-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	12.9943026083506	NST | Patient Tumors
+3656.77472076237	TCGA-BH-A208-01	Patient Tumors	NST	Normal	NST-Patient Tumors	NST-Normal	3.26408506905156	NST | Patient Tumors
+5164.52537314607	TCGA-BH-A209-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	5.85163945915725	Other | Patient Tumors
+1875.71151435348	TCGA-BH-A28O-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	0.207480244166911	ILC | Patient Tumors
+5409.95568170263	TCGA-BH-A28Q-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	6.27283925858463	mDLC | Patient Tumors
+6728.49126620665	TCGA-BH-A42T-01	Patient Tumors	ILC	LumB	ILC-Patient Tumors	ILC-LumB	8.5356686825348	ILC | Patient Tumors
+2914.19688136366	TCGA-BH-A42U-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	1.98969626657051	ILC | Patient Tumors
+3914.87525458188	TCGA-BH-A42V-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.70702911176676	NST | Patient Tumors
+5849.78791984759	TCGA-C8-A1HE-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.02766555358421	NST | Patient Tumors
+4651.33485581998	TCGA-C8-A1HF-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	4.97091798577015	NST | Patient Tumors
+5016.01919348825	TCGA-C8-A1HG-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.5967778104331	NST | Patient Tumors
+3848.5945938175	TCGA-C8-A1HI-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.5932803201686	NST | Patient Tumors
+4576.04685955216	TCGA-C8-A1HJ-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.84171108742986	NST | Patient Tumors
+5959.6590899618	TCGA-C8-A1HK-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	7.21622301043267	NST | Patient Tumors
+6240.06354346676	TCGA-C8-A1HL-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	7.69744434071354	Other | Patient Tumors
+5755.04173201847	TCGA-C8-A1HM-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.86506511704954	NST | Patient Tumors
+5973.17173222783	TCGA-C8-A1HN-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.23941298336494	NST | Patient Tumors
+7802.10689460086	TCGA-C8-A1HO-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	10.3781741579233	NST | Patient Tumors
+6470.54146801467	TCGA-C8-A26V-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.09298332757687	NST | Patient Tumors
+4442.4820617632	TCGA-C8-A26W-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.61249136974245	NST | Patient Tumors
+6557.18183977158	TCGA-C8-A26X-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	8.24167281674775	NST | Patient Tumors
+5209.6112522793	TCGA-C8-A26Y-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	5.92901443113854	NST | Patient Tumors
+6436.96821955693	TCGA-C8-A26Z-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	8.03536597135183	Other | Patient Tumors
+5999.75382252774	TCGA-C8-A273-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	7.28503233318579	Other | Patient Tumors
+7392.53201346562	TCGA-C8-A274-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	9.6752745902242	mDLC | Patient Tumors
+5975.09697802684	TCGA-C8-A275-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	7.24271702983402	NST | Patient Tumors
+5197.41562215615	TCGA-C8-A278-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	5.90808467314747	NST | Patient Tumors
+7924.46596696561	TCGA-C8-A27A-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	10.5881629610229	NST | Patient Tumors
+4511.13229101497	TCGA-C8-A27B-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.73030674047457	NST | Patient Tumors
+4024.76397557355	TCGA-C8-A3M7-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.89561668888075	ILC | Patient Tumors
+7085.21358619638	TCGA-C8-A3M8-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	9.147864342128	mDLC | Patient Tumors
+6719.63960960983	TCGA-D8-A1J8-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	8.52047774705049	NST | Patient Tumors
+6409.24727852333	TCGA-D8-A1J9-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.9877921616135	NST | Patient Tumors
+6319.86700838137	TCGA-D8-A1JA-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	7.83440054475098	NST | Patient Tumors
+3136.43486900681	TCGA-D8-A1JB-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	2.37109413210294	mDLC | Patient Tumors
+5254.00831095439	TCGA-D8-A1JC-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.00520727104936	NST | Patient Tumors
+4929.71422759562	TCGA-D8-A1JD-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.44866393428897	NST | Patient Tumors
+4491.25634290788	TCGA-D8-A1JE-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.69619626159617	NST | Patient Tumors
+7069.33769923347	TCGA-D8-A1JF-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	9.12061864275275	NST | Patient Tumors
+5869.46180526434	TCGA-D8-A1JG-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	7.06142925880965	NST | Patient Tumors
+4659.1562473584	TCGA-D8-A1JH-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.98434081266794	NST | Patient Tumors
+7233.6219457297	TCGA-D8-A1JI-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	9.40255811502188	NST | Patient Tumors
+4698.61286053754	TCGA-D8-A1JJ-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	5.05205501493936	mDLC | Patient Tumors
+5675.47197384364	TCGA-D8-A1JK-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	6.72850999319041	NST | Patient Tumors
+3575.75953390355	TCGA-D8-A1JL-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.12504934581024	NST | Patient Tumors
+8097.45743311033	TCGA-D8-A1JN-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	10.8850454906148	ILC | Patient Tumors
+5043.7088696237	TCGA-D8-A1JP-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.64429796433362	NST | Patient Tumors
+6634.02155083966	TCGA-D8-A1JS-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	8.37354271937012	Other | Patient Tumors
+7063.07036738495	TCGA-D8-A1JT-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	9.1098628443631	Other | Patient Tumors
+2795.80039685614	TCGA-D8-A1JU-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	1.78650793249406	mDLC | Patient Tumors
+6489.37836616055	TCGA-D8-A1X5-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	8.125310621494	mDLC | Patient Tumors
+6326.09701582473	TCGA-D8-A1X6-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	7.84509228816688	mDLC | Patient Tumors
+5911.56013159453	TCGA-D8-A1X7-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	7.13367708635299	Other | Patient Tumors
+4659.00314259682	TCGA-D8-A1X8-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.98407805907712	ILC | Patient Tumors
+7060.66125309347	TCGA-D8-A1X9-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	9.10572839796023	NST | Patient Tumors
+6789.14529244963	TCGA-D8-A1XA-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	8.63976122040536	mDLC | Patient Tumors
+4683.59543400063	TCGA-D8-A1XB-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.02628257842791	NST | Patient Tumors
+6297.86735022004	TCGA-D8-A1XC-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	7.79664542127205	Other | Patient Tumors
+11808.4722449932	TCGA-D8-A1XF-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	17.2537727420695	NST | Patient Tumors
+4911.84949557625	TCGA-D8-A1XG-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.41800504139332	NST | Patient Tumors
+6349.31671677356	TCGA-D8-A1XJ-01	Patient Tumors	Other	Her2	Other-Patient Tumors	Other-Her2	7.88494121082005	Other | Patient Tumors
+4048.05064927638	TCGA-D8-A1XK-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.93558054807421	NST | Patient Tumors
+4552.77965050108	TCGA-D8-A1XL-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.80178063286135	NST | Patient Tumors
+3848.52269359551	TCGA-D8-A1XM-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	3.59315692726223	mDLC | Patient Tumors
+4031.79618218989	TCGA-D8-A1XO-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.90768514136225	ILC | Patient Tumors
+4964.06411033717	TCGA-D8-A1XQ-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.50761412591845	NST | Patient Tumors
+5607.92968490037	TCGA-D8-A1XR-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.61259603487334	NST | Patient Tumors
+5000.53391331265	TCGA-D8-A1XS-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	5.5702024581777	Other | Patient Tumors
+4112.36780021209	TCGA-D8-A1XT-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	4.04595962567547	NST | Patient Tumors
+5503.35941406213	TCGA-D8-A1XU-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.43313581513858	NST | Patient Tumors
+7049.49355681928	TCGA-D8-A1XV-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	9.08656274780715	Other | Patient Tumors
+4449.20328344104	TCGA-D8-A1XW-01	Patient Tumors	NST	Normal	NST-Patient Tumors	NST-Normal	4.62402611962424	NST | Patient Tumors
+5350.98120863706	TCGA-D8-A1XY-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.1716291172103	NST | Patient Tumors
+6218.99900368856	TCGA-D8-A1XZ-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.66129403808064	NST | Patient Tumors
+4636.73958512897	TCGA-D8-A1Y0-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	4.9458700398836	mDLC | Patient Tumors
+5572.61316162259	TCGA-D8-A1Y1-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.55198692506715	NST | Patient Tumors
+3330.4315259077	TCGA-D8-A1Y2-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	2.70402511139724	NST | Patient Tumors
+8720.59593642429	TCGA-D8-A1Y3-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	11.954456249844	NST | Patient Tumors
+3802.87640232506	TCGA-D8-A27E-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	3.51482019354427	Other | Patient Tumors
+4582.70286034345	TCGA-D8-A27F-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.85313390727133	NST | Patient Tumors
+6441.07014190274	TCGA-D8-A27G-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	8.04240556185507	ILC | Patient Tumors
+4917.63643956154	TCGA-D8-A27H-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.42793641319591	NST | Patient Tumors
+3251.3557318462	TCGA-D8-A27I-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.56831771325985	ILC | Patient Tumors
+4385.57605299406	TCGA-D8-A27K-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	4.51483106193148	mDLC | Patient Tumors
+3500.81063848037	TCGA-D8-A27L-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.9964244017061	NST | Patient Tumors
+4306.37333399393	TCGA-D8-A27M-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.37890583919449	NST | Patient Tumors
+5312.2234999211	TCGA-D8-A27N-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.10511435286259	NST | Patient Tumors
+3686.87831338882	TCGA-D8-A27P-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.3157479107392	NST | Patient Tumors
+4312.0051416921	TCGA-D8-A27R-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.38857097096584	NST | Patient Tumors
+5296.80946144995	TCGA-D8-A27T-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.0786612633864	ILC | Patient Tumors
+5549.44249256673	TCGA-D8-A27V-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.51222214941118	ILC | Patient Tumors
+5984.6281582812	TCGA-D8-A27W-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	7.25907414251114	Other | Patient Tumors
+3636.36355521966	TCGA-D8-A3Z5-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.22905606679333	ILC | Patient Tumors
+4971.42057357026	TCGA-D8-A3Z6-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.5202390574377	ILC | Patient Tumors
+2477.60496842945	TCGA-D8-A4Z1-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	1.24043091608863	ILC | Patient Tumors
+8621.4131170511	TCGA-E2-A105-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	11.7842418053757	NST | Patient Tumors
+5396.79368027715	TCGA-E2-A107-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.25025104446763	ILC | Patient Tumors
+3328.79697629213	TCGA-E2-A108-01	Patient Tumors	Other	Normal	Other-Patient Tumors	Other-Normal	2.70121994860262	Other | Patient Tumors
+7932.48669118304	TCGA-E2-A109-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	10.6019278764138	NST | Patient Tumors
+5162.35527782671	TCGA-E2-A10B-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.84791520961924	NST | Patient Tumors
+6264.66243391982	TCGA-E2-A10C-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.73966018514571	NST | Patient Tumors
+6205.63090283644	TCGA-E2-A10E-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.63835212259043	NST | Patient Tumors
+4671.88118027121	TCGA-E2-A10F-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.00617894350893	ILC | Patient Tumors
+2873.86414017525	TCGA-E2-A14N-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	1.92047848088288	NST | Patient Tumors
+2366.80729824558	TCGA-E2-A14U-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	1.05028342887349	ILC | Patient Tumors
+4319.50981993746	TCGA-E2-A15I-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	4.40145026444146	Other | Patient Tumors
+2381.32889899901	TCGA-E2-A15I-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.07520494472326	Normal
+6028.31505158472	TCGA-E2-A15K-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.3340482188804	NST | Patient Tumors
+1695.41487391733	TCGA-E2-A15K-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.101939196470909	Normal
+4028.13298705805	TCGA-E2-A1AZ-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.90139848074618	NST | Patient Tumors
+4470.54665339579	TCGA-E2-A1B0-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	4.66065494186269	NST | Patient Tumors
+2482.55123060005	TCGA-E2-A1B1-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	1.24891953612265	Other | Patient Tumors
+5335.67566763549	TCGA-E2-A1B4-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.14536222768918	NST | Patient Tumors
+4459.90880272343	TCGA-E2-A1B5-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.64239859611677	ILC | Patient Tumors
+1158.65336992622	TCGA-E2-A1B5-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-1.02311245804178	Normal
+3834.48270341238	TCGA-E2-A1B6-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.56906193637103	NST | Patient Tumors
+4276.40994014827	TCGA-E2-A1BC-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	4.32748360225814	mDLC | Patient Tumors
+2458.20398052389	TCGA-E2-A1BC-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.20713554901447	Normal
+5994.49307848816	TCGA-E2-A1BD-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.27600400922963	NST | Patient Tumors
+6162.16255235134	TCGA-E2-A1IE-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.56375310255317	NST | Patient Tumors
+2593.56026668063	TCGA-E2-A1IF-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	1.4394297628618	NST | Patient Tumors
+1242.44898624118	TCGA-E2-A1IF-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.879305048955542	Normal
+6296.95560655959	TCGA-E2-A1IG-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.79508071539212	NST | Patient Tumors
+3946.99332044442	TCGA-E2-A1IH-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.76214912925303	ILC | Patient Tumors
+4374.52094546031	TCGA-E2-A1II-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.49585863304423	NST | Patient Tumors
+1113.10580730879	TCGA-E2-A1II-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-1.10127975674136	Normal
+3635.57568801508	TCGA-E2-A1IJ-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.22770395380249	ILC | Patient Tumors
+3205.56283892104	TCGA-E2-A1IK-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	2.48972938637915	Other | Patient Tumors
+4580.2532403369	TCGA-E2-A1IL-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	4.84892994623041	ILC | Patient Tumors
+4824.3359376056	TCGA-E2-A1IN-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.26781701742349	NST | Patient Tumors
+3715.48341814665	TCGA-E2-A1IO-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.36483909453577	NST | Patient Tumors
+2016.00616215079	TCGA-E2-A1IO-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.448249519406379	Normal
+4704.0113971758	TCGA-E2-A1IU-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.06131981423253	NST | Patient Tumors
+4321.96182444397	TCGA-E2-A1L6-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	4.40565831768644	Other | Patient Tumors
+5961.39975177716	TCGA-E2-A1L7-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.21921027965713	NST | Patient Tumors
+1855.80645783354	TCGA-E2-A1L7-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.173319810343156	Normal
+5113.35414181449	TCGA-E2-A1L8-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.76382099655548	ILC | Patient Tumors
+3897.86430029478	TCGA-E2-A1L9-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.67783544544276	NST | Patient Tumors
+5519.99792340547	TCGA-E2-A1LA-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.46169030312908	NST | Patient Tumors
+5051.40702119024	TCGA-E2-A1LB-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	5.65750929065619	NST | Patient Tumors
+1579.95541313992	TCGA-E2-A1LB-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.30008710251989	Normal
+5907.67946704713	TCGA-E2-A1LE-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	7.12701721154525	NST | Patient Tumors
+5535.11345755983	TCGA-E2-A1LG-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	6.48763110885719	Other | Patient Tumors
+4001.01328874078	TCGA-E2-A1LH-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.85485650490405	NST | Patient Tumors
+4283.06135657147	TCGA-E2-A1LI-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.33889855455086	NST | Patient Tumors
+2256.53440498439	TCGA-E2-A1LI-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.861036547357279	Normal
+7413.60036243025	TCGA-E2-A1LK-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	9.71143143006341	NST | Patient Tumors
+5767.95517767987	TCGA-E2-A1LL-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	6.88722676755835	Other | Patient Tumors
+6481.88275068874	TCGA-E2-A2P5-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	8.11244688126615	ILC | Patient Tumors
+6890.01960106214	TCGA-E2-A2P6-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	8.81287854566502	ILC | Patient Tumors
+3196.53717578266	TCGA-E2-A3DX-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.47423982632464	ILC | Patient Tumors
+6120.61421931907	TCGA-E2-A56Z-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.49244915626121	NST | Patient Tumors
+4048.85539098196	TCGA-E2-A570-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.93696162055453	NST | Patient Tumors
+3628.46940991647	TCGA-E2-A573-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.21550838216583	NST | Patient Tumors
+6003.33702841063	TCGA-E2-A574-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	7.2911817187611	NST | Patient Tumors
+5097.3999473156	TCGA-E9-A1N3-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.7364409082425	NST | Patient Tumors
+4423.69817616043	TCGA-E9-A1N4-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.58025505428946	NST | Patient Tumors
+1829.20967761812	TCGA-E9-A1N4-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.127675250149941	Normal
+4482.28623760188	TCGA-E9-A1N5-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.68080204815142	NST | Patient Tumors
+1822.51803303039	TCGA-E9-A1N5-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.116191259542718	Normal
+1238.13625919172	TCGA-E9-A1N6-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.886706415880841	Normal
+5704.72894116755	TCGA-E9-A1N8-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	6.77871988308201	NST | Patient Tumors
+1698.85645196575	TCGA-E9-A1N8-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.0960328681440024	Normal
+5036.15849230707	TCGA-E9-A1N9-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.63134024354489	NST | Patient Tumors
+8065.46987268066	TCGA-E9-A1NA-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	10.8301494424601	NST | Patient Tumors
+1209.15716498448	TCGA-E9-A1NA-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.936439428643062	Normal
+4590.1750400162	TCGA-E9-A1ND-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.86595742771572	NST | Patient Tumors
+1458.99593319361	TCGA-E9-A1ND-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.507673968998859	Normal
+3351.9446502324	TCGA-E9-A1NE-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.74094526076229	NST | Patient Tumors
+1353.04962485577	TCGA-E9-A1NE-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.689495701141149	Normal
+5334.90278445286	TCGA-E9-A1NF-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	6.14403582980695	NST | Patient Tumors
+2539.02397646498	TCGA-E9-A1NF-11	Normal	Normal	NA	Normal-Normal	Normal-NA	1.34583629172353	Normal
+3046.42864503175	TCGA-E9-A1NG-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	2.21662827290049	NST | Patient Tumors
+1767.29315671517	TCGA-E9-A1NG-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.0214160585328072	Normal
+4838.85517695861	TCGA-E9-A1NH-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.29273448071192	NST | Patient Tumors
+5869.21658265957	TCGA-E9-A1NI-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.06100841546495	NST | Patient Tumors
+3822.92433607838	TCGA-E9-A1QZ-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.54922582879565	NST | Patient Tumors
+5088.07091834256	TCGA-E9-A1R0-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.72043072125538	NST | Patient Tumors
+4561.25469537616	TCGA-E9-A1R2-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.81632523911848	NST | Patient Tumors
+4032.42016371405	TCGA-E9-A1R3-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.90875599888743	NST | Patient Tumors
+4576.10090280169	TCGA-E9-A1R4-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	4.84180383476002	mDLC | Patient Tumors
+6060.32461504905	TCGA-E9-A1R5-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.38898202795324	NST | Patient Tumors
+6995.51500526004	TCGA-E9-A1R6-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	8.99392645026163	NST | Patient Tumors
+5932.95805751537	TCGA-E9-A1R7-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.17039953582969	NST | Patient Tumors
+1828.63788964838	TCGA-E9-A1R7-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.126693965566213	Normal
+4282.26841123523	TCGA-E9-A1RB-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	4.33753772662971	Other | Patient Tumors
+7279.36018678749	TCGA-E9-A1RC-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	9.48105265008158	NST | Patient Tumors
+5253.33637420551	TCGA-E9-A1RD-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.00405411427129	NST | Patient Tumors
+1747.35966132817	TCGA-E9-A1RD-11	Normal	Normal	NA	Normal-Normal	Normal-NA	-0.0127931811828051	Normal
+8026.19509369217	TCGA-E9-A1RE-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	10.7627472983248	NST | Patient Tumors
+6591.92016437735	TCGA-E9-A1RF-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	8.30128964012399	mDLC | Patient Tumors
+5552.58971062918	TCGA-E9-A1RH-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	6.5176233063606	NST | Patient Tumors
+2252.76470313743	TCGA-E9-A1RH-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.854567103256499	Normal
+4001.93432606666	TCGA-E9-A1RI-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.85643716028115	NST | Patient Tumors
+2237.7873761988	TCGA-E9-A1RI-11	Normal	Normal	NA	Normal-Normal	Normal-NA	0.828863484418192	Normal
+4743.06169675771	TCGA-E9-A226-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.12833671384943	NST | Patient Tumors
+3874.21940452981	TCGA-E9-A227-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.63725681677925	NST | Patient Tumors
+7535.3702353111	TCGA-E9-A228-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	9.92040906748464	Other | Patient Tumors
+3696.74231115281	TCGA-E9-A229-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.33267619438999	NST | Patient Tumors
+4842.47208835779	TCGA-E9-A22A-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.29894171063735	NST | Patient Tumors
+6109.85385478547	TCGA-E9-A22B-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.47398255606838	NST | Patient Tumors
+6081.96962305091	TCGA-E9-A22D-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.42612851194948	NST | Patient Tumors
+4444.58439526523	TCGA-E9-A22E-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	4.61609932857439	mDLC | Patient Tumors
+6176.98924071769	TCGA-E9-A22G-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	7.58919820019741	NST | Patient Tumors
+4567.42995187181	TCGA-E9-A22H-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	4.82692302067481	NST | Patient Tumors
+4085.58740616925	TCGA-E9-A243-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.99999995318933	NST | Patient Tumors
+4372.70243309717	TCGA-E9-A244-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.49273775915088	NST | Patient Tumors
+4399.97811690141	TCGA-E9-A245-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	4.53954743239441	mDLC | Patient Tumors
+7747.44095541712	TCGA-E9-A247-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	10.2843581872915	mDLC | Patient Tumors
+4732.27508066373	TCGA-E9-A248-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	5.10982506155186	NST | Patient Tumors
+5238.04543517542	TCGA-E9-A249-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.97781228419574	NST | Patient Tumors
+3966.10746948046	TCGA-E9-A24A-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.79495223245391	NST | Patient Tumors
+6026.49079832705	TCGA-E9-A295-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	7.33091749264387	ILC | Patient Tumors
+7785.35599361114	TCGA-E9-A2JS-01	Patient Tumors	ILC	LumB	ILC-Patient Tumors	ILC-LumB	10.3494267869136	ILC | Patient Tumors
+5054.61816672119	TCGA-E9-A2JT-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	5.66302015792243	ILC | Patient Tumors
+5637.23907503504	TCGA-E9-A3Q9-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	6.66289589114891	mDLC | Patient Tumors
+3867.7366350458	TCGA-E9-A3QA-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	3.62613129107521	Other | Patient Tumors
+3548.22505315652	TCGA-E9-A3X8-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	3.07779553336876	mDLC | Patient Tumors
+4129.08952702166	TCGA-E9-A54X-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	4.074656928872	Other | Patient Tumors
+8781.05074751787	TCGA-E9-A5UO-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	12.058206900922	Other | Patient Tumors
+6416.17120730107	TCGA-E9-A5UP-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	7.99967479106374	Other | Patient Tumors
+5939.63660099879	TCGA-EW-A1IW-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	7.18186104273251	ILC | Patient Tumors
+3406.58497522113	TCGA-EW-A1IX-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	2.83471727311583	Other | Patient Tumors
+3931.56704310936	TCGA-EW-A1IY-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	3.73567503582238	NST | Patient Tumors
+5418.62468904199	TCGA-EW-A1J1-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.28771673714074	NST | Patient Tumors
+3875.75397961934	TCGA-EW-A1J2-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.63989040642724	ILC | Patient Tumors
+5425.51429425314	TCGA-EW-A1J3-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	6.2995404615623	mDLC | Patient Tumors
+4974.19813908464	TCGA-EW-A1J6-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	5.52500582827555	NST | Patient Tumors
+5181.62820407026	TCGA-EW-A1OV-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	5.88099080128477	NST | Patient Tumors
+8333.31124792625	TCGA-EW-A1OX-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	11.2898104117808	Other | Patient Tumors
+5894.91553719246	TCGA-EW-A1OY-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	7.10511215537551	NST | Patient Tumors
+8082.35905424833	TCGA-EW-A1OZ-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	10.8591341262615	NST | Patient Tumors
+6014.45179862863	TCGA-EW-A1P0-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	7.31025653887616	Other | Patient Tumors
+4649.83358644396	TCGA-EW-A1P3-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.9683415543433	NST | Patient Tumors
+4060.41849964808	TCGA-EW-A1P4-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	3.95680586505543	Other | Patient Tumors
+5103.64226651606	TCGA-EW-A1P5-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.74715378070988	NST | Patient Tumors
+4909.62677738847	TCGA-EW-A1P6-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	5.41419048213867	NST | Patient Tumors
+4081.42951274004	TCGA-EW-A1P7-01	Patient Tumors	NST	Normal	NST-Patient Tumors	NST-Normal	3.99286430686787	NST | Patient Tumors
+3838.81261003764	TCGA-EW-A1P8-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.57649278634561	NST | Patient Tumors
+5280.79778431655	TCGA-EW-A1PA-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.05118252517859	NST | Patient Tumors
+4618.72862849082	TCGA-EW-A1PB-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.91496020088246	NST | Patient Tumors
+8180.31373244175	TCGA-EW-A1PC-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	11.0272408733487	NST | Patient Tumors
+5265.5297309353	TCGA-EW-A1PD-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.02497997073596	NST | Patient Tumors
+4686.07665789482	TCGA-EW-A1PE-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	5.03054077706976	Other | Patient Tumors
+2410.41992471183	TCGA-EW-A1PG-01	Patient Tumors	ILC	Normal	ILC-Patient Tumors	ILC-Normal	1.12513005082544	ILC | Patient Tumors
+5553.89713525391	TCGA-EW-A1PH-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	6.5198670675038	NST | Patient Tumors
+3197.21361025481	TCGA-EW-A2FR-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	2.47540070195434	NST | Patient Tumors
+5792.17672456332	TCGA-EW-A2FS-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.92879502678896	NST | Patient Tumors
+4646.62574721291	TCGA-EW-A2FV-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	4.96283636124528	Other | Patient Tumors
+5640.10461939975	TCGA-EW-A2FW-01	Patient Tumors	Other	LumB	Other-Patient Tumors	Other-LumB	6.6678136485309	Other | Patient Tumors
+5779.01026911031	TCGA-EW-A3E8-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.9061991688096	ILC | Patient Tumors
+4323.00699681694	TCGA-EW-A3U0-01	Patient Tumors	mDLC	Basal	mDLC-Patient Tumors	mDLC-Basal	4.40745200973878	mDLC | Patient Tumors
+7160.23789249868	TCGA-EW-A423-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	9.27661870401817	mDLC | Patient Tumors
+6273.21545628947	TCGA-GI-A2C8-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.75433861393383	NST | Patient Tumors
+4766.43497241923	TCGA-GI-A2C9-01	Patient Tumors	Other	Basal	Other-Patient Tumors	Other-Basal	5.16844919660877	Other | Patient Tumors
+6107.88268282909	TCGA-GM-A2D9-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.47059969256816	NST | Patient Tumors
+5479.68953481295	TCGA-GM-A2DA-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.39251431060289	NST | Patient Tumors
+5129.85667085156	TCGA-GM-A2DB-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	5.79214211940839	NST | Patient Tumors
+6305.53251396556	TCGA-GM-A2DC-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	7.8098001349306	NST | Patient Tumors
+5815.76400652174	TCGA-GM-A2DD-01	Patient Tumors	NST	Normal	NST-Patient Tumors	NST-Normal	6.96927478044431	NST | Patient Tumors
+4687.59219470884	TCGA-GM-A2DF-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.03314169382631	NST | Patient Tumors
+4988.82493721066	TCGA-GM-A2DH-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	5.55010788055743	NST | Patient Tumors
+3845.65828762679	TCGA-GM-A2DI-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.58824112355976	NST | Patient Tumors
+3919.14762272138	TCGA-GM-A2DK-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	3.71436121599634	NST | Patient Tumors
+5400.9295824761	TCGA-GM-A2DL-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	6.2573489501293	NST | Patient Tumors
+3944.03953593737	TCGA-GM-A2DM-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	3.75707993690576	Other | Patient Tumors
+4305.84973606498	TCGA-GM-A2DN-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.37800725684761	NST | Patient Tumors
+5615.6487695168	TCGA-GM-A2DO-01	Patient Tumors	mDLC	LumB	mDLC-Patient Tumors	mDLC-LumB	6.62584328583972	mDLC | Patient Tumors
+6706.43331763955	TCGA-GM-A3NW-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	8.49781352288935	ILC | Patient Tumors
+5770.67966028909	TCGA-GM-A3NY-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.89190243917893	ILC | Patient Tumors
+2276.26852624254	TCGA-GM-A3XG-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	0.894903627444877	ILC | Patient Tumors
+4410.94187425898	TCGA-GM-A3XL-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	4.55836308897382	NST | Patient Tumors
+3144.09200857387	TCGA-GM-A3XN-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.38423507491804	ILC | Patient Tumors
+3951.00004923509	TCGA-GM-A4E0-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	3.76902535156198	ILC | Patient Tumors
+5899.03376960094	TCGA-HN-A2NL-01	Patient Tumors	ILC	Basal	ILC-Patient Tumors	ILC-Basal	7.11217973669685	ILC | Patient Tumors
+5136.59196589943	TCGA-JL-A3YW-01	Patient Tumors	mDLC	Her2	mDLC-Patient Tumors	mDLC-Her2	5.80370102156653	mDLC | Patient Tumors
+5142.04050357476	TCGA-JL-A3YX-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	5.8130516310716	Other | Patient Tumors
+2478.82396832124	TCGA-LL-A440-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	1.24252292547795	ILC | Patient Tumors
+3927.55166421254	TCGA-LL-A441-01	Patient Tumors	NST	Normal	NST-Patient Tumors	NST-Normal	3.72878396847249	NST | Patient Tumors
+5694.57469909877	TCGA-LL-A50Y-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	6.76129349125672	mDLC | Patient Tumors
+5969.49553649188	TCGA-LL-A5YL-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	7.23310401151975	mDLC | Patient Tumors
+8900.25147091525	TCGA-LL-A5YM-01	Patient Tumors	NST	LumB	NST-Patient Tumors	NST-LumB	12.2627754445622	NST | Patient Tumors
+4604.10581605685	TCGA-LL-A5YN-01	Patient Tumors	NST	LumA	NST-Patient Tumors	NST-LumA	4.8898649887203	NST | Patient Tumors
+4006.65779205268	TCGA-LL-A5YO-01	Patient Tumors	NST	Her2	NST-Patient Tumors	NST-Her2	3.86454342448957	NST | Patient Tumors
+3606.19613300028	TCGA-LL-A5YP-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	3.17728368275986	NST | Patient Tumors
+7041.13772524026	TCGA-LQ-A4E4-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	9.07222273167047	ILC | Patient Tumors
+3092.04426162906	TCGA-MS-A51U-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	2.29491236370631	ILC | Patient Tumors
+4439.64983032967	TCGA-OL-A66H-01	Patient Tumors	Other	LumA	Other-Patient Tumors	Other-LumA	4.60763078296833	Other | Patient Tumors
+5051.8510483468	TCGA-OL-A66I-01	Patient Tumors	NST	Basal	NST-Patient Tumors	NST-Basal	5.65827131613863	NST | Patient Tumors
+7020.50992704294	TCGA-OL-A66J-01	Patient Tumors	mDLC	LumA	mDLC-Patient Tumors	mDLC-LumA	9.03682195124349	mDLC | Patient Tumors
+5584.60432369531	TCGA-OL-A66K-01	Patient Tumors	ILC	LumA	ILC-Patient Tumors	ILC-LumA	6.57256578140171	ILC | Patient Tumors
+12283.4669230026	MDAMB134VI-I	Cell Lines	ILC	LumB	ILC-Cell Lines	ILC-LumB	18.0689437137531	ILC | Cell Lines
+13945.0026543315	SUM44PE-I	Cell Lines	ILC	LumB	ILC-Cell Lines	ILC-LumB	20.9204192340061	ILC | Cell Lines
+13829.1556071671	MDAMB330-I	Cell Lines	ILC	LumA	ILC-Cell Lines	ILC-LumA	20.7216061643535	ILC | Cell Lines
+11988.1940874983	IPH926-I	Cell Lines	ILC	LumA	ILC-Cell Lines	ILC-LumA	17.5622057325225	ILC | Cell Lines
+10837.729120941	WCRC25-I	Cell Lines	ILC	Her2	ILC-Cell Lines	ILC-Her2	15.5878138327929	ILC | Cell Lines
+8319.82542629236	HCC1187-I	Cell Lines	ILC-like	Basal	ILC-like-Cell Lines	ILC-like-Basal	11.2666664675764	ILC-like | Cell Lines
+10720.85121417	600MPE-I	Cell Lines	ILC-like	Basal	ILC-like-Cell Lines	ILC-like-Basal	15.3872316342089	ILC-like | Cell Lines
+10492.883513285	HCC2218-I	Cell Lines	ILC-like	LumA	ILC-like-Cell Lines	ILC-like-LumA	14.9960006144811	ILC-like | Cell Lines
+9831.27878573793	HCC2185-I	Cell Lines	ILC	Her2	ILC-Cell Lines	ILC-Her2	13.8605753274335	ILC | Cell Lines
+12447.0685644415	BCK4-I	Cell Lines	ILC	LumA	ILC-Cell Lines	ILC-LumA	18.3497117206277	ILC | Cell Lines
+10159.409662271	UACC3133-I	Cell Lines	ILC	LumA	ILC-Cell Lines	ILC-LumA	14.4237032483267	ILC | Cell Lines
+13878.5875403032	MDAMB453-I	Cell Lines	ILC-like	LumA	ILC-like-Cell Lines	ILC-like-LumA	20.8064396979325	ILC-like | Cell Lines
+11316.5743206494	ZR7530-I	Cell Lines	ILC-like	LumA	ILC-like-Cell Lines	ILC-like-LumA	16.409592949073	ILC-like | Cell Lines
+11018.6355376572	MDAMB468-I	Cell Lines	ILC-like	Basal	ILC-like-Cell Lines	ILC-like-Basal	15.8982797523615	ILC-like | Cell Lines
+12050.5528507301	CAMA1-I	Cell Lines	ILC-like	LumB	ILC-like-Cell Lines	ILC-like-LumB	17.6692238865566	ILC-like | Cell Lines
+11084.3832159595	OCUBM-I	Cell Lines	ILC-like	Her2	ILC-like-Cell Lines	ILC-like-Her2	16.0111138561712	ILC-like | Cell Lines
+14837.3665530671	BT20-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	22.4518661745825	NST | Cell Lines
+10628.0174187296	BT474-C	Cell Lines	NST	LumA	NST-Cell Lines	NST-LumA	15.2279131855236	NST | Cell Lines
+10002.1539924611	BT483-C	Cell Lines	NST	LumA	NST-Cell Lines	NST-LumA	14.1538259989671	NST | Cell Lines
+8250.41430250212	BT549-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	11.1475452734972	NST | Cell Lines
+10682.6227687146	CAL148-C	Cell Lines	NST	Her2	NST-Cell Lines	NST-Her2	15.3216251748726	NST | Cell Lines
+12393.7934053803	CAMA1-C	Cell Lines	ILC-like	LumB	ILC-like-Cell Lines	ILC-like-LumB	18.2582825632305	ILC-like | Cell Lines
+11403.4453322657	EFM19-C	Cell Lines	NST	LumA	NST-Cell Lines	NST-LumA	16.5586782551382	NST | Cell Lines
+9894.23305751832	HCC1143-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	13.968615474565	NST | Cell Lines
+8126.96229597586	HCC1187-C	Cell Lines	ILC-like	Basal	ILC-like-Cell Lines	ILC-like-Basal	10.9356808110615	ILC-like | Cell Lines
+10734.6879552331	HCC1395-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	15.4109778153337	NST | Cell Lines
+10879.7628849651	HCC1419-C	Cell Lines	NST	Her2	NST-Cell Lines	NST-Her2	15.6599508605312	NST | Cell Lines
+11404.9987567973	HCC1500-C	Cell Lines	NST	LumA	NST-Cell Lines	NST-LumA	16.5613441936077	NST | Cell Lines
+11828.0769013503	HCC1569-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	17.2874176385537	NST | Cell Lines
+9188.2334562818	HCC1599-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	12.7570010974104	NST | Cell Lines
+8586.74714147481	HCC1806-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	11.7247491451352	NST | Cell Lines
+10708.1047139211	HCC1937-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	15.365356490182	NST | Cell Lines
+12394.8091598449	HCC1954-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	18.260025769191	NST | Cell Lines
+11510.1982903297	HCC202-C	Cell Lines	NST	Her2	NST-Cell Lines	NST-Her2	16.7418843342459	NST | Cell Lines
+13682.6805527461	HCC2157-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	20.4702302690694	NST | Cell Lines
+10900.6925908704	HCC2218-C	Cell Lines	ILC-like	LumA	ILC-like-Cell Lines	ILC-like-LumA	15.6958697654995	ILC-like | Cell Lines
+7611.45461169336	HCC38-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	10.0509826884047	NST | Cell Lines
+8061.14189099051	HCC70-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	10.8227218959988	NST | Cell Lines
+9157.85531938166	HDQP1-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	12.7048670914493	NST | Cell Lines
+11735.7421556623	MCF7-C	Cell Lines	NST	LumA	NST-Cell Lines	NST-LumA	17.1289556434044	NST | Cell Lines
+11481.9484626668	MDAMB134VI-C	Cell Lines	ILC	LumA	ILC-Cell Lines	ILC-LumA	16.6934028658591	ILC | Cell Lines
+8827.96330631331	MDAMB157-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	12.1387167632592	NST | Cell Lines
+10370.7055002613	MDAMB436-C	Cell Lines	NST	Basal	NST-Cell Lines	NST-Basal	14.7863225397451	NST | Cell Lines
+13848.429809562	MDAMB453-C	Cell Lines	ILC-like	Her2	ILC-like-Cell Lines	ILC-like-Her2	20.7546839461099	ILC-like | Cell Lines
+10894.5505855965	MDAMB468-C	Cell Lines	ILC-like	Basal	ILC-like-Cell Lines	ILC-like-Basal	15.6853290486472	ILC-like | Cell Lines
+10235.1062877462	T47D-C	Cell Lines	NST	LumB	NST-Cell Lines	NST-LumB	14.5536114232992	NST | Cell Lines
+9867.67475582344	UACC812-C	Cell Lines	NST	LumA	NST-Cell Lines	NST-LumA	13.9230369500022	NST | Cell Lines
+11246.3283090388	UACC893-C	Cell Lines	NST	Her2	NST-Cell Lines	NST-Her2	16.2890389466966	NST | Cell Lines
+11272.5465032426	ZR7530-C	Cell Lines	ILC-like	LumA	ILC-like-Cell Lines	ILC-like-LumA	16.3340337894483	ILC-like | Cell Lines

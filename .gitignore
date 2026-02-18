@@ -1,0 +1,6 @@
+# ignore 1-Datasets
+1-Datasets/External
+1-Datasets/ICLE
+5-DataSharing
+.vscode
+.cursor
