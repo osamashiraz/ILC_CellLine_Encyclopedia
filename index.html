@@ -1,0 +1,2722 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>index</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="index_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="index_files/libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-d6a003b94517c951b2d65075d42fb01b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="icle_data_analysis" class="level1">
+<h1>ICLE_Data_Analysis</h1>
+<p>Osama Shiraz Shah 2026-02-18</p>
+<ul>
+<li><a href="#icle_data_analysis">ICLE_Data_Analysis</a></li>
+<li><a href="#publication-and-data-availability">Publication and Data Availability</a></li>
+<li><a href="#analysis-overview-and-downstream-workflow">Analysis overview and downstream workflow</a></li>
+<li><a href="#future-directions">Future directions</a></li>
+<li><a href="#1-preparation">1. Preparation</a>
+<ul>
+<li><a href="#analysis-options">Analysis Options</a></li>
+<li><a href="#setup-environment">Setup Environment</a></li>
+<li><a href="#load-all-data">Load All Data</a></li>
+</ul></li>
+<li><a href="#2-manuscript-figures">2. Manuscript Figures</a>
+<ul>
+<li><a href="#a-icle-characterization--molecular-subtyping">a. ICLE Characterization &amp; Molecular Subtyping</a>
+<ul>
+<li><a href="#supfig-1-genotypic-similarity">SupFig 1: Genotypic Similarity</a></li>
+<li><a href="#perform-molecular-subtyping">Perform Molecular Subtyping</a></li>
+<li><a href="#figure-1b-overview-of-multiomics-subtypes">Figure 1B: Overview of Multiomics Subtypes</a></li>
+<li><a href="#figure-1c-set-signature">Figure 1C: SET Signature</a></li>
+<li><a href="#figure-1d-multiomics-overview">Figure 1D: Multiomics Overview</a></li>
+<li><a href="#fig-1e-igv-plot">Fig 1E: IGV Plot</a></li>
+<li><a href="#figure-1f-alteration-frequency-barplots">Figure 1F: Alteration Frequency Barplots</a></li>
+<li><a href="#supfig-5-key-ilc-vs-nst-alterations-patient-tumors">SupFig 5: Key ILC vs NST Alterations (Patient Tumors)</a></li>
+<li><a href="#supfig-6-alterations-in-key-pathways-icle">SupFig 6: Alterations in Key Pathways (ICLE)</a></li>
+</ul></li>
+<li><a href="#b-cdh1-alteration-landscape">b. CDH1 Alteration Landscape</a>
+<ul>
+<li><a href="#figure-2b-novel-sv-in-icle">Figure 2B: Novel SV in ICLE</a></li>
+<li><a href="#figure-2c-exonic-deletions-in-icle">Figure 2C: Exonic Deletions in ICLE</a></li>
+<li><a href="#figure-2d-cdh1-alterations-foundation-medicine-dataset">Figure 2D: CDH1 Alterations (Foundation Medicine Dataset)</a></li>
+<li><a href="#figure-2e-cdh1-mutation-lollipop-plots-tcga-patient-tumors-vs-cell-lines">Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs Cell Lines)</a></li>
+<li><a href="#figure-2f-cdh1-allele-frequency-in-cell-lines">Figure 2F: CDH1 Allele Frequency in Cell Lines</a></li>
+<li><a href="#figure-2g-cdh1-alterations-patient-tumors-vs-cell-lines">Figure 2G: CDH1 Alterations (Patient Tumors vs Cell Lines)</a></li>
+<li><a href="#figure-2h-cdh1-molecular-alteration-landscape-summary">Figure 2H: CDH1 Molecular Alteration Landscape Summary</a></li>
+</ul></li>
+<li><a href="#csv-analysis">c.&nbsp;SV Analysis</a>
+<ul>
+<li><a href="#figure-3a-left-icle-genomic-instability-metrics">Figure 3A (left): ICLE Genomic Instability Metrics</a></li>
+<li><a href="#figure-3a-right-icle-sv-overview">Figure 3A (right): ICLE SV Overview</a></li>
+<li><a href="#figure-3b-chromosomal-topography-of-translocation-breakpoints">Figure 3B: Chromosomal Topography of Translocation Breakpoints</a></li>
+<li><a href="#figure-3c-chromothripsis-landscape">Figure 3C: Chromothripsis Landscape</a></li>
+<li><a href="#figure-3d-generate-cricos-plots-for-bck4-600mpe-hcc2185-and-zr7530">Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and ZR7530</a></li>
+<li><a href="#figure-3e-fusions-distribution-in-cell-lines-vs-patient-tumors">Figure 3E: Fusions Distribution in Cell Lines vs Patient Tumors</a></li>
+<li><a href="#figure-3f-goe-and-loe-functional-fusions-circos">Figure 3F: GOE and LOE Functional Fusions Circos</a></li>
+<li><a href="#supfig-8a-mutation-vs-sv-count-size">SupFig 8A: Mutation vs SV Count, Size</a></li>
+<li><a href="#supfig-8b-tmb-vs-sv-burden">SupFig 8B: TMB vs SV Burden</a></li>
+<li><a href="#supfig-8c-svchr-size---sv-count-by-chr">SupFig 8C: SV~Chr Size - SV Count by Chr</a></li>
+<li><a href="#supfig-8d-mutation--chr-size---mutation-count-by-chr">SupFig 8D: Mutation ~ Chr Size - Mutation Count by Chr</a></li>
+<li><a href="#supfig-9-generate-cricos-plots-for-all-icle-cell-lines">SupFig 9: Generate Cricos Plots for all ICLE cell lines</a></li>
+<li><a href="#supfig-10-functional-fusions">SupFig 10: Functional Fusions</a></li>
+</ul></li>
+<li><a href="#ddnam-analysis">d.&nbsp;DNAm Analysis</a>
+<ul>
+<li><a href="#supfig-11-dnam-index-by-across-histological-and-pam50-subtypes">SupFig 11: DNAm Index by Across Histological and PAM50 Subtypes</a></li>
+<li><a href="#figure-4a-dnam-index-by-specimen-type">Figure 4A: DNAm Index by Specimen Type</a></li>
+<li><a href="#figure-4b-dnam-mrna-alterations">Figure 4B: DNAm-mRNA Alterations</a></li>
+<li><a href="#figure-4c-consensus-dnam-mrna-alterations-heatmap">Figure 4C: Consensus DNAm-mRNA Alterations Heatmap</a></li>
+<li><a href="#figure-4d-msi1--tfap2b-barplots">Figure 4D: MSI1 &amp; TFAP2B Barplots</a></li>
+</ul></li>
+<li><a href="#e-rnai-analysis">e. RNAi Analysis</a>
+<ul>
+<li><a href="#figure-5b-consensus-differential-dependencies">Figure 5B: Consensus Differential Dependencies</a></li>
+<li><a href="#supfig-12-consensus-differential-dependencies-heatmap">SupFig 12: Consensus Differential Dependencies Heatmap</a></li>
+<li><a href="#figure-5c-over-represented-pathways">Figure 5C: Over represented Pathways</a></li>
+<li><a href="#figure-5d-pathway-level-dependencies-heatmap">Figure 5D: Pathway level Dependencies Heatmap</a></li>
+<li><a href="#figure-5e-top-druggable-dependencies-heatmap">Figure 5E: Top Druggable Dependencies Heatmap</a></li>
+</ul></li>
+<li><a href="#fcell-line-scoring">f.&nbsp;Cell Line Scoring</a>
+<ul>
+<li><a href="#figure-6-cl-tumor-concordanceresemblance-score">Figure 6: CL-Tumor Concordance/Resemblance Score</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="publication-and-data-availability" class="level1">
+<h1>Publication and Data Availability</h1>
+<p>This analysis accompanies the ICLE manuscript (PubMed: )</p>
+<p>Raw sequence files are deposited under Bioproject PRJNA1406296.</p>
+<p>Processed data and/or analysis code will be deposited under ZENODO (<a href="https://zenodo.org/record/XXXXX" class="uri">https://zenodo.org/record/XXXXX</a>).</p>
+<p>ICLE and Integrated BRCA cell line datasets generated in this study are uploaded to local instance of cBioPortal for data sharing and analysis:</p>
+<ul>
+<li><p><a href="https://cbioportal.crc.pitt.edu/study/summary?id=ILC_Cell_Line_Encyclopedia">ICLE Dataset</a> (N=17)</p></li>
+<li><p><a href="https://cbioportal.crc.pitt.edu/study/summary?id=BRCA_Cell_Line_Integrated">Integrated BRCA Cell Line</a> (ICLE Integrated with Public Datasets, N=56)</p></li>
+</ul>
+</section>
+<section id="analysis-overview-and-downstream-workflow" class="level1">
+<h1>Analysis overview and downstream workflow</h1>
+<p>This R Markdown document orchestrates the complete multiomics analysis pipeline for the ICLE project.</p>
+<p><strong>2-Analysis/ layout:</strong></p>
+<ul>
+<li><strong>config.R</strong> – Project root, <code>DIRS</code>, <code>FILES</code>; run from <code>2-Analysis/</code>.</li>
+<li><strong>Helper_Scripts/</strong> – Data loading (<code>Data_Loading/00_load_annotations.R</code>, <code>01_load_all_data.R</code>, 02–09) and figure scripts. Fig 1: 01, 02 (sources 03_Fig1C), 04–07. Fig 2: orchestrator <code>08_Fig2_CDH1_Alteration_Landscape_All.R</code> (sources 08_Fig2C–13_Fig2H). Fig 3: orchestrator <code>14_Fig3_SV_All.R</code> (sources 14_SupFig8, 15–20; 17–18 sourced by 19–20). Fig 4–6: 21, 22, 23.</li>
+<li><strong>SCRIPT_INDEX.md</strong> – Full script index and data-load order.</li>
+<li><strong>Main_Data_Analysis.Rmd</strong> – Master document: sources config and helpers, loads data once, then runs figure scripts in order and writes outputs to <code>3-Results/</code>.</li>
+</ul>
+<p><strong>Downstream flow:</strong></p>
+<ol type="1">
+<li><strong>Preparation</strong> – Options, <code>config.R</code>, <code>Helper_Functions.R</code>, then <code>01_load_all_data.R</code> and <code>load_all_icle_data(load_external = TRUE)</code> to load ICLE + external data.</li>
+<li><strong>Manuscript figures (in order)</strong> – Source helper scripts 01–23; each chunk produces one or more figures and may save to <code>DIRS$results</code> / <code>DIRS$results_sub</code>. Figure 1 (SupFig 1, subtyping, SupFig 2–6, Fig 1B–1F); Figure 2 (Fig 2C–2H, CDH1); Figure 3 (SupFig 8, Fig 3A–3F, SupFig 9–10); Figure 4 &amp; SupFig 11 (DNAm/DMI); Figure 5 (RNAi dependencies); Figure 6 (patient signatures, resemblance scores).</li>
+<li><strong>Outputs</strong> – All written under <code>3-Results/</code> and subfolders (e.g.&nbsp;molecular_subtyping, cdh1, ogm, dna_methylation, dependencies, molecular_resemblance).</li>
+</ol>
+</section>
+<section id="future-directions" class="level1">
+<h1>Future directions</h1>
+<p><em>Coming soon:</em> A package and/or web application to provide easy access to the Cell Line model scoring framework described in this study.</p>
+<hr>
+</section>
+<section id="preparation" class="level1">
+<h1>1. Preparation</h1>
+<section id="analysis-options" class="level2">
+<h2 class="anchored" data-anchor-id="analysis-options">Analysis Options</h2>
+<p>Set these to <code>TRUE</code> to reduce console noise during knitting. Set to <code>FALSE</code> to show package startup messages and warnings.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>SUPPRESS_PKG_MESSAGES <span class="ot">&lt;-</span> <span class="cn">TRUE</span>   <span class="co"># FALSE = show package startup messages</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>SUPPRESS_WARNINGS <span class="ot">&lt;-</span> <span class="cn">TRUE</span>       <span class="co"># FALSE = show warnings</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>SUPPRESS_FEATURE_SELECTION_PLOTS <span class="ot">&lt;-</span> <span class="cn">TRUE</span>  <span class="co"># FALSE = show intermediate plots from FSbyMAD/FSbyVar</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>SUPPRESS_CONSENSUS_CLUSTER_PLOTS <span class="ot">&lt;-</span> <span class="cn">TRUE</span>  <span class="co"># FALSE = show intermediate plots from ConsensusClusterPlus</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="setup-environment" class="level2">
+<h2 class="anchored" data-anchor-id="setup-environment">Setup Environment</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load configuration</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="st">"config.R"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## ===============================================
+## ICLE Project Configuration Loaded
+## ===============================================
+## Project Root: /Users/oshah/Documents/ICLE 
+## Directories verified: TRUE 
+## Files verified: TRUE 
+## Random seed set: 123 
+## ===============================================</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load helper functions</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressPackageStartupMessages</span>(<span class="fu">suppressWarnings</span>(<span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"Helper_Functions.R"</span>))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="load-all-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-all-data">Load All Data</h2>
+<p>This section uses the refactored modular data loading system to load all ICLE and external datasets.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load all ICLE data using the master orchestrator</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"Data_Loading"</span>, <span class="st">"01_load_all_data.R"</span>))</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Load all data (ICLE + external datasets)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Note: All datasets are loaded directly into global environment</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">load_all_icle_data</span>(<span class="at">load_external =</span> <span class="cn">TRUE</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## STEP 0/8: Loading Cell Line Annotations...
+
+## Loading cell line annotations...
+
+##   ✓ Loaded annotation data: 56 cell lines
+
+## 
+## Histology distribution:
+
+## 
+##      ILC ILC-like      NST 
+##        9       16       31
+
+## 
+## Study distribution:
+
+## 
+##  ICLE Other 
+##    17    39
+
+##   ✓ Annotations loaded
+
+## STEP 1/8: Loading RPPA (Protein) Data...
+
+## Loading RPPA data...
+
+## RPPA data already loaded (skipping)
+
+##   ✓ RPPA data loaded successfully
+
+##   ✓ Loaded: 207 proteins x 88 samples
+
+##   ✓ RPPA data loaded
+
+## STEP 2/8: Loading RNA-seq (mRNA) Data...
+
+## Loading RNA-seq data...
+
+##   ✓ RNA-seq data loaded successfully
+
+##   ✓ Loaded: 35353 genes x 68 samples
+
+##   ℹ Data appears to be log2-transformed (max value: 16.22)
+
+##   ✓ RNA-seq data loaded
+
+## STEP 3/8: Loading Copy Number Variation (CytoSNP) Data...
+
+## 
+##  Loading ICLE SNP Dataset
+##  Loading ICLE Gene level LogRR Dataset
+##  Loading ICLE Genotype Data
+##  Loading ICLE DNAcopy Segmentated Copy Number Data
+##  Loading Marcotte SNP Dataset
+
+##   ✓ Loaded segmentation functions
+
+## ═══════════════════════════════════════════════════════
+
+##   Marcotte SNP Array Data Preparation
+
+## ═══════════════════════════════════════════════════════
+
+## 
+
+## Step 1/2: Loading existing segmentation data...
+
+##   ✓ Loaded segmentation data: 190182 segments
+
+## Step 2/2: Preparing genotype data...
+
+##   Loading existing genotype data...
+
+##   ✓ Loaded genotype matrix: 1134514 SNPs
+
+## 
+
+## ═══════════════════════════════════════════════════════
+
+##   ✓ Marcotte SNP data preparation complete
+
+## ═══════════════════════════════════════════════════════
+
+## 
+##  Loading GISTIC Results
+
+##   ✓ CNV data loaded successfully
+
+##   ✗ Error loading CNV: object 'required_objects' not found
+
+## STEP 4/8: Loading Single Nucleotide Variation (WES) Data...
+
+## Loading SNV/mutation data...
+
+## ═══════════════════════════════════════════════════════
+
+##   SNV Data Preparation Pipeline
+
+## ═══════════════════════════════════════════════════════
+
+## 
+
+## Step 1/3: Filtering and merging MAF files...
+
+## 'ICLE_Hg38.maf.gz' already exists — skipping MAF filtering.
+
+##   ✓ MAF filtering and merging complete
+
+## Step 2/3: Performing genome liftover to hg19...
+
+## 'ICLE_Hg38_liftover.maf.gz' already exists — skipping liftover
+
+##   ✓ Genome liftover complete
+
+## Step 3/3: Integrating ICLE and CCLE MAFs...
+
+##   ✓ MAF integration complete
+
+## 
+
+## ═══════════════════════════════════════════════════════
+
+##   ✓ SNV data preparation complete
+
+## ═══════════════════════════════════════════════════════
+
+##   ✓ Loaded BRCA_CL_MAF: 91179 entries
+
+##   ✓ SNV data loaded
+
+## STEP 5/8: Loading DNA Methylation (DNAm) Data...
+
+## Loading DNAm data...
+
+## ═══════════════════════════════════════════════════════
+
+##   DNA Methylation Data Preparation
+
+## ═══════════════════════════════════════════════════════
+
+## 
+
+## Step 1/3: Preprocessing ICLE DNAm data with Sesame...
+
+## File 'ICLE_DNAm.Rdata' already exists. Skipping processing.
+
+##   ✓ ICLE DNAm preprocessing complete
+
+## Step 2/3: Preprocessing Sanger (Iorio) DNAm data with Sesame...
+
+## File './Sanger_DNAm.Rdata' already exists. Loading existing data...
+
+##   ✓ Loaded 486427 probes x 49 samples
+
+##   ✓ Sanger DNAm preprocessing complete
+
+## Step 3/3: Integrating ICLE and Sanger DNAm datasets...
+
+## File 'BRCA_CL_DNAm.Rdata' already exists. Skipping DNAm Integration. Loading the saved file!
+
+##   ✓ DNAm integration complete
+
+##   ✓ Standardized sample name suffixes
+
+##   ✓ Final DNAm matrix: 453001 probes x 65 samples
+
+## 
+
+## ═══════════════════════════════════════════════════════
+
+##   ✓ DNA methylation data preparation complete
+
+## ═══════════════════════════════════════════════════════
+
+##   ✓ DNAm data loaded successfully
+
+##   ✓ Loaded BRCA_CL_DNAm: 453001 probes x 65 samples
+
+##   ✓ DNAm data loaded
+
+## STEP 6/8: Loading Structural Variation (Bionano) Data...
+
+## Loading structural variation data...
+
+##   ✓ Loading preprocessed SV data from: ICLE_SV_Filtered.csv
+
+##   ✓ Loaded 4320 structural variations
+
+##   ✓ Loaded 645 nPutative gene fusions
+
+## SV data already loaded (skipping)
+
+##   ✓ SV data loaded
+
+## STEP 7/8: Loading External Datasets (TCGA, MSK)...
+
+##   Missing TCGA objects: TCGA_Annots
+
+##   Missing MSK objects: MSK_Annots
+
+## Loading external datasets...
+
+## Loading TCGA data (missing required objects: TCGA_Annots)...
+
+## 
+##  Loading TCGA BRCA Meta Data (Annotations)
+
+##   ✓ Loaded 817 TCGA samples
+
+## 
+##  Loading TCGA BRCA RNA Sequencing Data
+##  Loading TCGA BRCA DNAm Data
+##  Loading TCGA BRCA RPPA Data
+##  Loading TCGA Gene level LogRR Dataset
+##  Loading TCGA BRCA Genomic Alteration Matrix
+
+##   ✓ Loaded from config path: /Users/oshah/Documents/ICLE/3-Results/Genomic_Alteration_Matrix/TCGA_BRCA_GAM.Rdata
+
+## 
+##  Harmonizing TCGA BRCA Datasets
+##  ✓ TCGA data loading complete
+
+##   ✓ TCGA_Annots loaded: 915 samples
+
+##   ✓ Loaded TCGA_BRCA_GAM: 22578 x 815
+
+##   ✓ Loaded TCGA_BRCA_DNAm: 485512 x 651
+
+##   ✓ Loaded TCGA_BRCA_RPPA: 226 x 937
+
+##   ✓ Loaded TCGA_BRCA_CN: 26477 x 2209
+
+##   ✓ TCGA data loaded successfully
+
+## Loading MSK data (missing required objects: MSK_Annots)...
+
+## 
+##  Loading MSK BRCA Genomic Alteration Matrix
+
+##   ✓ Loaded from config path: /Users/oshah/Documents/ICLE/3-Results/Genomic_Alteration_Matrix/MSK_BRCA_MET_GAM.Rdata
+
+## 
+##  Loading MSK BRCA Meta Data
+
+##   ✓ Loaded 1365 MSK samples
+
+## 
+##  ✓ MSK data loading complete
+
+##   ✓ MSK_Annots loaded: 1365 samples
+
+##   ✓ Loaded MSK_BRCA_GAM: 543 x 1304
+
+##   ✓ MSK data loaded successfully
+
+## ✓ External data loading complete
+
+##   ✓ External data loaded
+
+## STEP 8/8: Generating Genomic Alteration Matrices...
+
+## Loading TCGA GAM...
+
+## Loading MSK GAM...
+
+## Loading cell line GAM...
+
+##   ✓ Manual GAM annotations applied
+
+## 
+
+## ═══════════════════════════════════════════════════════
+
+##   Data Loading Complete
+
+## ═══════════════════════════════════════════════════════
+
+## 
+
+## Loading Status Summary:
+
+##   ✓ ANNOTATIONS         : SUCCESS
+
+##   ✓ RPPA                : SUCCESS
+
+##   ✓ RNASEQ              : SUCCESS
+
+##   ✓ SNV                 : SUCCESS
+
+##   ✓ DNAM                : SUCCESS
+
+##   ✓ SV                  : SUCCESS
+
+##   ✓ EXTERNAL            : SUCCESS
+
+##   ✓ GAM                 : SUCCESS
+
+## 
+
+## Total Time: 0.77 minutes
+
+## 
+## Key Objects Available in Global Environment:
+
+##   • CL_Annots           : 56 x 5
+
+##   • BRCA_CL_RPPA        : 207 x 88
+
+##   • BRCA_CL_EXP         : 35353 x 68
+
+##   • BRCA_CL_GISTIC      : 23109 x 95
+
+##   • BRCA_CL_DNAm        : 453001 x 65
+
+##   • ICLE_SV             : 4320 x 36
+
+##   • BRCA_CL_GAM         : 23738 x 67
+
+## ═══════════════════════════════════════════════════════</code></pre>
+</section>
+</section>
+<section id="manuscript-figures" class="level1">
+<h1>2. Manuscript Figures</h1>
+<section id="a.-icle-characterization-molecular-subtyping" class="level2">
+<h2 class="anchored" data-anchor-id="a.-icle-characterization-molecular-subtyping">a. ICLE Characterization &amp; Molecular Subtyping</h2>
+<section id="supfig-1-genotypic-similarity" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-1-genotypic-similarity">SupFig 1: Genotypic Similarity</h3>
+<p>Compare ICLE genotypes with Marcotte et al.&nbsp;dataset.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"01_SupFig1_Genotype_Similarity.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## ═══════════════════════════════════════════════════════
+
+##   Supplementary Figure 1: Genotype Similarity Analysis
+
+## ═══════════════════════════════════════════════════════
+
+##   Step 1/4: Loading and merging genotype data...
+
+##   ✓ Genotype data merged: 692032 SNPs x 95 samples
+
+##   Step 2/4: Converting genotype calls to integers...
+
+##   ✓ Genotype calls converted
+
+##   Step 3/4: Computing genotypic similarity matrix...
+
+##   ✓ Similarity matrix computed
+
+##   Step 4/4: Generating genotypic similarity heatmap...
+
+##   ✓ Heatmap generated
+
+## ═══════════════════════════════════════════════════════
+
+##   Genotype Similarity Analysis Complete
+
+## ═══════════════════════════════════════════════════════</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results, <span class="st">"SupFig1_Genotype_Similarity.pdf"</span>), <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(supFig_1, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(supFig_1, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig1_genotype-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="perform-molecular-subtyping" class="level3">
+<h3 class="anchored" data-anchor-id="perform-molecular-subtyping">Perform Molecular Subtyping</h3>
+<p>Run molecular subtyping (PAM50, mRNA/RPPA/DNAm consensus), SupFig 2-4 (heatmaps, PCAs, Sankey), Fig 1C (SET signature), and Fig 1B (multiomics Sankey) via a single script. Assigns <code>fig1b_sankey</code> and <code>fig1c_setheatmap</code> to the session.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"02_Fig1_SupFig2_3_4_Molecular_Subtyping.R"</span>), </span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## 
+## ========================================
+
+## 1. Molecular subtyping
+
+## ========================================
+
+## ═══════════════════════════════════════════════════════
+
+##   Molecular Subtyping Pipeline
+
+## ═══════════════════════════════════════════════════════
+
+##   Step 1/7: Calculating ER status...
+
+##   ✓ ER status calculated for 56 samples
+
+## 
+##   Step 2/7: Calculating HER2 status...
+
+##   ✓ HER2 status calculated for 56 samples
+
+## 
+##   Step 3/7: Running Intrinsic Molecular Subtyping subtyping with BreastSubtypeR...
+
+##   ✓ Intrinsic Molecular Subtyping subtyping complete
+
+## 
+##   Step 4/7: Running mRNA consensus clustering...
+
+##   ✓ mRNA clustering complete
+
+## 
+##   Step 5/7: Running RPPA consensus clustering...
+
+##   ✓ RPPA clustering complete
+
+## 
+##   Step 6/7: Running DNAm consensus clustering...
+
+##   ✓ DNAm clustering complete
+
+## 
+##   Step 7/7: Updating annotations and saving results...
+
+##   ✓ Annotations updated and results saved
+
+## ═══════════════════════════════════════════════════════
+
+##   Molecular Subtyping Complete
+
+##   Results saved to: /Users/oshah/Documents/ICLE/3-Results/Molecular_Subtyping
+
+## ═══════════════════════════════════════════════════════
+
+## 
+## ========================================
+
+## 2. ERpos/neg and SET signature scores
+
+## ========================================
+
+## 
+## ========================================
+
+## 3. SupFig 2-4: Multi-omic subtypes (heatmaps, PCAs, Sankey)
+
+## ========================================
+
+##   ✓ ims entropy heatmap saved
+
+##   ✓ SupFig 2A: mRNA heatmap saved
+
+##   ✓ SupFig 2B: mRNA PCA saved
+
+##   ✓ SupFig 3A: RPPA heatmap saved
+
+##   ✓ SupFig 3B: RPPA PCA saved
+
+##   ✓ SupFig 4A: DNAm heatmap saved
+
+##   ✓ SupFig 4B: DNAm PCA saved
+
+##   ✓ SupFig 2C: mRNA–ims Sankey saved
+
+##   ✓ SupFig 3C: RPPA–ims Sankey saved
+
+##   ✓ SupFig 4C: DNAm–ims Sankey saved
+
+## 
+## ========================================
+
+## 4. Fig 1B: Multiomics Sankey
+
+## ========================================
+
+## 
+## ========================================
+
+## 5. Fig 1C: SET heatmap
+
+## ========================================
+
+##   Step 1/4: Loading SET signature genes...
+
+##   ✓ Loaded 101 ER+ genes and 59 ER- genes
+
+##   Step 2/4: Calculating SET scores...
+
+##   ✓ SET scores calculated for 68 samples
+
+##   Step 4/4: Creating SET signature heatmaps...
+
+##   ✓ SET score heatmap created
+
+##   ✓ Heatmaps created and combined
+
+## ═══════════════════════════════════════════════════════
+
+##   MOLECULAR SUBTYPING COMPLETE
+
+## ═══════════════════════════════════════════════════════</code></pre>
+</section>
+<section id="figure-1b-overview-of-multiomics-subtypes" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1b-overview-of-multiomics-subtypes">Figure 1B: Overview of Multiomics Subtypes</h3>
+<p>Sankey diagram (produced by the subtyping script above). Save to PDF and display.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_subtyping, <span class="st">"Fig1B_MolecularSubtypes.pdf"</span>), fig1b_sankey, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>fig1b_sankey</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig1b_multiomics_sankey-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-1c-set-signature" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1c-set-signature">Figure 1C: SET Signature</h3>
+<p><code>fig1c_setheatmap</code> is produced by the subtyping script above. Save to PDF and display.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_subtyping, <span class="st">"Fig1C_SET_Signature.pdf"</span>), <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(fig1c_setheatmap, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig1c_setheatmap, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig1c_set-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-1d-multiomics-overview" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1d-multiomics-overview">Figure 1D: Multiomics Overview</h3>
+<p>Generate comprehensive multiomics heatmap.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"04_Fig1D_Multiomics_Overview.R"</span>), <span class="at">chdir =</span> T)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## 
+## ========================================
+
+## Figure 1D: Multiomics Overview
+
+## ========================================
+
+##   Step 1/6: Loading additional genomic metrics...
+
+##   ✓ Saved Genomic Instability Metrics to File/Users/oshah/Documents/ICLE/3-Results/Genomic_Instability_Metrics.tsv
+
+##   ✓ Metrics loaded
+
+##   Step 2/6: Preparing genetic alteration matrix...
+
+##   ✓ Alteration matrix prepared: 9 genes x 17 samples
+
+##   Step 3/6: Selecting top variable features...
+
+##   ✓ RNA: 6000 genes selected
+
+##   ✓ RPPA: 50 proteins selected
+
+##   ✓ DNAm: 5913 probes selected
+
+## 
+##   Step 4/6: Creating annotations...
+
+##   ✓ Top annotation created
+
+## 
+##   Step 5/6: Creating individual heatmaps...
+
+##   ✓ Alteration heatmap created
+
+##   ✓ RPPA heatmap created
+
+##   ✓ RNA heatmap created
+
+##   ✓ DNAm heatmap created
+
+## 
+## ========================================
+
+## Figure 1D Completed
+
+## ========================================</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results, <span class="st">"Fig1D_Multiome_Overview.pdf"</span>), <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">8</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig1d_multiomics_overview, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">annotation_legend_side =</span> <span class="st">"right"</span>, <span class="at">heatmap_legend_side =</span> <span class="st">"right"</span>)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>fig1d_multiomics_overview</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig1d_multiomics-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="fig-1e-igv-plot" class="level3">
+<h3 class="anchored" data-anchor-id="fig-1e-igv-plot">Fig 1E: IGV Plot</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare primary ILC patient tumor CN segments</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>TCGA_BRCA_CN_SEG <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>external<span class="sc">$</span>tcga, <span class="st">"CN"</span>, <span class="st">"TCGA_logRR_DNAcopy.seg"</span>))</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>TCGA_BRCA_CN_SEG<span class="sc">$</span>ID <span class="ot">&lt;-</span> <span class="fu">substr</span>(TCGA_BRCA_CN_SEG<span class="sc">$</span>ID, <span class="dv">1</span>, <span class="dv">15</span>)</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>ILC_cases <span class="ot">&lt;-</span> <span class="fu">subset</span>(TCGA_Annots, <span class="st">`</span><span class="at">Final Pathology</span><span class="st">`</span> <span class="sc">==</span> <span class="st">"ILC"</span>)<span class="sc">$</span>Case.ID</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>ILC_seg <span class="ot">&lt;-</span> <span class="fu">subset</span>(TCGA_BRCA_CN_SEG, ID <span class="sc">%in%</span> ILC_cases)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(ILC_seg, <span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>external<span class="sc">$</span>tcga, <span class="st">"CN"</span>, <span class="st">"TCGA_logRR_ILC_127.seg"</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare metastatic ILC patient tumor CN segments</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>MSK_BRCA_CN_SEG <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>external<span class="sc">$</span>msk, <span class="st">"CN"</span>, <span class="st">"MSK_BRCA_CN.seg"</span>))</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>ILC_met_cases <span class="ot">&lt;-</span> <span class="fu">subset</span>(MSK_Annots, ONCOTREE_CODE <span class="sc">==</span> <span class="st">"ILC"</span>)<span class="sc">$</span>SAMPLE_ID</span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>ILC_met_seg <span class="ot">&lt;-</span> <span class="fu">subset</span>(MSK_BRCA_CN_SEG, ID <span class="sc">%in%</span> ILC_met_cases)</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(ILC_met_seg, <span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>external<span class="sc">$</span>msk, <span class="st">"MSK_CN_ILC_202.seg"</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="co"># prepare ICLE CN segments by subtype</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>ICLE_cells <span class="ot">&lt;-</span> <span class="fu">subset</span>(CL_Annots, Study <span class="sc">==</span> <span class="st">"ICLE"</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>ICLE_cells <span class="ot">&lt;-</span> <span class="fu">split</span>(ICLE_cells<span class="sc">$</span>Name, ICLE_cells<span class="sc">$</span><span class="st">`</span><span class="at">mRNA Subtypes</span><span class="st">`</span>)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>ICLE_cells<span class="sc">$</span>HER2 <span class="ot">=</span> <span class="st">"SKBR3-M"</span> <span class="co"># borrow information on SKRB3 from Marcotte</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>ICLE_cells<span class="sc">$</span>Other <span class="ot">&lt;-</span> <span class="fu">c</span>(ICLE_cells<span class="sc">$</span>HER2, ICLE_cells<span class="sc">$</span>Basal)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>ICLE_cells <span class="ot">&lt;-</span> ICLE_cells[<span class="sc">-</span><span class="fu">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)]</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>BRCA_CL_CN_SEG <span class="ot">&lt;-</span> <span class="fu">read.delim</span>(FILES<span class="sc">$</span>cnv_seg)</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>BRCA_CL_CN_SEG_subtype <span class="ot">&lt;-</span> <span class="fu">sapply</span>(ICLE_cells, <span class="at">FUN =</span> <span class="cf">function</span>(x){</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">subset</span>(BRCA_CL_CN_SEG, ID <span class="sc">%in%</span> x)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>}, <span class="at">simplify =</span> F)</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="fu">sapply</span>(<span class="fu">names</span>(BRCA_CL_CN_SEG_subtype), <span class="at">FUN =</span> <span class="cf">function</span>(x){</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>  seg <span class="ot">=</span> BRCA_CL_CN_SEG_subtype[[x]]</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">=</span> <span class="fu">gsub</span>(<span class="st">"[//]"</span>, <span class="st">"_"</span>, x)</span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.table</span>(seg, <span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>icle<span class="sc">$</span>cytosnp, <span class="st">"3_Segmentation"</span>, <span class="fu">paste0</span>(x, <span class="st">"_ICLE_CL_LogRR_DNACopy.seg"</span>)), <span class="at">row.names =</span> <span class="cn">FALSE</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>  <span class="dv">1</span></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>##      Lum Lum/HER2    Other 
+##        1        1        1</code></pre>
+</section>
+<section id="figure-1f-alteration-frequency-barplots" class="level3">
+<h3 class="anchored" data-anchor-id="figure-1f-alteration-frequency-barplots">Figure 1F: Alteration Frequency Barplots</h3>
+<p>Compare alteration frequencies across cell lines, primary, and metastatic tumors.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressWarnings</span>(<span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"05_Fig1F_Alteration_barplots.R"</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## 
+## ========================================
+
+## Figure 1F: Alteration Barplots
+
+## ========================================
+
+##   Step 1/5: Defining gene sets...
+
+##   ✓ Gene sets defined:
+
+##     - ILC genes: 6
+
+##     - NST genes: 7
+
+##     - ESCAT genes: 25
+
+##     - Total unique genes: 32
+
+##   Step 2/5: Calculating alteration frequencies...
+
+##     Processing Cell Lines...
+
+##       - Samples: 14
+
+##       - Altered genes: 25
+
+##     Processing Primary Tumors...
+
+##       - Samples: 126
+
+##       - Altered genes: 30
+
+##     Processing Metastatic Tumors...
+
+##       - Samples: 194
+
+##       - Altered genes: 31
+
+## 
+
+##   Step 3/5: Combining and ordering data...
+
+##   ✓ Combined data prepared:
+
+##     - Common events: 24
+
+##     - Genes to plot: 21
+
+##   Step 4/5: Creating alteration barplot...
+
+##   ✓ Barplot created
+
+##   Step 5/5: Performing statistical tests...
+
+##   ✓ Statistical tests completed
+
+##   Saving results p-values plots...
+
+##   ✓ P-values (numeric) saved: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/Fig1F_Alteration_Barplot_pval.pdf
+
+##   ✓ P-values (notation) saved: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/Fig1F_Alteration_Barplot_pval_nt.pdf
+
+##   ✓ Figure 1F complete</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>output_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results, <span class="st">"Molecular_Resemblance"</span>, <span class="st">"Fig1F_Alteration_Barplot.pdf"</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="at">filename =</span> output_file, fig1f_alteration_barplot, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>fig1f_alteration_barplot</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig1f_alterations-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="supfig-5-key-ilc-vs-nst-alterations-patient-tumors" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-5-key-ilc-vs-nst-alterations-patient-tumors">SupFig 5: Key ILC vs NST Alterations (Patient Tumors)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"06_SupFig5_ILC_NST_Alterations.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## 
+## ========================================
+
+## SupFig 5: ILC vs NST alteration frequencies (LumA tumors)
+
+## ========================================
+
+## Specs: 28 rows, 14 genes
+
+##   ✓ SupFig 5 complete (supfigs5_tumor_alterations, freq_tbl assigned).</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results, <span class="st">"SupFig5_BRCA_Tumor_Top_Alterations.pdf"</span>), supfigs5_tumor_alterations, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(freq_tbl, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results, <span class="st">"SupFig5_BRCA_Tumor_Top_Alterations.tsv"</span>),</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>supfigs5_tumor_alterations</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig5_ilc_nst-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="supfig-6-alterations-in-key-pathways-icle" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-6-alterations-in-key-pathways-icle">SupFig 6: Alterations in Key Pathways (ICLE)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"07_SupFig6_Pathway_Alterations.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## 
+## ========================================
+
+## SupFig 6: Pathway alterations (ICLE)
+
+## ========================================
+
+##   ✓ SupFig 6 complete (SupFigS6, pathway_alt_mat assigned).</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results, <span class="st">"SupFig6_Pathway_Alterations.pdf"</span>), <span class="at">width =</span> <span class="fl">7.5</span>, <span class="at">height =</span> <span class="dv">8</span>)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(SupFigS6, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(pathway_alt_mat, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results, <span class="st">"SupFig6_Pathway_Alterations.tsv"</span>),</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">col.names =</span> <span class="cn">NA</span>)</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(SupFigS6, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig6_pathway-1.png" class="img-fluid"><!-- --></p>
+</section>
+</section>
+<section id="b.-cdh1-alteration-landscape" class="level2">
+<h2 class="anchored" data-anchor-id="b.-cdh1-alteration-landscape">b. CDH1 Alteration Landscape</h2>
+<section id="figure-2b-novel-sv-in-icle" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2b-novel-sv-in-icle">Figure 2B: Novel SV in ICLE</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualizations generated using Bionano Access software by loading SV files</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"08_Fig2_CDH1_Alteration_Landscape_All.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## ═══════════════════════════════════════════════════════
+
+##   Figure 2C-H – running all panels in order
+
+## ═══════════════════════════════════════════════════════
+
+## 
+## ========================================
+
+## Figure 2C: CDH1 Exonic Deletion Analysis
+
+## ========================================
+
+##   Loading WES CDH1 read counts...
+
+##   Found 19 WES samples
+
+##   ✓ Loaded read counts for 19 samples
+
+##   Generating CDH1 deletion heatmap...
+
+##   ✓ Heatmap generated with 16 exons and 5 samples
+
+##   ✓ CDH1 exonic deletion analysis complete (fig2c_cdh1_exonic_del_heatmap assigned).
+
+## 
+## ========================================
+
+## Figure 2D: FMI CDH1 alterations (Local vs Distant)
+
+## ========================================
+
+##   ✓ Fig 2D complete (fig2d_fmi_alts, fig2d_fmi_alts_tbl, fig2d_fmi_alts_tbl_pval assigned).
+
+## 
+## ========================================
+
+## Figure 2E: CDH1 Protein Paint query
+
+## ========================================
+
+##   ✓ Saved Fig2E_CellLines_CDH1_Mutations_Protein_Paint_Query.tsv
+
+##   ✓ Saved Fig2E_TCGA_CDH1_Mutations_Protein_Paint_Query.tsv
+
+## 
+## ========================================
+
+## Figure 2F: CDH1 allele frequency plot
+
+## ========================================
+
+##   ✓ Fig 2F complete (fig2f_cdh1_af assigned).
+
+## 
+## ========================================
+
+## Figure 2G: Cell vs Tumor CDH1 alteration barplots
+
+## ========================================
+
+##   ✓ Fig 2G complete (fig2g_cl_cdh1_alts, fig2g_tcga_cdh1_alts, fig2g_cl_cdh1_alts_tbl_pval, fig2g_tcga_cdh1_alts_tbl_pval assigned).
+
+## 
+## ========================================
+
+## Figure 2H: CDH1 alteration landscape
+
+## ========================================
+
+##   ✓ Fig 2H complete (fig2h_tcga, fig2h_cl, TCGA_CDH1_df, CL_CDH1_df assigned).
+
+## ═══════════════════════════════════════════════════════
+
+##   Figure 2C-H complete
+
+## ═══════════════════════════════════════════════════════</code></pre>
+</section>
+<section id="figure-2c-exonic-deletions-in-icle" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2c-exonic-deletions-in-icle">Figure 2C: Exonic Deletions in ICLE</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2C_CDH1_Exonic_Deletions_ICLE.pdf"</span>), <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="fl">4.5</span>)</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig2c_cdh1_exonic_del_heatmap)</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig2c_cdh1_exonic_del_heatmap)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig2c_exonic-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-2d-cdh1-alterations-foundation-medicine-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2d-cdh1-alterations-foundation-medicine-dataset">Figure 2D: CDH1 Alterations (Foundation Medicine Dataset)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2D_FMI_CDH1_Alterations_Barplot.pdf"</span>), fig2d_fmi_alts, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gtsave</span>(gt<span class="sc">::</span><span class="fu">gt</span>(fig2d_fmi_alts_tbl), <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2D_FMI_CDH1_Alterations_Table.pdf"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//RtmpIuMw7q/fileea3955e1246e.html screenshot completed</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gtsave</span>(gt<span class="sc">::</span><span class="fu">gt</span>(fig2d_fmi_alts_tbl_pval) <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>               gt<span class="sc">::</span><span class="fu">cols_width</span>(<span class="fu">starts_with</span>(<span class="st">"local"</span>) <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">100</span>),<span class="fu">starts_with</span>(<span class="st">"distant"</span>) <span class="sc">~</span> <span class="fu">px</span>(<span class="dv">100</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>             gt<span class="sc">::</span><span class="fu">tab_options</span>(<span class="at">table.width =</span> <span class="fu">px</span>(<span class="dv">600</span>), <span class="at">column_labels.font.size =</span> <span class="fu">px</span>(<span class="dv">10</span>)), </span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2D_FMI_CDH1_Alterations_ILCvsNST_Event_pval.pdf"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//RtmpIuMw7q/fileea39301eddce.html screenshot completed</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>fig2d_fmi_alts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig2d_fmi-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-2e-cdh1-mutation-lollipop-plots-tcga-patient-tumors-vs-cell-lines" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2e-cdh1-mutation-lollipop-plots-tcga-patient-tumors-vs-cell-lines">Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs Cell Lines)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># CDH1 protein paint plot for TCGA (generated by Fig 2 orchestrator)</span></span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a><span class="co"># queries files plotted using https://proteinpaint.stjude.org/</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="figure-2f-cdh1-allele-frequency-in-cell-lines" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2f-cdh1-allele-frequency-in-cell-lines">Figure 2F: CDH1 Allele Frequency in Cell Lines</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2F_CL_CDH1_AF_Barplot_histology_shape.pdf"</span>), fig2f_cdh1_af, <span class="at">width =</span> <span class="fl">4.5</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>fig2f_cdh1_af</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig2f_cdh1_af-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-2g-cdh1-alterations-patient-tumors-vs-cell-lines" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2g-cdh1-alterations-patient-tumors-vs-cell-lines">Figure 2G: CDH1 Alterations (Patient Tumors vs Cell Lines)</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2G_CL_CDH1_Alt_barplot.pdf"</span>), fig2g_cl_cdh1_alts, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2G_TCGA_CDH1_Alt_barplot.pdf"</span>), fig2g_tcga_cdh1_alts, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">suppressMessages</span>({</span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gtsave</span>(gt<span class="sc">::</span><span class="fu">gt</span>(fig2g_cl_cdh1_alts_tbl), <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2G_CL_CDH1_Alterations_Table.pdf"</span>))</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gtsave</span>(gt<span class="sc">::</span><span class="fu">gt</span>(fig2g_cl_cdh1_alts_tbl_pval), <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2G_CL_CDH1_Alterations_ILCvsNST_Event_pval.pdf"</span>))</span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gtsave</span>(gt<span class="sc">::</span><span class="fu">gt</span>(fig2g_tcga_cdh1_alts_tbl), <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2G_TCGA_CDH1_Alterations_Table.pdf"</span>))</span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>  gt<span class="sc">::</span><span class="fu">gtsave</span>(gt<span class="sc">::</span><span class="fu">gt</span>(fig2g_tcga_cdh1_alts_tbl_pval), <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2G_TCGA_CDH1_Alterations_ILCvsNST_Event_pval.pdf"</span>))</span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a>})</span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(<span class="at">plotlist =</span> <span class="fu">list</span>(fig2g_cl_cdh1_alts <span class="sc">+</span> fig2g_tcga_cdh1_alts), <span class="at">widths =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="fl">0.6</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig2g_allele_freq-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-2h-cdh1-molecular-alteration-landscape-summary" class="level3">
+<h3 class="anchored" data-anchor-id="figure-2h-cdh1-molecular-alteration-landscape-summary">Figure 2H: CDH1 Molecular Alteration Landscape Summary</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(TCGA_CDH1_df, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2H_TCGA_CDH1_Alteration_Landscape.tsv"</span>), <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(CL_CDH1_df, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2HCellLines_CDH1_Alteration_Landscape.tsv"</span>), <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2H_TCGA_CDH1_Alteration_Heatmap.pdf"</span>), <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">10</span>)</span>
+<span id="cb50-5"><a href="#cb50-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(fig2h_tcga, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb50-6"><a href="#cb50-6" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>cdh1, <span class="st">"Fig2H_CellLine_CDH1_Alteration_Heatmap.pdf"</span>), <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="dv">10</span>)</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(fig2h_cl, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig2h_tcga, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig2h_landscape-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig2h_cl, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig2h_landscape-2.png" class="img-fluid"><!-- --></p>
+</section>
+</section>
+<section id="c.-sv-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="c.-sv-analysis">c.&nbsp;SV Analysis</h2>
+<p>Run all Figure 3 and SupFig 8–10 scripts in order (TMB/SV prep, Fig 3A–3F, SupFig 8–10).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"14_Fig3_SV_All.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## ═══════════════════════════════════════════════════════
+
+##   Figure 3 + SupFig 8–10 – running all panels in order
+
+## ═══════════════════════════════════════════════════════
+
+## 
+## ========================================
+
+## SupFig 8: TMB vs SV Comparison
+
+## ========================================
+
+##   ✓ SupFig 8 prep complete (chrom_sizes, alt_count_chr, SupFig8A–D assigned).
+
+## 
+## ========================================
+
+## Figure 3A: Genomic instability metrics and SV distribution
+
+## ========================================
+
+##   ✓ Fig 3A complete
+
+## 
+## ========================================
+
+## Figure 3B: Translocation breakpoint topography
+
+## ========================================
+
+##   ✓ Fig 3B complete (fig3b_transloc_breakpoints_ht assigned).
+
+## 
+## ========================================
+
+## Figure 3C: Chromothripsis landscape
+
+## ========================================
+
+## [1] "Running Shatter Seek on All ICLE Samples to identify Chromothripsis Events"
+
+## Processing: HCC1187
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: HCC2218
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: IPH926
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: MDAMB134VI
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: MDAMB330
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: MDAMB453
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: 600MPE
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: SUM44PE
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: WCRC25
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: BCK4
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: CAMA1
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: HCC2185
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: MDAMB468
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: OCUBM
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: SKBR3
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: UACC3133
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+
+## Processing: ZR7530
+
+## Running..
+## 
+## 
+## Evaluating the statistical criteria
+## Successfully finished!
+## [1] "Saving Chromothripsis Analysis Results to: /Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping"
+
+##   ✓ Fig 3C complete (shatterseek_outs, thripsis_ht assigned).
+
+## 
+## ========================================
+
+## Figure 3D: Circos plots for selected samples
+
+## ========================================
+
+##   ✓ Fig 3D complete (trk_bck4, trk_600, trk_hcc, trk_zr assigned).
+
+##   Preparing ICLE fusion data...
+
+##   Loading tumor fusion data...
+
+##   Calculating fusion gene expression...
+
+##   Adding OncoVar annotations...
+
+##   Identifying recurring fusions...
+
+##   ✓ Fusion data preparation complete
+
+##   Generating fusion visualizations...
+
+## 
+## ========================================
+
+## Figure 3E: ICLE Fusion Distribution (Left)
+
+## ========================================
+
+##   ✓ Fig 3E (ICLE) complete
+
+## 
+## ========================================
+
+## Figure 3E: Tumor Fusion Distribution (Right)
+
+## ========================================
+
+##   ✓ Fig 3E (Tumor) complete
+
+## 
+## ========================================
+
+## SupFig 10A: Fusion Breakpoint Heatmap
+
+## ========================================
+
+##   ✓ SupFig 10A complete
+
+## 
+## ========================================
+
+## SupFig 10B: Recurring Fusions Expression Heatmap
+
+## ========================================
+
+##   ✓ SupFig 10B complete
+
+## 
+## ========================================
+
+## Figure 3F: GOE and LOE Fusions Circos
+
+## ========================================
+
+##   ✓ Fig 3F (GOE) complete
+
+##   ✓ Fig 3F (LOE) complete
+
+## 
+## ========================================
+
+## SupFig 10C: Recurring Gene Circos Plots
+
+## ========================================
+
+##   ✓ SupFig 10C (recurring genes) complete
+
+## 
+## ═══════════════════════════════════════════════════════
+
+##   Figure 3 + SupFig 8–10 complete
+
+## ═══════════════════════════════════════════════════════</code></pre>
+<section id="figure-3a-left-icle-genomic-instability-metrics" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3a-left-icle-genomic-instability-metrics">Figure 3A (left): ICLE Genomic Instability Metrics</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3A_left_Metrics_of_GenomicInstability.pdf"</span>), <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig3a_genomic_instability)</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>fig3a_genomic_instability</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig3a_left-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-3a-right-icle-sv-overview" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3a-right-icle-sv-overview">Figure 3A (right): ICLE SV Overview</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3A_right_SV_Distribution.pdf"</span>), fig3a_sv_distribution, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>fig3a_sv_distribution</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig3a_right-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-3b-chromosomal-topography-of-translocation-breakpoints" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3b-chromosomal-topography-of-translocation-breakpoints">Figure 3B: Chromosomal Topography of Translocation Breakpoints</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3B_Translocation_Distribution.pdf"</span>), <span class="at">width =</span> <span class="fl">6.5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig3b_transloc_breakpoints_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>fig3b_transloc_breakpoints_ht</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig3b-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-3c-chromothripsis-landscape" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3c-chromothripsis-landscape">Figure 3C: Chromothripsis Landscape</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb65"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a href="#cb65-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(shatterseek_outs<span class="sc">$</span>chromothripsis_df, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupTable11_shatterseek_chromothripsis_results.tsv"</span>), <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">col.names =</span> <span class="cn">NA</span>)</span>
+<span id="cb65-2"><a href="#cb65-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3C_chromothripsis_heatmap.pdf"</span>), <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb65-3"><a href="#cb65-3" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig3c_thripsis_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb65-4"><a href="#cb65-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb67"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a href="#cb67-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig3c_thripsis_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig3c-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-3d-generate-cricos-plots-for-bck4-600mpe-hcc2185-and-zr7530" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3d-generate-cricos-plots-for-bck4-600mpe-hcc2185-and-zr7530">Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and ZR7530</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load required libraries for HTML widget to PDF conversion</span></span>
+<span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmlwidgets)</span>
+<span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(webshot2)</span>
+<span id="cb68-4"><a href="#cb68-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb68-5"><a href="#cb68-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Save all four circos plots to PDF</span></span>
+<span id="cb68-6"><a href="#cb68-6" aria-hidden="true" tabindex="-1"></a><span class="fu">message</span>(<span class="st">"Saving circos plots to PDF..."</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## Saving circos plots to PDF...</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>circos_bck4 <span class="ot">&lt;-</span> <span class="fu">save_circos_to_pdf</span>(trk_bck4, <span class="st">"BCK4"</span>, DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/Fig3D_Circos_BCK4.html screenshot completed
+
+##   ✓ Saved PDF: Fig3D_Circos_BCK4.pdf</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>circos_600mpe <span class="ot">&lt;-</span> <span class="fu">save_circos_to_pdf</span>(trk_600, <span class="st">"600MPE"</span>, DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/Fig3D_Circos_600MPE.html screenshot completed
+
+##   ✓ Saved PDF: Fig3D_Circos_600MPE.pdf</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>circos_hcc2185 <span class="ot">&lt;-</span> <span class="fu">save_circos_to_pdf</span>(trk_hcc, <span class="st">"HCC2185"</span>, DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/Fig3D_Circos_HCC2185.html screenshot completed
+
+##   ✓ Saved PDF: Fig3D_Circos_HCC2185.pdf</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>circos_zr7530 <span class="ot">&lt;-</span> <span class="fu">save_circos_to_pdf</span>(trk_zr, <span class="st">"ZR7530"</span>, DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/Fig3D_Circos_ZR7530.html screenshot completed
+
+##   ✓ Saved PDF: Fig3D_Circos_ZR7530.pdf</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>circos_bck4</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/unnamed-chunk-13-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb79"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a>circos_600mpe</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/unnamed-chunk-14-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>circos_hcc2185</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/unnamed-chunk-15-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb81"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a>circos_zr7530</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/unnamed-chunk-16-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-3e-fusions-distribution-in-cell-lines-vs-patient-tumors" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3e-fusions-distribution-in-cell-lines-vs-patient-tumors">Figure 3E: Fusions Distribution in Cell Lines vs Patient Tumors</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save fusion distribution plots</span></span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3E_right_FusionDistribution_ICLE.pdf"</span>), </span>
+<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>       fig3e_1, <span class="at">width =</span> <span class="dv">3</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3E_right_FusionDistribution_PatientTumor.pdf"</span>), </span>
+<span id="cb82-5"><a href="#cb82-5" aria-hidden="true" tabindex="-1"></a>       fig3e_2<span class="sc">+</span><span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">25</span>,<span class="dv">50</span>,<span class="dv">75</span>), <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">75</span>)), <span class="at">width =</span> <span class="dv">3</span>, <span class="at">height =</span> <span class="dv">4</span>)</span>
+<span id="cb82-6"><a href="#cb82-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-7"><a href="#cb82-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Save fusion data table</span></span>
+<span id="cb82-8"><a href="#cb82-8" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(fusions_df, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupTable12_fusion_df.tsv"</span>), </span>
+<span id="cb82-9"><a href="#cb82-9" aria-hidden="true" tabindex="-1"></a>            <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb82-10"><a href="#cb82-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb82-11"><a href="#cb82-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(<span class="at">plotlist =</span> <span class="fu">list</span>(fig3e_1, fig3e_2))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig3e_fusions-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-3f-goe-and-loe-functional-fusions-circos" class="level3">
+<h3 class="anchored" data-anchor-id="figure-3f-goe-and-loe-functional-fusions-circos">Figure 3F: GOE and LOE Functional Fusions Circos</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb83"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3F_left_GOE_Fusions.pdf"</span>), <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">7</span>)</span>
+<span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>fig3f_left_goe_fusions_circos</span>
+<span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb85"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"Fig3F_right_LOE_Fusions.pdf"</span>), <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">7</span>)</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>fig3f_right_loe_fusions_circos</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+</section>
+<section id="supfig-8a-mutation-vs-sv-count-size" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-8a-mutation-vs-sv-count-size">SupFig 8A: Mutation vs SV Count, Size</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig8A_TMB_SV_Burden_Correlation.pdf"</span>), SupFig8A, <span class="at">width =</span> <span class="fl">5.5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(sv_tmb_summary, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupTable_SV_TMB_summary.tsv"</span>), <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb87-4"><a href="#cb87-4" aria-hidden="true" tabindex="-1"></a>SupFig8A</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig8a-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="supfig-8b-tmb-vs-sv-burden" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-8b-tmb-vs-sv-burden">SupFig 8B: TMB vs SV Burden</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig8B_TMB_vs_SV_Burden_Correlation.pdf"</span>), SupFig8B, <span class="at">width =</span> <span class="fl">5.5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a>SupFig8B</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig8b-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig8B_TMB_vs_SV_Burden_Correlation_NoOutliers.pdf"</span>), SupFig8B_no_outliers, <span class="at">width =</span> <span class="fl">5.5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write.table</span>(alt_count_chr, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupTable_alt_count_per_chr.tsv"</span>), <span class="at">sep =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>, <span class="at">quote =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb89-4"><a href="#cb89-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggarrange</span>(<span class="at">plotlist =</span> <span class="fu">list</span>(SupFig8B <span class="sc">+</span>SupFig8B_no_outliers))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig8b-2.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="supfig-8c-svchr-size---sv-count-by-chr" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-8c-svchr-size---sv-count-by-chr">SupFig 8C: SV~Chr Size - SV Count by Chr</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig8D_SV_Per_Chr.pdf"</span>), SupFig8C, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>SupFig8C</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig8c-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="supfig-8d-mutation-chr-size---mutation-count-by-chr" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-8d-mutation-chr-size---mutation-count-by-chr">SupFig 8D: Mutation ~ Chr Size - Mutation Count by Chr</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb91"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig8_Mutations_Per_Chr.pdf"</span>), SupFig8D, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>SupFig8D</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig8d-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="supfig-9-generate-cricos-plots-for-all-icle-cell-lines" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-9-generate-cricos-plots-for-all-icle-cell-lines">SupFig 9: Generate Cricos Plots for all ICLE cell lines</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw_circos_plot_for_all</span>(shatterseek_outs<span class="sc">$</span>sv_df, shatterseek_outs<span class="sc">$</span>cnv_df, shatterseek_outs<span class="sc">$</span>chromothripsis_df, <span class="at">out_dir =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig9_OGM_Circos"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## [1] "Making Circos Plot for: HCC1187"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/HCC1187_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: HCC1187
+
+## [1] "Making Circos Plot for: HCC2218"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/HCC2218_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: HCC2218
+
+## [1] "Making Circos Plot for: IPH926"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/IPH926_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: IPH926
+
+## [1] "Making Circos Plot for: MDAMB134VI"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/MDAMB134VI_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: MDAMB134VI
+
+## [1] "Making Circos Plot for: MDAMB330"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/MDAMB330_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: MDAMB330
+
+## [1] "Making Circos Plot for: MDAMB453"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/MDAMB453_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: MDAMB453
+
+## [1] "Making Circos Plot for: 600MPE"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/600MPE_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: 600MPE
+
+## [1] "Making Circos Plot for: SUM44PE"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/SUM44PE_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: SUM44PE
+
+## [1] "Making Circos Plot for: WCRC25"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/WCRC25_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: WCRC25
+
+## [1] "Making Circos Plot for: BCK4"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/BCK4_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: BCK4
+
+## [1] "Making Circos Plot for: CAMA1"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/CAMA1_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: CAMA1
+
+## [1] "Making Circos Plot for: HCC2185"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/HCC2185_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: HCC2185
+
+## [1] "Making Circos Plot for: MDAMB468"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/MDAMB468_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: MDAMB468
+
+## [1] "Making Circos Plot for: OCUBM"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/OCUBM_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: OCUBM
+
+## [1] "Making Circos Plot for: SKBR3"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/SKBR3_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: SKBR3
+
+## [1] "Making Circos Plot for: UACC3133"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/UACC3133_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: UACC3133
+
+## [1] "Making Circos Plot for: ZR7530"
+
+## file:////Users/oshah/Documents/ICLE/3-Results/Optical_Genome_Mapping/SupFig9_OGM_Circos/ZR7530_circos_plot.html screenshot completed
+
+##   Saved PDF for sample: ZR7530</code></pre>
+</section>
+<section id="supfig-10-functional-fusions" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-10-functional-fusions">SupFig 10: Functional Fusions</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SupFig 10A: Fusion Breakpoints Heatmap</span></span>
+<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig10A_Functional_Fusions_Chr_Heatmap.pdf"</span>), <span class="at">width =</span> <span class="fl">6.5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(supfig10a_fusion_breakpoints_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb94-4"><a href="#cb94-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(supfig10a_fusion_breakpoints_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig10-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SupFig 10B: Recurring fusions expression heatmap</span></span>
+<span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, <span class="st">"SupFig10B_Recurring_Functional_Fusions.pdf"</span>), <span class="at">width =</span> <span class="dv">15</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(supfig10b_recurring_fusions_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb97-4"><a href="#cb97-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb99"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(supfig10b_recurring_fusions_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/unnamed-chunk-19-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># SupFig 10C: Recurring gene circos plots</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a>gene_names <span class="ot">&lt;-</span> <span class="fu">names</span>(recurring_gene_circos)</span>
+<span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(gene_names)) {</span>
+<span id="cb100-4"><a href="#cb100-4" aria-hidden="true" tabindex="-1"></a>    gene <span class="ot">&lt;-</span> gene_names[i]</span>
+<span id="cb100-5"><a href="#cb100-5" aria-hidden="true" tabindex="-1"></a>    pdf_file <span class="ot">&lt;-</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>ogm, </span>
+<span id="cb100-6"><a href="#cb100-6" aria-hidden="true" tabindex="-1"></a>                         <span class="fu">paste0</span>(<span class="st">"SupFig10C_"</span>, gene, <span class="st">"_Fusions.pdf"</span>))</span>
+<span id="cb100-7"><a href="#cb100-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">pdf</span>(pdf_file, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">7</span>)</span>
+<span id="cb100-8"><a href="#cb100-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">print</span>(recurring_gene_circos[[gene]])</span>
+<span id="cb100-9"><a href="#cb100-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">dev.off</span>()</span>
+<span id="cb100-10"><a href="#cb100-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="d.-dnam-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="d.-dnam-analysis">d.&nbsp;DNAm Analysis</h2>
+<section id="supfig-11-dnam-index-by-across-histological-and-pam50-subtypes" class="level4">
+<h4 class="anchored" data-anchor-id="supfig-11-dnam-index-by-across-histological-and-pam50-subtypes">SupFig 11: DNAm Index by Across Histological and PAM50 Subtypes</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb101"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"21_Fig4_SupFig11_DNAm_Alterations.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## ===============================================================================
+
+## Section 1: Loading Data
+
+## ===============================================================================
+
+## Loading Oncovar annotations...
+
+## Loading HM450K probe set...
+
+## Loading RNA-seq data...
+
+## Loading cell line DNA methylation data...
+
+## TCGA DNA methylation data already loaded
+
+##   Common probes across datasets: 75646
+
+## 
+## ===============================================================================
+
+## Section 2: Calculating DMI (DNA Methylation Index)
+
+## ===============================================================================
+
+##   Step 1: Calculating median DNA methylation in normal samples...
+
+##     Calculated median beta for 75646 probes
+
+##   Step 2: Calculating Global Methylation Aberration (GMA) scores...
+
+##   Patient tumors: 651 samples
+
+##   Cell lines: 49 samples
+
+##   Step 3: Combining patient and cell line data...
+
+##   Step 4: Defining group variables...
+
+##   Filtered to 700 samples (Cell Lines: 49. Normal: 98. Patient Tumors: 553. )
+
+##   Step 5: Computing DMI z-scores...
+
+##   Step 6: Removing outlier normals...
+
+##   Removed 12 outlier normal samples
+
+##   Step 7: Generating combined histology-type labels...
+
+##   ✓ Saved DMI summary to: /Users/oshah/Documents/ICLE/3-Results/DNA_Methylation/DMI_Summary.tsv
+
+## 
+## ===============================================================================
+
+## Section 3: DMI Comparisons and Visualizations
+
+## ===============================================================================
+
+## 
+## ========================================
+
+## SupFig 11A: DMI patient tumors by PAM50
+
+## ========================================
+
+## 
+## ========================================
+
+## SupFig 11B: DMI cell lines by PAM50
+
+## ========================================
+
+## 
+## ========================================
+
+## SupFig 11C: DMI by histology
+
+## ========================================
+
+## 
+## ========================================
+
+## Figure 4A: DMI by tissue source
+
+## ========================================
+
+##   ✓ SupFig 11 and Fig 4A DMI figures assigned to global environment
+
+## 
+## ===============================================================================
+
+## Section 4: Differential Analysis (TCGA and Cell Lines)
+
+## ===============================================================================
+
+## TCGA DESeq2 Analysis (LumA ILC vs NST)...
+
+##   Loading existing TCGA DESeq2 results...
+
+##   ✓ TCGA DESeq2: 890 significant DEGs
+
+## TCGA Limma Analysis (LumA ILC vs NST)...
+
+##   Loading existing TCGA Limma results...
+
+##   ✓ TCGA Limma: 3030 significant probes
+
+## Cell Line DESeq2 Analysis (Non-Basal ILC vs NST)...
+
+##   Loading existing Cell Line DESeq2 results...
+
+##   ✓ Cell Line DESeq2: 833 significant DEGs
+
+## Cell Line Limma Analysis (Non-Basal ILC vs NST)...
+
+##   Loading existing Cell Line Limma results...
+
+##   ✓ Cell Line Limma: 23308 significant probes
+
+## 
+## ===============================================================================
+
+## Section 5: Identifying Consensus Events Between Cell Lines and Tumors
+
+## ===============================================================================
+
+## Identifying consensus DGE events...
+
+##   Consensus DGE events: 23
+
+## Identifying consensus DPM events...
+
+##   Consensus DPM events: 854
+
+## Merging RNA and DNAm results...
+
+## Warning: Returning more (or less) than 1 row per `summarise()` group was deprecated in
+## dplyr 1.1.0.
+## ℹ Please use `reframe()` instead.
+## ℹ When switching from `summarise()` to `reframe()`, remember that `reframe()`
+##   always returns an ungrouped data frame and adjust accordingly.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+
+## `summarise()` has grouped output by 'gene'. You can override using the
+## `.groups` argument.
+
+##   ✓ Identified 46 DNAm-regulated genes
+
+## Adding annotations and expression/methylation values...
+
+## Identifying consensus genes...
+
+##   ✓ Identified 7 consensus genes
+
+## 
+## ========================================
+
+## Figure 4B: DNAm-mRNA alterations scatter plot
+
+## ========================================
+
+##   ✓ Fig 4B complete (dnma_lfc_plt assigned).
+
+## 
+## ========================================
+
+## Figure 4C: Consensus DNAm-mRNA alterations heatmap
+
+## ========================================
+
+##   ✓ Fig 4C complete (fig4c_ht assigned).
+
+## 
+## ========================================
+
+## Figure 4D: MSI1 and TFAP2B expression and DNAm barplots
+
+## ========================================
+
+##   ✓ Fig 4D complete (fig4e assigned).
+
+## 
+## ===============================================================================
+
+## Section 9: Saving Results
+
+## ===============================================================================
+
+##   ✓ Saved TCGA_DNAm_Regulated_Genes.csv to: /Users/oshah/Documents/ICLE/3-Results/DNA_Methylation/TCGA_DNAm_Regulated_Genes.csv
+
+## 
+## ===============================================================================
+
+## Script 22 completed successfully!
+
+## ===============================================================================
+
+##   All figures assigned to global environment for saving in Main_Data_Analysis.Rmd
+
+##   - SupFig11: tumor_pam50, cl_pam50, tumor_cl_histology_LumA
+
+##   - Fig4A: tissue_dmi
+
+##   - Fig4B: dnma_lfc_plt
+
+##   - Fig4C: fig4c_ht
+
+##   - Fig4D: fig4e</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb103"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(dnam_dir, <span class="st">"SupFig11A_DMI_Tumor_PAM50.pdf"</span>), tumor_pam50, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">3</span>)</span>
+<span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(dnam_dir, <span class="st">"SupFig11A_DMI_Tumor_PAM50_pvalue_table.pdf"</span>), <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">10</span>)</span>
+<span id="cb103-4"><a href="#cb103-4" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.table</span>(<span class="fu">signif</span>(SupFig11A_pval_table, <span class="dv">1</span>))</span>
+<span id="cb103-5"><a href="#cb103-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb105"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>tumor_pam50</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig11a_tumor_pam50-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(dnam_dir, <span class="st">"SupFig11B_DMI_CL_PAM50.pdf"</span>), cl_pam50, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">3</span>)</span>
+<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(dnam_dir, <span class="st">"SupFig11B_DMI_CL_PAM50_pvalue_table.pdf"</span>), <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">10</span>)</span>
+<span id="cb106-4"><a href="#cb106-4" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.table</span>(<span class="fu">signif</span>(SupFig11B_pval_table, <span class="dv">1</span>))</span>
+<span id="cb106-5"><a href="#cb106-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>cl_pam50</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig11b_cl_pam50-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(dnam_dir, <span class="st">"SupFig11C_DMI_Tumor_CL_Histology.pdf"</span>), tumor_cl_histology_LumA, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">3</span>)</span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(dnam_dir, <span class="st">"SupFig11C_DMI_Tumor_CL_Histology_pvalues_table.pdf"</span>), <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">10</span>)</span>
+<span id="cb109-4"><a href="#cb109-4" aria-hidden="true" tabindex="-1"></a>  gridExtra<span class="sc">::</span><span class="fu">grid.table</span>(<span class="fu">signif</span>(SupFig11C_pval_table, <span class="dv">1</span>))</span>
+<span id="cb109-5"><a href="#cb109-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a>tumor_cl_histology_LumA</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig11c_tumor_cl_histology-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-4a-dnam-index-by-specimen-type" class="level4">
+<h4 class="anchored" data-anchor-id="figure-4a-dnam-index-by-specimen-type">Figure 4A: DNAm Index by Specimen Type</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dna_methylation, <span class="st">"Fig4A_DMI_Normal_Tumor_CL.pdf"</span>), </span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>       tissue_dmi, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">3</span>)</span>
+<span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>gt<span class="sc">::</span><span class="fu">gtsave</span>(tissue_dmi_pval, <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dna_methylation, <span class="st">"Fig4A_DMI_Normal_Tumor_CL_pvalue_table.pdf"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//RtmpIuMw7q/fileea392529ed19.html screenshot completed</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>tissue_dmi</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig4a-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-4b-dnam-mrna-alterations" class="level4">
+<h4 class="anchored" data-anchor-id="figure-4b-dnam-mrna-alterations">Figure 4B: DNAm-mRNA Alterations</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb115"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dna_methylation, <span class="st">"Fig4B_Tumor_RNA_DNAm_Alterations_small_height.pdf"</span>),</span>
+<span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a>       dnma_lfc_plt, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb115-3"><a href="#cb115-3" aria-hidden="true" tabindex="-1"></a>dnma_lfc_plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig4b-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-4c-consensus-dnam-mrna-alterations-heatmap" class="level4">
+<h4 class="anchored" data-anchor-id="figure-4c-consensus-dnam-mrna-alterations-heatmap">Figure 4C: Consensus DNAm-mRNA Alterations Heatmap</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dna_methylation, <span class="st">"Fig4C_Alterations_Heatmap.pdf"</span>), <span class="at">width =</span> <span class="dv">10</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(fig4c_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">gap =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>))</span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig4c_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">gap =</span> <span class="fu">unit</span>(<span class="fl">0.1</span>, <span class="st">"cm"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig4c-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-4d-msi1-tfap2b-barplots" class="level4">
+<h4 class="anchored" data-anchor-id="figure-4d-msi1-tfap2b-barplots">Figure 4D: MSI1 &amp; TFAP2B Barplots</h4>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dna_methylation, <span class="st">"Fig4D_Top_Alterations_Barplots.pdf"</span>), fig4e, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">10</span>)</span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a>fig4e</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig4d-1.png" class="img-fluid"><!-- --></p>
+</section>
+</section>
+<section id="e.-rnai-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="e.-rnai-analysis">e. RNAi Analysis</h2>
+<section id="figure-5b-consensus-differential-dependencies" class="level3">
+<h3 class="anchored" data-anchor-id="figure-5b-consensus-differential-dependencies">Figure 5B: Consensus Differential Dependencies</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"22_Fig5_RNAi_Differential_Dependencies.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## ===============================================================================
+
+## Section 2: Loading RNAi Data
+
+## ===============================================================================
+
+## Loading RNAi data...
+
+## New names:
+## ✓ Loaded 15256 genes across 19 cell lines
+## ===============================================================================
+## Section 3: SIMEM Differential Analysis
+## ===============================================================================
+## Loading existing SIMEM results...
+## ✓ Loaded SIMEM results for 14730 genes
+## ===============================================================================
+## Section 4: D2 Differential Analysis
+## ===============================================================================
+## ✓ Analyzed 13607 genes
+## ===============================================================================
+## Section 5: Computing Consensus Dependencies
+## ===============================================================================
+## ✓ Consensus dependencies: 93
+## Adding drug-gene interaction information...
+## • `` -&gt; `...1`
+
+## Warning in .fun(.value[0], ...): no non-missing arguments to max; returning
+## -Inf
+
+##   ✓ Added DGI information for 2396 genes
+##   ✓ Saved results to: /Users/oshah/Documents/ICLE/3-Results/Gene_Dependencies/RNAi_ILC_Consensus_Dependencies.tsv
+## 
+## ========================================
+## Figure 5B: Consensus dependencies scatter plot
+## ========================================
+
+## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## ℹ Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+
+##   ✓ Fig 5B complete (fig5b_consensus_dep_plt assigned).
+## 
+## ========================================
+## SupFig 12: Consensus dependencies heatmap
+## ========================================
+##   ✓ SupFig 12 complete (supfig12_dep_ht assigned).
+## 
+## ========================================
+## Figure 5C: KEGG pathway enrichment
+## ========================================
+
+## Warning: Vectorized input to `element_text()` is not officially supported.
+## ℹ Results may be unexpected or may change in future versions of ggplot2.
+
+## Warning in geom_text(aes(x = 0.05), size = fontsize, face = "bold", hjust = 0,
+## : Ignoring unknown parameters: `face`
+
+## Scale for x is already present.
+## Adding another scale for x, which will replace the existing scale.
+
+## Warning in geom_text(aes(x = 0.05), size = fontsize, face = "bold", hjust = 0,
+## : Ignoring unknown parameters: `face`
+
+## Scale for x is already present.
+## Adding another scale for x, which will replace the existing scale.
+
+## Warning: Removed 2 rows containing missing values or values outside the scale range
+## (`geom_text()`).
+
+##   ✓ Fig 5C complete (fig5c_pathway_plt assigned).
+## 
+## ========================================
+## Figure 5D: Pathway level dependencies heatmap
+## ========================================
+##   ✓ Fig 5D complete (fig5d_pathway_ht assigned).
+## 
+## ========================================
+## Figure 5E: Druggable dependencies heatmap
+## ========================================
+##   ✓ Fig 5E complete (fig5e_drug_ht assigned).
+## 
+## ========================================
+##   Figure 5 (5B–5E) and SupFig 12 complete
+## ========================================
+##   - Fig 5B: fig5b_consensus_dep_plt
+##   - SupFig 12: supfig12_dep_ht
+##   - Fig 5C: fig5c_pathway_plt
+##   - Fig 5D: fig5d_pathway_ht
+##   - Fig 5E: fig5e_drug_ht</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dependencies, <span class="st">"Fig5b_Differential_Dependencies.pdf"</span>), </span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a>       fig5b_consensus_dep_plt, <span class="at">width =</span> <span class="dv">8</span>, <span class="at">height =</span> <span class="fl">4.5</span>)</span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a>fig5b_consensus_dep_plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/unnamed-chunk-21-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="supfig-12-consensus-differential-dependencies-heatmap" class="level3">
+<h3 class="anchored" data-anchor-id="supfig-12-consensus-differential-dependencies-heatmap">SupFig 12: Consensus Differential Dependencies Heatmap</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb123"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a href="#cb123-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dependencies, <span class="st">"SupFig12_Consensus_Dependencies_Heatmap.pdf"</span>), </span>
+<span id="cb123-2"><a href="#cb123-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">width =</span> <span class="fl">7.5</span>, <span class="at">height =</span> <span class="dv">16</span>)</span>
+<span id="cb123-3"><a href="#cb123-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(supfig12_dep_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb123-4"><a href="#cb123-4" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb125"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a href="#cb125-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(supfig12_dep_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/supfig12-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-5c-over-represented-pathways" class="level3">
+<h3 class="anchored" data-anchor-id="figure-5c-over-represented-pathways">Figure 5C: Over represented Pathways</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dependencies, <span class="st">"Fig5C_KEGG_ORA.pdf"</span>), fig5c_pathway_plt, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="fl">3.5</span>)</span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a>fig5c_pathway_plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig5c-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-5d-pathway-level-dependencies-heatmap" class="level3">
+<h3 class="anchored" data-anchor-id="figure-5d-pathway-level-dependencies-heatmap">Figure 5D: Pathway level Dependencies Heatmap</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb127"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb127-1"><a href="#cb127-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dependencies, <span class="st">"Fig5D_Pathway_Scores.pdf"</span>), <span class="at">width =</span> <span class="fl">7.5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb127-2"><a href="#cb127-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(fig5d_pathway_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb127-3"><a href="#cb127-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb129"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb129-1"><a href="#cb129-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig5d_pathway_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig5d-1.png" class="img-fluid"><!-- --></p>
+</section>
+<section id="figure-5e-top-druggable-dependencies-heatmap" class="level3">
+<h3 class="anchored" data-anchor-id="figure-5e-top-druggable-dependencies-heatmap">Figure 5E: Top Druggable Dependencies Heatmap</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>dependencies, <span class="st">"Fig5E_ILC_Druggable_Dependencies.pdf"</span>), <span class="at">width =</span> <span class="fl">7.5</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(fig5e_drug_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig5e_drug_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">heatmap_legend_side =</span> <span class="st">"bottom"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig5e-1.png" class="img-fluid"><!-- --></p>
+</section>
+</section>
+<section id="f.-cell-line-scoring" class="level2">
+<h2 class="anchored" data-anchor-id="f.-cell-line-scoring">f.&nbsp;Cell Line Scoring</h2>
+<section id="figure-6-cl-tumor-concordanceresemblance-score" class="level3">
+<h3 class="anchored" data-anchor-id="figure-6-cl-tumor-concordanceresemblance-score">Figure 6: CL-Tumor Concordance/Resemblance Score</h3>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate resemblance scores between cell lines and tumors</span></span>
+<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="fu">source</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>scripts<span class="sc">$</span>helpers, <span class="st">"23_Fig6_Patient_Signatures_Resemblance_Scores.R"</span>), <span class="at">chdir =</span> <span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## ===============================================================================
+
+## Selecting Patient and Cell Line Subsets
+
+## ===============================================================================
+
+##   ILC tumors: 106
+
+##   NST tumors: 201
+
+##   Cell lines: 39
+
+## 
+## ===============================================================================
+
+## PART 1: Computing Patient-Derived Signatures from TCGA
+
+## ===============================================================================
+
+## 
+## 1.1 Computing CNV signature...
+
+##   ✓ Saved CNV gene annotation to: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/ILC_Signatures/ILC_CNV_Genes.tsv
+
+## 
+## 1.2 Computing Alterations signature...
+
+##   ✓ Saved alterations signature to: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/ILC_Signatures/ILC_Alterations.tsv
+
+## 
+## 1.3 Computing RNA signature...
+
+##   ✓ Saved RNA signature to: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/ILC_Signatures/ILC_DEGs.tsv
+
+## 
+## 1.4 Computing DNAm signature...
+
+##   ✓ Saved DNAm signature to: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/ILC_Signatures/ILC_DNAm_Probes.tsv
+
+## 
+## 1.5 Computing RPPA signature...
+
+##   ✓ Saved RPPA signature to: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/ILC_Signatures/ILC_DEPs.tsv
+
+## 
+## ===============================================================================
+
+## PART 1 Complete: All patient-derived signatures saved to files
+
+## ===============================================================================
+
+## 
+## ===============================================================================
+
+## PART 2: Scoring Cell Lines and Computing Consensus
+
+## ===============================================================================
+
+## 
+## 2.1 Computing CNV resemblance scores...
+
+##   ✓ CNV scores computed for 38 cell lines
+
+## 
+## 2.2 Computing Alterations resemblance scores...
+
+##   ✓ Alterations scores computed for 38 cell lines
+
+## 
+## 2.3 Computing RNA resemblance scores...
+
+##   ✓ RNA scores computed for 39 cell lines
+
+## 
+## 2.4 Computing DNAm resemblance scores...
+
+##   ✓ DNAm scores computed for 34 cell lines
+
+## 
+## 2.5 Computing RPPA resemblance scores...
+
+##   ✓ RPPA scores computed for 37 cell lines
+
+## 
+## 2.6 Combining scores and computing consensus...
+
+##   ✓ Saved resemblance scores to: /Users/oshah/Documents/ICLE/3-Results/Molecular_Resemblance/Resemblance_Scores.tsv
+
+## 
+## ========================================
+
+## Figure 6: Resemblance scores heatmap
+
+## ========================================
+
+## Warning: Heatmap/annotation names are duplicated: Score
+
+##   ✓ Fig 6 complete (fig6_resemblance_ht and signature heatmaps assigned).</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_resemblance, <span class="st">"Fig6_ILC_CN_Signature.pdf"</span>), <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb135-2"><a href="#cb135-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(cn_sig_ht)</span>
+<span id="cb135-3"><a href="#cb135-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_resemblance, <span class="st">"Fig6_ILC_Alteration_Signature.pdf"</span>), <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb137-2"><a href="#cb137-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(mut_sig_ht)</span>
+<span id="cb137-3"><a href="#cb137-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_resemblance, <span class="st">"Fig6_ILC_DNAm_Signature.pdf"</span>), <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(dnam_sign_ht)</span>
+<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_resemblance, <span class="st">"Fig6_ILC_RNA_Signature.pdf"</span>), <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(rna_sign_ht)</span>
+<span id="cb141-3"><a href="#cb141-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="at">file =</span> <span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_resemblance, <span class="st">"Fig6_ILC_rppa_Signature.pdf"</span>), <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">6</span>)</span>
+<span id="cb143-2"><a href="#cb143-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(rppa_sig_ht)</span>
+<span id="cb143-3"><a href="#cb143-3" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Save Fig 6</span></span>
+<span id="cb145-2"><a href="#cb145-2" aria-hidden="true" tabindex="-1"></a><span class="fu">pdf</span>(<span class="fu">file.path</span>(DIRS<span class="sc">$</span>results_sub<span class="sc">$</span>molecular_resemblance, <span class="st">"Fig6_Resemblance_Scores.pdf"</span>), <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">5</span>)</span>
+<span id="cb145-3"><a href="#cb145-3" aria-hidden="true" tabindex="-1"></a>   <span class="fu">draw</span>(fig6_resemblance_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">annotation_legend_side =</span> <span class="st">"right"</span>, </span>
+<span id="cb145-4"><a href="#cb145-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">heatmap_legend_side =</span> <span class="st">"right"</span>)</span>
+<span id="cb145-5"><a href="#cb145-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dev.off</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## quartz_off_screen 
+##                 2</code></pre>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Display figure</span></span>
+<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a><span class="fu">draw</span>(fig6_resemblance_ht, <span class="at">merge_legends =</span> <span class="cn">TRUE</span>, <span class="at">annotation_legend_side =</span> <span class="st">"right"</span>, </span>
+<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">heatmap_legend_side =</span> <span class="st">"right"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><img src="index/figure-gfm/fig6_display-1.png" class="img-fluid"><!-- --></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<pre><code>## R version 4.5.1 (2025-06-13)
+## Platform: aarch64-apple-darwin20
+## Running under: macOS Sequoia 15.7.2
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## time zone: America/Chicago
+## tzcode source: internal
+## 
+## attached base packages:
+## [1] stats4    grid      stats     graphics  grDevices utils     datasets 
+## [8] methods   base     
+## 
+## other attached packages:
+##  [1] msigdbr_25.1.1              hypeR_2.0.0                
+##  [3] tidytext_0.4.3              patchwork_1.3.2            
+##  [5] sesame_1.26.0               sesameData_1.26.0          
+##  [7] ExperimentHub_2.16.1        AnnotationHub_3.16.1       
+##  [9] BiocFileCache_2.16.2        dbplyr_2.5.1               
+## [11] limma_3.64.3                DESeq2_1.48.2              
+## [13] webshot2_0.1.2              htmlwidgets_1.6.4          
+## [15] interacCircos_1.18.0        hiAnnotator_1.42.0         
+## [17] gridExtra_2.3               ShatterSeek_1.1            
+## [19] graph_1.86.0                foreach_1.5.2              
+## [21] scales_1.4.0                ggsci_4.1.0                
+## [23] gt_1.1.0                    ggpattern_1.2.1            
+## [25] clusterProfiler_4.16.0      org.Hs.eg.db_3.21.0        
+## [27] AnnotationDbi_1.70.0        CancerSubtypes_1.17.1      
+## [29] NMF_0.28                    cluster_2.1.8.1            
+## [31] rngtools_1.5.2              registry_0.5-1             
+## [33] sigclust_1.1.0.1            tidyr_1.3.1                
+## [35] forcats_1.0.1               circlize_0.4.16            
+## [37] ConsensusClusterPlus_1.72.0 SummarizedExperiment_1.38.1
+## [39] Biobase_2.68.0              MatrixGenerics_1.20.0      
+## [41] matrixStats_1.5.0           BreastSubtypeR_1.0.0       
+## [43] viridis_0.6.5               viridisLite_0.4.2          
+## [45] data.table_1.17.8           readxl_1.4.5               
+## [47] maftools_2.24.0             stringr_1.5.2              
+## [49] ggrepel_0.9.6               rtracklayer_1.68.0         
+## [51] GenomicRanges_1.60.0        GenomeInfoDb_1.44.3        
+## [53] IRanges_2.42.0              S4Vectors_0.46.0           
+## [55] BiocGenerics_0.54.1         generics_0.1.4             
+## [57] magrittr_2.0.4              DNAcopy_1.82.0             
+## [59] vroom_1.6.6                 reshape2_1.4.4             
+## [61] ggsankey_0.0.99999          dplyr_1.1.4                
+## [63] ComplexHeatmap_2.24.1       ggthemes_5.1.0             
+## [65] ggpubr_0.6.2                ggplot2_4.0.0              
+## 
+## loaded via a namespace (and not attached):
+##   [1] R.methodsS3_1.8.2        dichromat_2.0-0.1        Biostrings_2.76.0       
+##   [4] vctrs_0.6.5              ggtangle_0.0.7           digest_0.6.37           
+##   [7] png_0.1-8                shape_1.4.6.1            proxy_0.4-27            
+##  [10] magick_2.9.0             MASS_7.3-65              httpuv_1.6.16           
+##  [13] qvalue_2.40.0            withr_3.0.2              xfun_0.53               
+##  [16] ggfun_0.2.0              survival_3.8-3           memoise_2.0.1           
+##  [19] ggbeeswarm_0.7.2         gson_0.1.0               systemfonts_1.3.1       
+##  [22] ragg_1.5.0               tidytree_0.4.6           GlobalOptions_0.1.2     
+##  [25] R.oo_1.27.1              Formula_1.2-5            KEGGREST_1.48.1         
+##  [28] promises_1.4.0           otel_0.2.0               httr_1.4.7              
+##  [31] rstatix_0.7.3            restfulr_0.0.16          ps_1.9.1                
+##  [34] rstudioapi_0.17.1        UCSC.utils_1.4.0         units_1.0-0             
+##  [37] DOSE_4.2.0               processx_3.8.6           babelgene_22.9          
+##  [40] curl_7.0.0               polyclip_1.10-7          GenomeInfoDbData_1.2.14 
+##  [43] SparseArray_1.8.1        xtable_1.8-4             doParallel_1.0.17       
+##  [46] reactable_0.4.4          evaluate_1.0.5           S4Arrays_1.8.1          
+##  [49] preprocessCore_1.70.0    hms_1.1.4                visNetwork_2.1.4        
+##  [52] colorspace_2.1-2         filelock_1.0.3           readr_2.1.5             
+##  [55] later_1.4.4              ggtree_3.16.3            lattice_0.22-7          
+##  [58] XML_3.99-0.19            cowplot_1.2.0            class_7.3-23            
+##  [61] pillar_1.11.1            nlme_3.1-168             iterators_1.0.14        
+##  [64] gridBase_0.4-7           compiler_4.5.1           stringi_1.8.7           
+##  [67] sf_1.0-21                tokenizers_0.3.0         GenomicAlignments_1.44.0
+##  [70] plyr_1.8.9               crayon_1.5.3             abind_1.4-8             
+##  [73] BiocIO_1.18.0            gridGraphics_0.5-1       locfit_1.5-9.12         
+##  [76] bit_4.6.0                chromote_0.5.1           fastmatch_1.1-6         
+##  [79] codetools_0.2-20         textshaping_1.0.4        e1071_1.7-16            
+##  [82] GetoptLong_1.0.5         mime_0.13                splines_4.5.1           
+##  [85] Rcpp_1.1.0               iCluster_2.1.0           cellranger_1.1.0        
+##  [88] knitr_1.51               blob_1.2.4               clue_0.3-66             
+##  [91] BiocVersion_3.21.1       fs_1.6.6                 openxlsx_4.2.8          
+##  [94] ggsignif_0.6.4           ggplotify_0.1.3          tibble_3.3.0            
+##  [97] Matrix_1.7-4             statmod_1.5.1            tzdb_0.5.0              
+## [100] svglite_2.2.2            tweenr_2.0.3             pkgconfig_2.0.3         
+## [103] pheatmap_1.0.13          tools_4.5.1              cachem_1.1.0            
+## [106] RSQLite_2.4.3            DBI_1.2.3                impute_1.82.0           
+## [109] fastmap_1.2.0            rmarkdown_2.30           Rsamtools_2.24.1        
+## [112] broom_1.0.10             sass_0.4.10              BiocManager_1.30.26     
+## [115] carData_3.0-5            farver_2.1.2             yaml_2.3.10             
+## [118] cli_3.6.5                purrr_1.1.0              lifecycle_1.0.4         
+## [121] backports_1.5.0          BiocParallel_1.42.2      gtable_0.3.6            
+## [124] rjson_0.2.23             parallel_4.5.1           ape_5.8-1               
+## [127] SnowballC_0.7.1          jsonlite_2.0.0           bitops_1.0-9            
+## [130] kableExtra_1.4.0         bit64_4.6.0-1            assertthat_0.2.1        
+## [133] yulab.utils_0.2.1        zip_2.3.3                janeaustenr_1.0.0       
+## [136] GOSemSim_2.34.0          R.utils_2.13.0           lazyeval_0.2.2          
+## [139] shiny_1.11.1             htmltools_0.5.8.1        enrichplot_1.28.4       
+## [142] GO.db_3.21.0             rappdirs_0.3.3           glue_1.8.0              
+## [145] XVector_0.48.0           RCurl_1.98-1.17          treeio_1.32.0           
+## [148] classInt_0.4-11          BSgenome_1.76.0          igraph_2.2.1            
+## [151] R6_2.6.1                 labeling_0.4.3           aplot_0.2.9             
+## [154] DelayedArray_0.34.1      tidyselect_1.2.1         vipor_0.4.7             
+## [157] ggforce_0.5.0            xml2_1.4.1               car_3.1-3               
+## [160] wheatmap_0.2.0           KernSmooth_2.23-26       S7_0.2.0                
+## [163] gridpattern_1.3.1        websocket_1.4.4          fgsea_1.34.2            
+## [166] RColorBrewer_1.1-3       rlang_1.1.6              Cairo_1.7-0             
+## [169] beeswarm_0.4.0</code></pre>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
