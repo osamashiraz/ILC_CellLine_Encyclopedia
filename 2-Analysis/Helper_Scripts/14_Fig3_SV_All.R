@@ -8,6 +8,7 @@
 #              then 15, 16, 17, 18, 19, 20.
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 if (!exists("DIRS", envir = .GlobalEnv)) {
@@ -15,9 +16,6 @@ if (!exists("DIRS", envir = .GlobalEnv)) {
 }
 
 helpers <- DIRS$scripts$helpers
-message("═══════════════════════════════════════════════════════")
-message("  Figure 3 + SupFig 8–10 – running all panels in order")
-message("═══════════════════════════════════════════════════════\n")
 
 suppressWarnings({
   source(file.path(helpers, "14_SupFig8_TMB_SV_Preparation.R"), chdir = TRUE)

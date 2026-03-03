@@ -1,5 +1,5 @@
 # ==============================================================================
-# Script 20: Figure 3D - Circos Plots for Selected Samples (BCK4, 600MPE, HCC2185, ZR7530)
+# Script 19: Figure 3D - Circos Plots for Selected Samples (BCK4, 600MPE, HCC2185, ZR7530)
 # ==============================================================================
 # Description: Generates circos plots for 4 selected ICLE cell lines showing
 #              structural variations, copy number alterations, and chromothripsis
@@ -22,6 +22,7 @@
 #   - Circos plot objects for selected samples (assigned to .GlobalEnv)
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 if (!exists("DIRS", envir = .GlobalEnv)) {

@@ -1,5 +1,5 @@
 # ==============================================================================
-# Script 23: Figure 5 - RNAi Differential Dependencies (ILC vs NST)
+# Script 22: Figure 5 - RNAi Differential Dependencies (ILC vs NST)
 # ==============================================================================
 # Description: Performs gene dependency analysis comparing ILC vs NST cell lines
 #              using D2 scores and SIMEM. Identifies consensus dependencies,
@@ -22,6 +22,7 @@
 #     fig5c_pathway_plt, fig5d_pathway_ht, fig5e_drug_ht) assigned to .GlobalEnv
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 # ------------------------------------------------------------------------------

@@ -4,6 +4,7 @@
 # This script loads and prepares CNV data from CytoSNP arrays
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 #' Load CNV Data
@@ -21,20 +22,20 @@ load_cnv_data <- function(config_loaded = TRUE) {
   # # ------------------------------------------------------------------------------
   # # Check if required downstream objects already exist in GlobalEnv
   # # ------------------------------------------------------------------------------
-  # required_objects <- c("BRCA_CL_GISTIC")
-  # missing_objects <- required_objects[!sapply(required_objects, exists, envir = .GlobalEnv)]
-  # 
-  # # If all required objects exist, skip loading
-  # if (length(missing_objects) == 0) {
-  #   message("CNV data already loaded (all required objects present in GlobalEnv)")
-  #   message("  ✓ BRCA_CL_GISTIC: present")
-  #   return(invisible(NULL))
-  # }
-  # 
-  # # Report which objects are missing
-  # if (length(missing_objects) > 0) {
-  #   message("Loading CNV data (missing objects: ", paste(missing_objects, collapse = ", "), ")...")
-  # }
+  required_objects <- c("BRCA_CL_GISTIC")
+  missing_objects <- required_objects[!sapply(required_objects, exists, envir = .GlobalEnv)]
+
+  # If all required objects exist, skip loading
+  if (length(missing_objects) == 0) {
+    message("CNV data already loaded (all required objects present in GlobalEnv)")
+    message("  ✓ BRCA_CL_GISTIC: present")
+    return(invisible(NULL))
+  }
+
+  # Report which objects are missing
+  if (length(missing_objects) > 0) {
+    message("Loading CNV data (missing objects: ", paste(missing_objects, collapse = ", "), ")...")
+  }
   
   # ------------------------------------------------------------------------------
   # Source the CNV preparation script

@@ -26,6 +26,7 @@
 #   - Multiple figure outputs (SupFig 2-4, Fig 1C)
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 suppressPackageStartupMessages({
@@ -783,9 +784,7 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
   out_dir <- output_dir
   ensure_dir(out_dir)
   
-  message("\n========================================")
-  message("1. Molecular subtyping")
-  message("========================================\n")
+  message("\n  ── Step 1/5: molecular subtyping pipeline ──")
   
   pl <- run_molecular_subtyping_pipeline(
     BRCA_CL_EXP, BRCA_CL_RPPA, BRCA_CL_DNAm, BRCA_CL_GISTIC, CL_Annots,
@@ -799,18 +798,14 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
   CL_Annots <- pl$CL_Annots
   
   
-  message("\n========================================")
-  message("2. ERpos/neg and SET signature scores")
-  message("========================================\n")
+  message("\n  ── Step 2/5: ER/HER2 status + SET scores ──")
   
   source(file.path(DIRS$scripts$helpers, "03_Fig1C_SET_Signature.R"))
   SET_sig <- load_set_signature()
   SET_scores <- calculate_set_scores(BRCA_CL_EXP, SET_sig)
   ERpos <- setNames(SET_scores$ERpos, rownames(SET_scores))
   
-  message("\n========================================")
-  message("3. SupFig 2-4: Multi-omic subtypes (heatmaps, PCAs, Sankey)")
-  message("========================================\n")
+  message("\n  ── Step 3/5: building SupFig 2–4 heatmap, PCA, and Sankey objects ──")
   
   colFun_similarity <- circlize::colorRamp2(c(0, 1), c("white", "blue"), space = "RGB")
   
@@ -856,10 +851,7 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
                                       `HER2 CN` = annot_cols$CN, HER2 = annot_cols$HER2, `HER2 mRNA` = annot_cols$RNA_zscore)
                          ), use_raster = TRUE, raster_quality = 4
   )
-  pdf(file.path(out_dir, "SupFig2A_mRNA_subtypes.pdf"), width = 10, height = 8)
-  draw(mRNA_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
-  dev.off()
-  message("  ✓ SupFig 2A: mRNA heatmap saved")
+  message("  ✓ SupFig 2A: mRNA_sim_HT object created (saved in Main_Data_Analysis.Rmd)")
   
   # Feature selection with conditional plot suppression
   if (exists("SUPPRESS_FEATURE_SELECTION_PLOTS", envir = .GlobalEnv) && 
@@ -878,8 +870,8 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
     geom_point(size = 5, alpha = 1) + scale_color_manual("Subtype", values = annot_cols$Subtypes) +
     scale_shape_manual(values = c(8, 18)) + theme_bw(20) +
     xlab(paste0("PC1 (", Propf_mrna[1], "%)")) + ylab(paste0("PC2 (", Propf_mrna[2], "%)"))
-  ggsave(file.path(out_dir, "SupFig2B_mRNA_pca_subtypes.pdf"), plt, width = 7, height = 5)
-  message("  ✓ SupFig 2B: mRNA PCA saved\n")
+  supfig2b_mRNA_pca <- plt
+  message("  ✓ SupFig 2B: supfig2b_mRNA_pca object created (saved in Main_Data_Analysis.Rmd)\n")
   
   # ---- RPPA (SupFig 3A, 3B) ----
   K_rppa <- 9
@@ -912,10 +904,7 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
                                       `HER2 CN` = annot_cols$CN, HER2 = annot_cols$HER2, `HER2 mRNA` = annot_cols$RNA_zscore)
                          ), use_raster = TRUE, raster_quality = 4
   )
-  pdf(file.path(out_dir, "SupFig3A_RPPA_subtypes.pdf"), width = 10, height = 8)
-  draw(rppa_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
-  dev.off()
-  message("  ✓ SupFig 3A: RPPA heatmap saved")
+  message("  ✓ SupFig 3A: rppa_sim_HT object created (saved in Main_Data_Analysis.Rmd)")
   
   # Feature selection with conditional plot suppression
   if (exists("SUPPRESS_FEATURE_SELECTION_PLOTS", envir = .GlobalEnv) && 
@@ -934,8 +923,8 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
     geom_point(size = 5, alpha = 1) + scale_color_manual("Subtype", values = annot_cols$Subtypes) +
     scale_shape_manual(values = c(8, 18)) + theme_bw(20) +
     xlab(paste0("PC1 (", Propf_rppa[1], "%)")) + ylab(paste0("PC2 (", Propf_rppa[2], "%)"))
-  ggsave(file.path(out_dir, "SupFig3B_RPPA_pca_subtypes.pdf"), plt, width = 7, height = 5)
-  message("  ✓ SupFig 3B: RPPA PCA saved\n")
+  supfig3b_rppa_pca <- plt
+  message("  ✓ SupFig 3B: supfig3b_rppa_pca object created (saved in Main_Data_Analysis.Rmd)\n")
   
   # ---- DNAm (SupFig 4A, 4B) ----
   K_dnam <- 7
@@ -968,10 +957,7 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
                                       `HER2 CN` = annot_cols$CN, HER2 = annot_cols$HER2, `HER2 mRNA` = annot_cols$RNA_zscore)
                          ), use_raster = TRUE, raster_quality = 4
   )
-  pdf(file.path(out_dir, "SupFig4A_DNAm_subtypes.pdf"), width = 10, height = 8)
-  draw(dnam_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
-  dev.off()
-  message("  ✓ SupFig 4A: DNAm heatmap saved")
+  message("  ✓ SupFig 4A: dnam_sim_HT object created (saved in Main_Data_Analysis.Rmd)")
   
   load(FILES$hm450k_probeset)
   allProbes <- intersect(HM450K_ProbeSet$probeID, rownames(BRCA_CL_DNAm))
@@ -994,8 +980,8 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
     geom_point(size = 5, alpha = 1) + scale_color_manual("Subtype", values = annot_cols$Subtypes) +
     scale_shape_manual(values = c(8, 18)) + theme_bw(20) +
     xlab(paste0("PC1 (", Propf_dnam[1], "%)")) + ylab(paste0("PC2 (", Propf_dnam[2], "%)"))
-  ggsave(file.path(out_dir, "SupFig4B_DNAm_pca_subtypes.pdf"), plt, width = 7, height = 5)
-  message("  ✓ SupFig 4B: DNAm PCA saved\n")
+  supfig4b_dnam_pca <- plt
+  message("  ✓ SupFig 4B: supfig4b_dnam_pca object created (saved in Main_Data_Analysis.Rmd)\n")
   
   # ---- Sankey (SupFig 2C, 3C, 4C) ----
   cl_levels <- rev(c("MDAMB134VI", "MDAMB330", "SUM44PE", "CAMA1", "BCK4", "HCC2185", "IPH926", "UACC3133",
@@ -1012,8 +998,7 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
     scale_fill_manual("Molecular Subtypes", values = c(annot_cols$PAM50, annot_cols$Subtypes)) +
     theme_sankey(base_size = 15) + xlab("")
   
-  ggsave(file.path(out_dir, "SupFig2C_RNA_ims.pdf"), rna_ims, width = 7, height = 5)
-  message("  ✓ SupFig 2C: mRNA–ims Sankey saved")
+  message("  ✓ SupFig 2C: rna_ims object created (saved in Main_Data_Analysis.Rmd)")
   
   df_rppa <- CL_Annots %>% filter(Study == "ICLE") %>% dplyr::select(`RPPA Subtypes`, TopCall) %>%
     make_long(`RPPA Subtypes`, TopCall) %>% drop_na(node) %>%
@@ -1023,8 +1008,7 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
     geom_sankey_label(size = 4, color = 1, fill = "white", space = 0.6) +
     scale_fill_manual("Molecular Subtypes", values = c(annot_cols$PAM50, annot_cols$Subtypes)) +
     theme_sankey(base_size = 15) + xlab("")
-  ggsave(file.path(out_dir, "SupFig3C_RPPA_ims.pdf"), rppa_sankey, width = 7, height = 5)
-  message("  ✓ SupFig 3C: RPPA–ims Sankey saved")
+  message("  ✓ SupFig 3C: rppa_sankey object created (saved in Main_Data_Analysis.Rmd)")
   
   df_dnam <- CL_Annots %>% filter(Study == "ICLE") %>% dplyr::select(`DNAm Subtypes`, TopCall) %>%
     make_long(`DNAm Subtypes`, TopCall) %>% drop_na(node) %>%
@@ -1034,15 +1018,12 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
     geom_sankey_label(size = 4, color = 1, fill = "white", space = 0.6) +
     scale_fill_manual("Molecular Subtypes", values = c(annot_cols$PAM50, annot_cols$Subtypes)) +
     theme_sankey(base_size = 15) + xlab("")
-  ggsave(file.path(out_dir, "SupFig4C_DNAm_ims.pdf"), dnam_sankey, width = 7, height = 5)
-  message("  ✓ SupFig 4C: DNAm–ims Sankey saved\n")
+  message("  ✓ SupFig 4C: dnam_sankey object created (saved in Main_Data_Analysis.Rmd)\n")
   
   
   
   # Fig 1B: Multiomics subtypes Sankey (mRNA -> RPPA -> DNAm)
-  message("\n========================================")
-  message("4. Fig 1B: Multiomics Sankey")
-  message("========================================\n")
+  message("\n  ── Step 4/5: Fig 1B multiomics Sankey ──")
   cl_levels_fig1b <- rev(c("MDAMB134VI", "MDAMB330", "SUM44PE", "CAMA1", "BCK4",
                            "HCC2185", "IPH926", "UACC3133", "HCC2218", "MDAMB453", "ZR7530", "WCRC25",
                            "OCUBM", "600MPE", "SKBR3", "MDAMB468", "HCC1187", "Lum", "LumA", "LumB",
@@ -1064,9 +1045,7 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
     theme_sankey(base_size = 15) + xlab("")
   
   
-  message("\n========================================")
-  message("5. Fig 1C: SET heatmap")
-  message("========================================\n")
+  message("\n  ── Step 5/5: Fig 1C SET heatmap ──")
   
   sample_ids <- subset(CL_Annots, Study == "ICLE")$Name
   set_res <- generate_SET_score_heatmap(BRCA_CL_EXP, SET_sig = NULL, sample_ids, CL_Annots, BRCA_CL_RPPA, annot_cols, random_seed = 123)
@@ -1077,8 +1056,19 @@ run_subtyping_and_set_analysis <- function(output_dir = NULL) {
               sep = "\t", col.names = NA
   )
   
-  assign("fig1b_sankey", fig1b_sankey, envir = .GlobalEnv)
-  assign("fig1c_setheatmap", fig1c_setheatmap, envir = .GlobalEnv)
+  # SupFig 2–4 objects: assigned to GlobalEnv for saving/display in Main_Data_Analysis.Rmd
+  assign("mRNA_sim_HT",        mRNA_sim_HT,        envir = .GlobalEnv)
+  assign("supfig2b_mRNA_pca",  supfig2b_mRNA_pca,  envir = .GlobalEnv)
+  assign("rna_ims",            rna_ims,             envir = .GlobalEnv)
+  assign("rppa_sim_HT",        rppa_sim_HT,        envir = .GlobalEnv)
+  assign("supfig3b_rppa_pca",  supfig3b_rppa_pca,  envir = .GlobalEnv)
+  assign("rppa_sankey",        rppa_sankey,         envir = .GlobalEnv)
+  assign("dnam_sim_HT",        dnam_sim_HT,        envir = .GlobalEnv)
+  assign("supfig4b_dnam_pca",  supfig4b_dnam_pca,  envir = .GlobalEnv)
+  assign("dnam_sankey",        dnam_sankey,         envir = .GlobalEnv)
+  # Fig 1B and 1C objects
+  assign("fig1b_sankey",       fig1b_sankey,        envir = .GlobalEnv)
+  assign("fig1c_setheatmap",   fig1c_setheatmap,    envir = .GlobalEnv)
 
   message("═══════════════════════════════════════════════════════")
   message("  MOLECULAR SUBTYPING COMPLETE")

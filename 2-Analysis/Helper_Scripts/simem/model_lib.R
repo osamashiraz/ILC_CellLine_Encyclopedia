@@ -2,7 +2,7 @@
 ## as noted below.
 ##================================================================##
 ###  In longer simulations, aka computer experiments,		 ###
-###  you may want to						 ###
+###  it may be useful to					 ###
 ###  1) catch all errors and warnings (and continue)		 ###
 ###  2) store the error or warning messages			 ###
 ###								 ###

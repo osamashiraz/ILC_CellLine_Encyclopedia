@@ -23,6 +23,7 @@
 #   - SupFig8A-D: Plot objects (assigned to .GlobalEnv)
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 if (!exists("DIRS", envir = .GlobalEnv)) {

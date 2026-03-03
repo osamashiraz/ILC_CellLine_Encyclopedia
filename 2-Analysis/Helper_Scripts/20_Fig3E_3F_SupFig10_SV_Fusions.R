@@ -1,5 +1,5 @@
 # ==============================================================================
-# Script 21: Fig 3E, 3F & SupFig 10 - SV Fusions Analysis
+# Script 20: Fig 3E, 3F & SupFig 10 - SV Fusions Analysis
 # ==============================================================================
 # Description: Identifies and visualizes gene fusions from Bionano structural
 #              variations. Generates functional fusion heatmaps and circos plots
@@ -27,6 +27,7 @@
 #   - recurring_gene_circos: List of circos plots for top recurring genes
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 # ==============================================================================

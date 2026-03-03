@@ -1,5 +1,5 @@
 # ==============================================================================
-# Script 22: Fig 4 & SupFig 11 - DNA Methylation Alterations (DMI, ILC vs NST)
+# Script 21: Fig 4 & SupFig 11 - DNA Methylation Alterations (DMI, ILC vs NST)
 # ==============================================================================
 # Description: Analyzes DNA methylation instability (DMI) and generates
 #              SupFig 11 and Fig 4A-D showing DNAm alterations across tissue types
@@ -29,6 +29,7 @@
 #   - TCGA_DNAm_Regulated_Genes.csv
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 # ------------------------------------------------------------------------------

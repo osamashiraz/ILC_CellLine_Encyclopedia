@@ -1,5 +1,5 @@
 # ==============================================================================
-# Script 24: Figure 6 - Patient Signatures & Resemblance Scores
+# Script 23: Figure 6 - Patient Signatures & Resemblance Scores
 # ==============================================================================
 # Description: Generates ILC vs NST multi-omic signatures from TCGA patient
 #              tumors and calculates cell-line resemblance scores. Compares ICLE
@@ -37,6 +37,7 @@
 #   - Assigned to .GlobalEnv: cn_sig_ht, mut_sig_ht, dnam_sign_ht, rna_sign_ht, rppa_sig_ht, fig6_resemblance_ht
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 # ------------------------------------------------------------------------------
@@ -812,7 +813,7 @@ message("Figure 6: Resemblance scores heatmap")
 message("========================================")
 
 # Prepare matrix for heatmap (filter to ICLE cell lines with "-I" suffix)
-mat <- as.matrix(molecular_resemblance_scores[, c("CNV", "MUT", "DNAm", "RPPA", "RNA", "CONSENSUS")])
+mat <- as.matrix(molecular_resemblance_scores[, c("CNV", "MUT", "DNAm", "RNA", "RPPA", "CONSENSUS")])
 mat <- mat[grep("-I", rownames(mat)), ]
 
 # Order cell lines by consensus score

@@ -20,6 +20,7 @@
 #   - CDH1 mutation tables formatted for Protein Paint
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 if (!exists("DIRS", envir = .GlobalEnv)) {

@@ -10,6 +10,7 @@
 #        → 11 (Fig2F allele freq) → 12 (Fig2G cell/tumor barplots) → 13 (Fig2H landscape)
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 if (!exists("DIRS", envir = .GlobalEnv)) {
@@ -17,9 +18,6 @@ if (!exists("DIRS", envir = .GlobalEnv)) {
 }
 
 helpers <- DIRS$scripts$helpers
-message("═══════════════════════════════════════════════════════")
-message("  Figure 2C-H – running all panels in order")
-message("═══════════════════════════════════════════════════════\n")
 
 suppressWarnings({
   source(file.path(helpers, "08_Fig2C_CDH1_exonic_deletions.R"), chdir = TRUE)

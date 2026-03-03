@@ -1,129 +1,145 @@
-ILC Cell Line Encylopedia (ICLE) Data Analysis
+ILC Cell Line Encyclopedia (ICLE) Data Analysis
 ================
-Osama Shiraz Shah
-2026-02-18
 
-- [ILC Cell Line Encylopedia (ICLE) Data Analysis](#ilc-cell-line-encylopedia-icle-data-analysis)
-- [Publication and Data Availability](#publication-and-data-availability)
-- [Analysis overview and downstream workflow](#analysis-overview-and-downstream-workflow)
-- [Future directions](#future-directions)
+**Author:** Osama Shiraz Shah
+<br>
+
+**Last Updated:** March 03, 2026
+
+<br>
+
+**Table of Content:**
+
+- [ILC Cell Line Encyclopedia (ICLE) Data Analysis](#ilc-cell-line-encyclopedia-icle-data-analysis)
+- [Associated Publication and Data Availability](#associated-publication-and-data-availability)
 - [1. Preparation](#1-preparation)
-  - [Analysis Options](#analysis-options)
   - [Setup Environment](#setup-environment)
   - [Load All Data](#load-all-data)
 - [2. Manuscript Figures](#2-manuscript-figures)
-  - [a. ICLE Characterization \& Molecular Subtyping](#a-icle-characterization--molecular-subtyping)
-    - [SupFig 1: Genotypic Similarity](#supfig-1-genotypic-similarity)
+  - [a. Multi-omic Characterization of ILC Cell Lines and Genomic Fidelity to Human ILC](#a-multi-omic-characterization-of-ilc-cell-lines-and-genomic-fidelity-to-human-ilc)
+    - [SupFig 1: Genotypic Similarity With Public Datasets](#supfig-1-genotypic-similarity-with-public-datasets)
     - [Perform Molecular Subtyping](#perform-molecular-subtyping)
-    - [Figure 1B: Overview of Multiomics Subtypes](#figure-1b-overview-of-multiomics-subtypes)
+    - [SupFig 2: RNA-seq Consensus Clustering](#supfig-2-rna-seq-consensus-clustering)
+    - [SupFig 3: RPPA Consensus Clustering](#supfig-3-rppa-consensus-clustering)
+    - [SupFig 4: DNAm Consensus Clustering](#supfig-4-dnam-consensus-clustering)
+    - [Figure 1B: Overview of Multiomic Subtypes](#figure-1b-overview-of-multiomic-subtypes)
     - [Figure 1C: SET Signature](#figure-1c-set-signature)
     - [Figure 1D: Multiomics Overview](#figure-1d-multiomics-overview)
-    - [Fig 1E: IGV Plot](#fig-1e-igv-plot)
-    - [Figure 1F: Alteration Frequency Barplots](#figure-1f-alteration-frequency-barplots)
+    - [Fig 1E: IGV Plot (Patient Tumors vs Cell Lines)](#fig-1e-igv-plot-patient-tumors-vs-cell-lines)
+    - [Figure 1F: Alteration Frequency Barplots (Patient Tumors vs Cell Lines)](#figure-1f-alteration-frequency-barplots-patient-tumors-vs-cell-lines)
     - [SupFig 5: Key ILC vs NST Alterations (Patient Tumors)](#supfig-5-key-ilc-vs-nst-alterations-patient-tumors)
     - [SupFig 6: Alterations in Key Pathways (ICLE)](#supfig-6-alterations-in-key-pathways-icle)
-  - [b. CDH1 Alteration Landscape](#b-cdh1-alteration-landscape)
-    - [Figure 2B: Novel SV in ICLE](#figure-2b-novel-sv-in-icle)
+  - [b. Recapitulation of the CDH1 Alteration Landscape in ILC Cell Line Models](#b-recapitulation-of-the-cdh1-alteration-landscape-in-ilc-cell-line-models)
+    - [Figure 2B: Novel SVs in CDH1](#figure-2b-novel-svs-in-cdh1)
     - [Figure 2C: Exonic Deletions in ICLE](#figure-2c-exonic-deletions-in-icle)
-    - [Figure 2D: CDH1 Alterations (Foundation Medicine Dataset)](#figure-2d-cdh1-alterations-foundation-medicine-dataset)
-    - [Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs Cell Lines)](#figure-2e-cdh1-mutation-lollipop-plots-tcga-patient-tumors-vs-cell-lines)
+    - [Figure 2D: CDH1 Alterations in Local Recurrences and Distant Metastases (Patient Tumors)](#figure-2d-cdh1-alterations-in-local-recurrences-and-distant-metastases-patient-tumors)
+    - [Figure 2E: CDH1 Mutation Lollipop Plots (Patient Tumors vs Cell Lines)](#figure-2e-cdh1-mutation-lollipop-plots-patient-tumors-vs-cell-lines)
     - [Figure 2F: CDH1 Allele Frequency in Cell Lines](#figure-2f-cdh1-allele-frequency-in-cell-lines)
-    - [Figure 2G: CDH1 Alterations (Patient Tumors vs Cell Lines)](#figure-2g-cdh1-alterations-patient-tumors-vs-cell-lines)
-    - [Figure 2H: CDH1 Molecular Alteration Landscape Summary](#figure-2h-cdh1-molecular-alteration-landscape-summary)
-  - [c. SV Analysis](#csv-analysis)
+    - [Figure 2G: CDH1 Alteration Type Frequencies (Patient Tumors vs Cell Lines)](#figure-2g-cdh1-alteration-type-frequencies-patient-tumors-vs-cell-lines)
+    - [Figure 2H: CDH1 Molecular Alteration Landscape (Patient Tumors vs Cell Lines)](#figure-2h-cdh1-molecular-alteration-landscape-patient-tumors-vs-cell-lines)
+  - [c. Optical Genome Mapping Reveals Structural Variations, Chromothripsis and Functional Fusions](#coptical-genome-mapping-reveals-structural-variations-chromothripsis-and-functional-fusions)
     - [Figure 3A (left): ICLE Genomic Instability Metrics](#figure-3a-left-icle-genomic-instability-metrics)
-    - [Figure 3A (right): ICLE SV Overview](#figure-3a-right-icle-sv-overview)
+    - [Figure 3A (right): ICLE SV Type Distribution](#figure-3a-right-icle-sv-type-distribution)
     - [Figure 3B: Chromosomal Topography of Translocation Breakpoints](#figure-3b-chromosomal-topography-of-translocation-breakpoints)
     - [Figure 3C: Chromothripsis Landscape](#figure-3c-chromothripsis-landscape)
-    - [Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and ZR7530](#figure-3d-generate-cricos-plots-for-bck4-600mpe-hcc2185-and-zr7530)
-    - [Figure 3E: Fusions Distribution in Cell Lines vs Patient Tumors](#figure-3e-fusions-distribution-in-cell-lines-vs-patient-tumors)
+    - [Figure 3D: OGM Circos Plots — BCK4, 600MPE, HCC2185, ZR7530](#figure-3d-ogm-circos-plots--bck4-600mpe-hcc2185-zr7530)
+    - [Figure 3E: Fusion Distribution (Patient Tumors vs Cell Lines)](#figure-3e-fusion-distribution-patient-tumors-vs-cell-lines)
     - [Figure 3F: GOE and LOE Functional Fusions Circos](#figure-3f-goe-and-loe-functional-fusions-circos)
-    - [SupFig 8A: Mutation vs SV Count, Size](#supfig-8a-mutation-vs-sv-count-size)
-    - [SupFig 8B: TMB vs SV Burden](#supfig-8b-tmb-vs-sv-burden)
-    - [SupFig 8C: SV~Chr Size - SV Count by Chr](#supfig-8c-svchr-size---sv-count-by-chr)
-    - [SupFig 8D: Mutation ~ Chr Size - Mutation Count by Chr](#supfig-8d-mutation--chr-size---mutation-count-by-chr)
-    - [SupFig 9: Generate Cricos Plots for all ICLE cell lines](#supfig-9-generate-cricos-plots-for-all-icle-cell-lines)
-    - [SupFig 10: Functional Fusions](#supfig-10-functional-fusions)
-  - [d. DNAm Analysis](#ddnam-analysis)
-      - [SupFig 11: DNAm Index by Across Histological and PAM50 Subtypes](#supfig-11-dnam-index-by-across-histological-and-pam50-subtypes)
-      - [Figure 4A: DNAm Index by Specimen Type](#figure-4a-dnam-index-by-specimen-type)
-      - [Figure 4B: DNAm-mRNA Alterations](#figure-4b-dnam-mrna-alterations)
-      - [Figure 4C: Consensus DNAm-mRNA Alterations Heatmap](#figure-4c-consensus-dnam-mrna-alterations-heatmap)
-      - [Figure 4D: MSI1 \& TFAP2B Barplots](#figure-4d-msi1--tfap2b-barplots)
-  - [e. RNAi Analysis](#e-rnai-analysis)
-    - [Figure 5B: Consensus Differential Dependencies](#figure-5b-consensus-differential-dependencies)
+    - [SupFig 8A: Mutation Count vs SV Count and SV Size](#supfig-8a-mutation-count-vs-sv-count-and-sv-size)
+    - [SupFig 8B: TMB vs SV Burden (With and Without Outliers)](#supfig-8b-tmb-vs-sv-burden-with-and-without-outliers)
+    - [SupFig 8C: SV Count per Chromosome](#supfig-8c-sv-count-per-chromosome)
+    - [SupFig 8D: Somatic Mutation Count per Chromosome](#supfig-8d-somatic-mutation-count-per-chromosome)
+    - [SupFig 9: OGM Circos Plots](#supfig-9-ogm-circos-plots)
+    - [SupFig 10: Functional Fusions Landscape](#supfig-10-functional-fusions-landscape)
+  - [d. Global Methylation Instability and Epigenetic Regulation of ILC Driver Genes](#dglobal-methylation-instability-and-epigenetic-regulation-of-ilc-driver-genes)
+    - [SupFig 11: DNAm Instability Score (DMI) by PAM50 Subtype and Histology](#supfig-11-dnam-instability-score-dmi-by-pam50-subtype-and-histology)
+    - [Figure 4A: DNAm Instability Score (DMI) by Specimen Type](#figure-4a-dnam-instability-score-dmi-by-specimen-type)
+    - [Figure 4B: Consensus DNAm–mRNA Alterations (Patient Tumors and Cell Lines)](#figure-4b-consensus-dnammrna-alterations-patient-tumors-and-cell-lines)
+    - [Figure 4C: Consensus DNAm-Regulated Genes](#figure-4c-consensus-dnam-regulated-genes)
+    - [Figure 4D: Top Consensus DNAm-Regulated Genes — Expression and Methylation Barplots](#figure-4d-top-consensus-dnam-regulated-genes--expression-and-methylation-barplots)
+  - [e. Identification of ILC-Specific Gene Dependencies and Nomination of Druggable Targets](#e-identification-of-ilc-specific-gene-dependencies-and-nomination-of-druggable-targets)
+    - [Figure 5A: ILC-Specific Dependency Analysis — Study Schematic](#figure-5a-ilc-specific-dependency-analysis--study-schematic)
+    - [Figure 5B: Consensus ILC-Specific Differential Dependencies](#figure-5b-consensus-ilc-specific-differential-dependencies)
     - [SupFig 12: Consensus Differential Dependencies Heatmap](#supfig-12-consensus-differential-dependencies-heatmap)
-    - [Figure 5C: Over represented Pathways](#figure-5c-over-represented-pathways)
-    - [Figure 5D: Pathway level Dependencies Heatmap](#figure-5d-pathway-level-dependencies-heatmap)
-    - [Figure 5E: Top Druggable Dependencies Heatmap](#figure-5e-top-druggable-dependencies-heatmap)
-  - [f. Cell Line Scoring](#fcell-line-scoring)
-    - [Figure 6: CL-Tumor Concordance/Resemblance Score](#figure-6-cl-tumor-concordanceresemblance-score)
+    - [Figure 5C: KEGG Pathway Over-Representation in ILC-Specific Dependency Genes](#figure-5c-kegg-pathway-over-representation-in-ilc-specific-dependency-genes)
+    - [Figure 5D: Pathway-Level Dependency Scores](#figure-5d-pathway-level-dependency-scores)
+    - [Figure 5E: Druggable ILC Dependencies — Prioritized Therapeutic Targets](#figure-5e-druggable-ilc-dependencies--prioritized-therapeutic-targets)
+  - [f. Integrative Multi-omic Benchmarking Framework for ILC Model Selection](#fintegrative-multi-omic-benchmarking-framework-for-ilc-model-selection)
+    - [Figure 6: CL–tumor Concordance / Molecular Resemblance Scores](#figure-6-cltumor-concordance--molecular-resemblance-scores)
 
-# Publication and Data Availability
+# Associated Publication and Data Availability
 
-This analysis accompanies the ICLE manuscript (PubMed: )
+This bioinformatics pipeline accompanies the manuscript: *“Multi-omic
+characterization of the ILC cell line encyclopedia (ICLE) defines new
+models for biomarker discovery and therapeutic exploration”*.
 
-Raw sequence files are deposited under Bioproject PRJNA1406296.
+To reproduce all analyses, clone this GitHub repository and download the
+ICLE and external datasets from
+[Zenodo](https://zenodo.org/records/18686750). Extract the contents of
+each `.tar.gz` archive directly into the repository’s `1-Datasets/`
+folder, then follow the instructions in `2-Analysis/README.md`.
 
-Processed data and/or analysis code will be deposited under ZENODO
-(<https://zenodo.org/record/XXXXX>).
+<br>
 
-ICLE and Integrated BRCA cell line datasets generated in this study are
-uploaded to local instance of cBioPortal for data sharing and analysis:
+This R Markdown document orchestrates the complete multi-omics analysis
+pipeline for the ICLE project, from data loading through figure
+generation.
+
+**`2-Analysis/` directory layout:**
+
+- **`config.R`** – Defines project root and all path variables (`DIRS`,
+  `FILES`). Must be sourced from `2-Analysis/`.
+- **`requirements.R`** – Package installation and version checking for
+  all dependencies.
+- **`Helper_Scripts/`** – Contains data-loading modules and per-figure
+  analysis scripts:
+  - *Data loading* (`Data_Loading/`): scripts for loading annotations
+    and data modalities (RPPA, RNA-seq, CNV, SNV, DNAm, SV, external
+    datasets, GAM generation).
+  - *Figure 1*: scripts 01, 02 (sources `03_Fig1C`), 04–07.
+  - *Figure 2*: orchestrator `08_Fig2_CDH1_Alteration_Landscape_All.R`
+    (sources `08_Fig2C` – `13_Fig2H`).
+  - *Figure 3*: orchestrator `14_Fig3_SV_All.R` (sources `14_SupFig8`,
+    15–20; scripts 17–18 are sourced by 19–20).
+  - *Figure 4:* script 21
+  - *Figure 5:* script 22
+  - *Figure 6*: script 23
+- **`README.md`** – Environment setup, package installation, and
+  step-by-step run instructions.
+
+<br>
+
+**Future Directions:**
+
+A dedicated R package and interactive web application are in development
+to provide streamlined access to the cell line model scoring framework
+described in this study.
+
+<br>
+
+**Additional Notes:**
+
+ICLE and integrated BRCA cell line datasets are available through an
+institutional [cBioPortal](https://cbioportal.crc.pitt.edu) instance:
 
 - [ICLE
   Dataset](https://cbioportal.crc.pitt.edu/study/summary?id=ILC_Cell_Line_Encyclopedia)
-  (N=17)
+  (N = 17 cell lines)
 
-- [Integrated BRCA Cell
-  Line](https://cbioportal.crc.pitt.edu/study/summary?id=BRCA_Cell_Line_Integrated)
-  (ICLE Integrated with Public Datasets, N=56)
+- [Integrated BRCA Cell Line
+  Dataset](https://cbioportal.crc.pitt.edu/study/summary?id=BRCA_Cell_Line_Integrated)
+  (ICLE integrated with public datasets, N = 56 cell lines)
 
-# Analysis overview and downstream workflow
-
-This R Markdown document orchestrates the complete multiomics analysis
-pipeline for the ICLE project.
-
-**2-Analysis/ layout:**
-
-- **config.R** – Project root, `DIRS`, `FILES`; run from `2-Analysis/`.
-- **Helper_Scripts/** – Data loading
-  (`Data_Loading/00_load_annotations.R`, `01_load_all_data.R`, 02–09)
-  and figure scripts. Fig 1: 01, 02 (sources 03_Fig1C), 04–07. Fig 2:
-  orchestrator `08_Fig2_CDH1_Alteration_Landscape_All.R` (sources
-  08_Fig2C–13_Fig2H). Fig 3: orchestrator `14_Fig3_SV_All.R` (sources
-  14_SupFig8, 15–20; 17–18 sourced by 19–20). Fig 4–6: 21, 22, 23.
-- **SCRIPT_INDEX.md** – Full script index and data-load order.
-- **Main_Data_Analysis.Rmd** – Master document: sources config and
-  helpers, loads data once, then runs figure scripts in order and writes
-  outputs to `3-Results/`.
-
-**Downstream flow:**
-
-1.  **Preparation** – Options, `config.R`, `Helper_Functions.R`, then
-    `01_load_all_data.R` and `load_all_icle_data(load_external = TRUE)`
-    to load ICLE + external data.
-2.  **Manuscript figures (in order)** – Source helper scripts 01–23;
-    each chunk produces one or more figures and may save to
-    `DIRS$results` / `DIRS$results_sub`. Figure 1 (SupFig 1, subtyping,
-    SupFig 2–6, Fig 1B–1F); Figure 2 (Fig 2C–2H, CDH1); Figure 3 (SupFig
-    8, Fig 3A–3F, SupFig 9–10); Figure 4 & SupFig 11 (DNAm/DMI); Figure
-    5 (RNAi dependencies); Figure 6 (patient signatures, resemblance
-    scores).
-3.  **Outputs** – All written under `3-Results/` and subfolders
-    (e.g. molecular_subtyping, cdh1, ogm, dna_methylation, dependencies,
-    molecular_resemblance).
-
-# Future directions
-
-*Coming soon:* A package and/or web application to provide easy access
-to the Cell Line model scoring framework described in this study.
+Raw sequencing files are deposited at NCBI under [BioProject
+PRJNA1406296](https://www.ncbi.nlm.nih.gov/bioproject/PRJNA1406296).
+Processed data are deposited at
+[Zenodo](https://zenodo.org/records/18686750).
 
 ------------------------------------------------------------------------
 
 # 1. Preparation
 
-## Analysis Options
+## Setup Environment
 
 Set these to `TRUE` to reduce console noise during knitting. Set to
 `FALSE` to show package startup messages and warnings.
@@ -134,17 +150,8 @@ SUPPRESS_WARNINGS <- TRUE       # FALSE = show warnings
 SUPPRESS_FEATURE_SELECTION_PLOTS <- TRUE  # FALSE = show intermediate plots from FSbyMAD/FSbyVar
 SUPPRESS_CONSENSUS_CLUSTER_PLOTS <- TRUE  # FALSE = show intermediate plots from ConsensusClusterPlus
 
-knitr::opts_chunk$set(
-  dev = "png",
-  dpi = 300,
-  fig.width = 6,
-  fig.height = 4,       
-  out.width = "70%", 
-  fig.align = "center"
-)
+knitr::opts_chunk$set(dev = "png", dpi = 300, fig.width = 6, fig.height = 4, out.width = "70%", fig.align = "center")
 ```
-
-## Setup Environment
 
 ``` r
 # Load configuration
@@ -167,15 +174,14 @@ suppressPackageStartupMessages(suppressWarnings(source(file.path(DIRS$scripts$he
 
 ## Load All Data
 
-This section uses the refactored modular data loading system to load all
-ICLE and external datasets.
+Loads all ICLE and external datasets into the R session via the modular
+`Data_Loading/` scripts.
 
 ``` r
 # Load all ICLE data using the master orchestrator
 source(file.path(DIRS$scripts$helpers, "Data_Loading", "01_load_all_data.R"))
 
 # Load all data (ICLE + external datasets)
-# Note: All datasets are loaded directly into global environment
 load_all_icle_data(load_external = TRUE, verbose = TRUE)
 ```
 
@@ -227,6 +233,8 @@ load_all_icle_data(load_external = TRUE, verbose = TRUE)
 
     ## STEP 3/8: Loading Copy Number Variation (CytoSNP) Data...
 
+    ## Loading CNV data (missing objects: BRCA_CL_GISTIC)...
+
     ## 
     ##  Loading ICLE SNP Dataset
     ##  Loading ICLE Gene level LogRR Dataset
@@ -267,7 +275,11 @@ load_all_icle_data(load_external = TRUE, verbose = TRUE)
 
     ##   ✓ CNV data loaded successfully
 
-    ##   ✗ Error loading CNV: object 'required_objects' not found
+    ##   ✓ Loaded BRCA_CL_GISTIC: 23109 genes x 95 samples
+
+    ##   Missing objects: BRCA_CL_GISTIC
+
+    ##   ✓ CNV data loaded
 
     ## STEP 4/8: Loading Single Nucleotide Variation (WES) Data...
 
@@ -466,6 +478,8 @@ load_all_icle_data(load_external = TRUE, verbose = TRUE)
 
     ##   ✓ RNASEQ              : SUCCESS
 
+    ##   ✓ CNV                 : SUCCESS
+
     ##   ✓ SNV                 : SUCCESS
 
     ##   ✓ DNAM                : SUCCESS
@@ -478,7 +492,7 @@ load_all_icle_data(load_external = TRUE, verbose = TRUE)
 
     ## 
 
-    ## Total Time: 0.81 minutes
+    ## Total Time: 0.82 minutes
 
     ## 
     ## Key Objects Available in Global Environment:
@@ -501,11 +515,13 @@ load_all_icle_data(load_external = TRUE, verbose = TRUE)
 
 # 2. Manuscript Figures
 
-## a. ICLE Characterization & Molecular Subtyping
+## a. Multi-omic Characterization of ILC Cell Lines and Genomic Fidelity to Human ILC
 
-### SupFig 1: Genotypic Similarity
+### SupFig 1: Genotypic Similarity With Public Datasets
 
-Compare ICLE genotypes with Marcotte et al. dataset.
+Pairwise SNP-based genotype similarity heatmap confirming unique cell
+line identities and verifying the absence of cross-contamination between
+ICLE and the Marcotte et al. panel.
 
 ``` r
 source(file.path(DIRS$scripts$helpers, "01_SupFig1_Genotype_Similarity.R"), chdir = TRUE)
@@ -552,26 +568,31 @@ dev.off()
 draw(supFig_1, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/supfig1_genotype-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig1_genotype-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### Perform Molecular Subtyping
 
-Run molecular subtyping (PAM50, mRNA/RPPA/DNAm consensus), SupFig 2-4
-(heatmaps, PCAs, Sankey), Fig 1C (SET signature), and Fig 1B (multiomics
-Sankey) via a single script. Assigns `fig1b_sankey` and
-`fig1c_setheatmap` to the session.
+Performs all molecular subtyping and produces SupFigs 2–4 (Clustering
+heatmaps), Fig 1B (Sankey), and Fig 1C (SET heatmap) in one orchestrator
+script. Three independent approaches are used:
+
+1.  **Intrinsic subtyping** — multi-algorithm consensus using
+    BreastSubtypeR (PAM50, SCMGENE, SSP, AIMS, GGI); majority-vote
+    “TopCall” assignment.
+2.  **Data-driven multi-omic consensus clustering** —
+    ConsensusClusterPlus on the top 6,000 MAD-variable genes (RNA), top
+    50 variable proteins (RPPA), and 6,000 variable probes (DNAm), each
+    yielding an independent cluster solution consolidated into four core
+    subtypes (Luminal, Luminal/HER2, HER2-enriched, Basal).
+3.  **SET signature** — endocrine therapy sensitivity inferred from
+    published SET ER+/ER− gene modules (Symmans et al. 2010).
 
 ``` r
-source(file.path(DIRS$scripts$helpers, "02_Fig1_SupFig2_3_4_Molecular_Subtyping.R"), 
-       chdir = TRUE)
+source(file.path(DIRS$scripts$helpers, "02_Fig1_SupFig2_3_4_Molecular_Subtyping.R"), chdir = TRUE)
 ```
 
     ## 
-    ## ========================================
-
-    ## 1. Molecular subtyping
-
-    ## ========================================
+    ##   ── Step 1/5: molecular subtyping pipeline ──
 
     ## ═══════════════════════════════════════════════════════
 
@@ -622,52 +643,36 @@ source(file.path(DIRS$scripts$helpers, "02_Fig1_SupFig2_3_4_Molecular_Subtyping.
     ## ═══════════════════════════════════════════════════════
 
     ## 
-    ## ========================================
-
-    ## 2. ERpos/neg and SET signature scores
-
-    ## ========================================
+    ##   ── Step 2/5: ER/HER2 status + SET scores ──
 
     ## 
-    ## ========================================
-
-    ## 3. SupFig 2-4: Multi-omic subtypes (heatmaps, PCAs, Sankey)
-
-    ## ========================================
+    ##   ── Step 3/5: building SupFig 2–4 heatmap, PCA, and Sankey objects ──
 
     ##   ✓ ims entropy heatmap saved
 
-    ##   ✓ SupFig 2A: mRNA heatmap saved
+    ##   ✓ SupFig 2A: mRNA_sim_HT object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 2B: mRNA PCA saved
+    ##   ✓ SupFig 2B: supfig2b_mRNA_pca object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 3A: RPPA heatmap saved
+    ##   ✓ SupFig 3A: rppa_sim_HT object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 3B: RPPA PCA saved
+    ##   ✓ SupFig 3B: supfig3b_rppa_pca object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 4A: DNAm heatmap saved
+    ##   ✓ SupFig 4A: dnam_sim_HT object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 4B: DNAm PCA saved
+    ##   ✓ SupFig 4B: supfig4b_dnam_pca object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 2C: mRNA–ims Sankey saved
+    ##   ✓ SupFig 2C: rna_ims object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 3C: RPPA–ims Sankey saved
+    ##   ✓ SupFig 3C: rppa_sankey object created (saved in Main_Data_Analysis.Rmd)
 
-    ##   ✓ SupFig 4C: DNAm–ims Sankey saved
-
-    ## 
-    ## ========================================
-
-    ## 4. Fig 1B: Multiomics Sankey
-
-    ## ========================================
+    ##   ✓ SupFig 4C: dnam_sankey object created (saved in Main_Data_Analysis.Rmd)
 
     ## 
-    ## ========================================
+    ##   ── Step 4/5: Fig 1B multiomics Sankey ──
 
-    ## 5. Fig 1C: SET heatmap
-
-    ## ========================================
+    ## 
+    ##   ── Step 5/5: Fig 1C SET heatmap ──
 
     ##   Step 1/4: Loading SET signature genes...
 
@@ -689,10 +694,114 @@ source(file.path(DIRS$scripts$helpers, "02_Fig1_SupFig2_3_4_Molecular_Subtyping.
 
     ## ═══════════════════════════════════════════════════════
 
-### Figure 1B: Overview of Multiomics Subtypes
+### SupFig 2: RNA-seq Consensus Clustering
 
-Sankey diagram (produced by the subtyping script above). Save to PDF and
-display.
+Heatmap showing consensus clustering solution for top variable RNA
+features in integrated BRCA dataset. Heatmap annotations include
+multi-algorithm intrinsic molecular subtype (IMS) top calls, ER+ gene
+module scores and HER2 mRNA levels.
+
+``` r
+pdf(file.path(DIRS$results_sub$molecular_subtyping, "SupFig2A_mRNA_subtypes.pdf"), width = 10, height = 8)
+draw(mRNA_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
+dev.off()
+```
+
+    ## quartz_off_screen 
+    ##                 2
+
+``` r
+draw(mRNA_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
+```
+
+<img src="Index/figure-gfm/supfig2a_rna_ht-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+PCA plot of top variable RNA features showing cell clustering/similarity
+annotated by molecular subtypes
+
+``` r
+ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig2B_mRNA_pca_subtypes.pdf"), supfig2b_mRNA_pca, width = 7, height = 5)
+supfig2b_mRNA_pca
+```
+
+<img src="Index/figure-gfm/supfig2b_rna_pca-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+Sankey plot showing agreement between RNA molecular subtypes and (IMS)
+top calls
+
+``` r
+ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig2C_RNA_ims.pdf"), rna_ims, width = 7, height = 5)
+rna_ims
+```
+
+<img src="Index/figure-gfm/supfig2c_rna_ims-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+### SupFig 3: RPPA Consensus Clustering
+
+``` r
+pdf(file.path(DIRS$results_sub$molecular_subtyping, "SupFig3A_RPPA_subtypes.pdf"), width = 10, height = 8)
+draw(rppa_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
+dev.off()
+```
+
+    ## quartz_off_screen 
+    ##                 2
+
+``` r
+draw(rppa_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
+```
+
+<img src="Index/figure-gfm/supfig3a_rppa_ht-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+``` r
+ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig3B_RPPA_pca_subtypes.pdf"), supfig3b_rppa_pca, width = 7, height = 5)
+supfig3b_rppa_pca
+```
+
+<img src="Index/figure-gfm/supfig3b_rppa_pca-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+``` r
+ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig3C_RPPA_ims.pdf"), rppa_sankey, width = 7, height = 5)
+rppa_sankey
+```
+
+<img src="Index/figure-gfm/supfig3c_rppa_ims-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+### SupFig 4: DNAm Consensus Clustering
+
+``` r
+pdf(file.path(DIRS$results_sub$molecular_subtyping, "SupFig4A_DNAm_subtypes.pdf"), width = 10, height = 8)
+draw(dnam_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
+dev.off()
+```
+
+    ## quartz_off_screen 
+    ##                 2
+
+``` r
+draw(dnam_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
+```
+
+<img src="Index/figure-gfm/supfig4a_dnam_ht-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+``` r
+ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig4B_DNAm_pca_subtypes.pdf"), supfig4b_dnam_pca, width = 7, height = 5)
+supfig4b_dnam_pca
+```
+
+<img src="Index/figure-gfm/supfig4b_dnam_pca-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+``` r
+ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig4C_DNAm_ims.pdf"), dnam_sankey, width = 7, height = 5)
+dnam_sankey
+```
+
+<img src="Index/figure-gfm/supfig4c_dnam_ims-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+### Figure 1B: Overview of Multiomic Subtypes
+
+Sankey/alluvial diagram showing agreement across the three data-driven
+molecular subtype assignments (RNA, RPPA, DNAm).
 
 ``` r
 ggsave(file.path(DIRS$results_sub$molecular_subtyping, "Fig1B_MolecularSubtypes.pdf"), fig1b_sankey, width = 7, height = 5)
@@ -700,12 +809,13 @@ ggsave(file.path(DIRS$results_sub$molecular_subtyping, "Fig1B_MolecularSubtypes.
 fig1b_sankey
 ```
 
-<img src="index/figure-gfm/fig1b_multiomics_sankey-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1b_multiomics_sankey-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### Figure 1C: SET Signature
 
-`fig1c_setheatmap` is produced by the subtyping script above. Save to
-PDF and display.
+Heatmap of SET (Sensitivity to Endocrine Therapy) ER+ and ER− gene
+module scores (Symmans et al. 2010) across integrated BRCA cell lines,
+stratified by intrinsic subtype.
 
 ``` r
 pdf(file.path(DIRS$results_sub$molecular_subtyping, "Fig1C_SET_Signature.pdf"), width = 8, height = 6)
@@ -720,11 +830,14 @@ dev.off()
 draw(fig1c_setheatmap, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/fig1c_set-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1c_set-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### Figure 1D: Multiomics Overview
 
-Generate comprehensive multiomics heatmap.
+Comprehensive multi-omic overview heatmap summarising key genomic,
+transcriptomic, proteomic, and epigenetic features of ICLE cell lines.
+Features include ER/HER2 status, molecular subtypes, copy number
+alterations, somatic mutations and top variable RPPA/RNA/DNAm features.
 
 ``` r
 source(file.path(DIRS$scripts$helpers, "04_Fig1D_Multiomics_Overview.R"), chdir = T)
@@ -780,8 +893,7 @@ source(file.path(DIRS$scripts$helpers, "04_Fig1D_Multiomics_Overview.R"), chdir 
 
 ``` r
 pdf(file.path(DIRS$results, "Fig1D_Multiome_Overview.pdf"), width = 6, height = 8)
-draw(fig1d_multiomics_overview, merge_legends = TRUE, 
-    annotation_legend_side = "right", heatmap_legend_side = "right")
+  draw(fig1d_multiomics_overview, merge_legends = TRUE, annotation_legend_side = "right", heatmap_legend_side = "right")
 dev.off()
 ```
 
@@ -792,9 +904,15 @@ dev.off()
 fig1d_multiomics_overview
 ```
 
-<img src="index/figure-gfm/fig1d_multiomics-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1d_multiomics-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Fig 1E: IGV Plot
+### Fig 1E: IGV Plot (Patient Tumors vs Cell Lines)
+
+Prepares copy number segmentation files (log R ratio) per ICLE molecular
+subtype for genome-wide CN visualization in the Integrative Genomics
+Viewer (IGV). TCGA primary ILC (n = 127) and MSK metastatic ILC (n =
+202) segment files are also subsetted and exported. These files are
+loaded directly into IGV to produce figure 1E subpanels.
 
 ``` r
 # prepare primary ILC patient tumor CN segments
@@ -827,17 +945,24 @@ sapply(names(BRCA_CL_CN_SEG_subtype), FUN = function(x){
   seg = BRCA_CL_CN_SEG_subtype[[x]]
   x = gsub("[//]", "_", x)
   write.table(seg, file = file.path(DIRS$icle$cytosnp, "3_Segmentation", paste0(x, "_ICLE_CL_LogRR_DNACopy.seg")), row.names = FALSE, quote = FALSE, sep = "\t")
-  1
 })
 ```
 
-    ##      Lum Lum/HER2    Other 
-    ##        1        1        1
+    ## $Lum
+    ## NULL
+    ## 
+    ## $`Lum/HER2`
+    ## NULL
+    ## 
+    ## $Other
+    ## NULL
 
-### Figure 1F: Alteration Frequency Barplots
+### Figure 1F: Alteration Frequency Barplots (Patient Tumors vs Cell Lines)
 
-Compare alteration frequencies across cell lines, primary, and
-metastatic tumors.
+Compares alteration frequencies of ESMO ESCAT-scored actionable genes in
+luminal ICLE cell lines versus TCGA primary ILC and MSK metastatic ILC
+patient tumors. Differences in alteration frequency between groups are
+assessed by two-proportion z-test.
 
 ``` r
 suppressWarnings(source(file.path(DIRS$scripts$helpers, "05_Fig1F_Alteration_barplots.R")))
@@ -915,9 +1040,13 @@ ggsave(filename = output_file, fig1f_alteration_barplot, width = 6, height = 5)
 fig1f_alteration_barplot
 ```
 
-<img src="index/figure-gfm/fig1f_alterations-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1f_alterations-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### SupFig 5: Key ILC vs NST Alterations (Patient Tumors)
+
+Barplot comparing the frequencies of key somatic alterations in ILC
+versus NST primary and metastatic breast cancer patient tumors.
+Statistical comparisons performed using a two-proportion z-test.
 
 ``` r
 source(file.path(DIRS$scripts$helpers, "06_SupFig5_ILC_NST_Alterations.R"), chdir = TRUE)
@@ -937,15 +1066,20 @@ source(file.path(DIRS$scripts$helpers, "06_SupFig5_ILC_NST_Alterations.R"), chdi
 ``` r
 ggsave(file.path(DIRS$results, "SupFig5_BRCA_Tumor_Top_Alterations.pdf"), supfigs5_tumor_alterations, width = 8, height = 5)
 
-write.table(freq_tbl, file.path(DIRS$results, "SupFig5_BRCA_Tumor_Top_Alterations.tsv"),
+write.table(freq_tbl, file.path(DIRS$results, "SupFig5_BRCA_Tumor_Top_Alterations.tsv"),  # source data for SupFig 5
             sep = "\t", quote = FALSE, row.names = FALSE)
 
 supfigs5_tumor_alterations
 ```
 
-<img src="index/figure-gfm/supfig5_ilc_nst-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig5_ilc_nst-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### SupFig 6: Alterations in Key Pathways (ICLE)
+
+Oncoprint summarising the frequency and type of somatic alterations
+across key cancer-relevant signalling pathways (RTK/RAS, PI3K, cell
+cycle, apoptosis, DNA repair, Wnt, TGF-β, epigenetic regulators) in ICLE
+cell lines.
 
 ``` r
 source(file.path(DIRS$scripts$helpers, "07_SupFig6_Pathway_Alterations.R"), chdir = TRUE)
@@ -970,31 +1104,38 @@ dev.off()
     ##                 2
 
 ``` r
-write.table(pathway_alt_mat, file.path(DIRS$results, "SupFig6_Pathway_Alterations.tsv"),
+write.table(pathway_alt_mat, file.path(DIRS$results, "SupFig6_Pathway_Alterations.tsv"),  # source data for SupFig 6
             sep = "\t", quote = FALSE, col.names = NA)
 
 draw(SupFigS6, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/supfig6_pathway-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig6_pathway-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-## b. CDH1 Alteration Landscape
+## b. Recapitulation of the CDH1 Alteration Landscape in ILC Cell Line Models
 
-### Figure 2B: Novel SV in ICLE
+### Figure 2B: Novel SVs in CDH1
+
+Structural variant visualizations for novel *CDH1* rearrangements
+detected by Bionano OGM. These figures are generated externally by
+loading the filtered SV files into Bionano Access (v1.7) software.
 
 ``` r
 # Visualizations generated using Bionano Access software by loading SV files
 ```
 
+Runs the full CDH1 alteration analysis pipeline (Figs 2C–2H) via
+orchestrator script `08_Fig2_CDH1_Alteration_Landscape_All.R`, which
+sources sub-scripts 08_Fig2C through 13_Fig2H in order. Performs
+analysis and generates visualizations of: (i) exonic deletions in *CDH1*
+locus using WES read coverage, (ii) *CDH1* alteration frequency
+comparisons in FMI local and distant metastases, (iii) *CDH1* biallelic
+inactivation events in ILC vs NST tumors and cell lines, (iv) multi-omic
+overview of *CDH1* alteration landscape.
+
 ``` r
 source(file.path(DIRS$scripts$helpers, "08_Fig2_CDH1_Alteration_Landscape_All.R"), chdir = TRUE)
 ```
-
-    ## ═══════════════════════════════════════════════════════
-
-    ##   Figure 2C-H – running all panels in order
-
-    ## ═══════════════════════════════════════════════════════
 
     ## 
     ## ========================================
@@ -1070,6 +1211,11 @@ source(file.path(DIRS$scripts$helpers, "08_Fig2_CDH1_Alteration_Landscape_All.R"
 
 ### Figure 2C: Exonic Deletions in ICLE
 
+Heatmap of exon-level read depth (samtools bedcov) across canonical
+*CDH1* and *CTNNA1* transcripts in ICLE cell lines. Exonic deletions are
+defined as exons with fewer than 5 mapped WES reads. Identifies partial
+gene deletions not detectable by point-mutation callers.
+
 ``` r
 pdf(file.path(DIRS$results_sub$cdh1, "Fig2C_CDH1_Exonic_Deletions_ICLE.pdf"), width = 4, height = 4.5)
 draw(fig2c_cdh1_exonic_del_heatmap)
@@ -1083,16 +1229,22 @@ dev.off()
 draw(fig2c_cdh1_exonic_del_heatmap)
 ```
 
-<img src="index/figure-gfm/fig2c_exonic-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2c_exonic-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 2D: CDH1 Alterations (Foundation Medicine Dataset)
+### Figure 2D: CDH1 Alterations in Local Recurrences and Distant Metastases (Patient Tumors)
+
+Barplot comparing the frequency of *CDH1* structural rearrangements and
+copy number deletions in ILC versus NST breast cancers across local
+recurrence and distant metastasis groups in the FMI clinical cohort.
+Enrichment statistics computed by Chi-square exact test, restricted to
+cases without co-occurring *CDH1* point mutations or copy number gains.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$cdh1, "Fig2D_FMI_CDH1_Alterations_Barplot.pdf"), fig2d_fmi_alts, width = 6, height = 4)
 gt::gtsave(gt::gt(fig2d_fmi_alts_tbl), file.path(DIRS$results_sub$cdh1, "Fig2D_FMI_CDH1_Alterations_Table.pdf"))
 ```
 
-    ## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//RtmprrgPOq/file180e3fa3dbe0.html screenshot completed
+    ## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//Rtmpc117E4/file8db756dec8c7.html screenshot completed
 
 ``` r
 gt::gtsave(gt::gt(fig2d_fmi_alts_tbl_pval) %>%
@@ -1101,22 +1253,29 @@ gt::gtsave(gt::gt(fig2d_fmi_alts_tbl_pval) %>%
            file.path(DIRS$results_sub$cdh1, "Fig2D_FMI_CDH1_Alterations_ILCvsNST_Event_pval.pdf"))
 ```
 
-    ## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//RtmprrgPOq/file180e1eb86fc4.html screenshot completed
+    ## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//Rtmpc117E4/file8db73c4fad5f.html screenshot completed
 
 ``` r
 fig2d_fmi_alts
 ```
 
-<img src="index/figure-gfm/fig2d_fmi-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2d_fmi-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 2E: CDH1 Mutation Lollipop Plots (TCGA Patient Tumors vs Cell Lines)
+### Figure 2E: CDH1 Mutation Lollipop Plots (Patient Tumors vs Cell Lines)
+
+*CDH1* protein domain lollipop plot overlaying mutation positions across
+TCGA primary breast cancer tumors and integrated BRCA cell lines
+generated using the ProteinPaint web tool (Zhou et al. 2016;
+<https://proteinpaint.stjude.org/>).
 
 ``` r
-# CDH1 protein paint plot for TCGA (generated by Fig 2 orchestrator)
-# queries files plotted using https://proteinpaint.stjude.org/
+# queries files (Fig2E_TCGA_CDH1_Mutations_Protein_Paint_Query.tsv & Fig2E_CellLines_CDH1_Mutations_Protein_Paint_Query.tsv) plotted using https://proteinpaint.stjude.org/
 ```
 
 ### Figure 2F: CDH1 Allele Frequency in Cell Lines
+
+Barplot of *CDH1* variant allele frequencies (VAF) in ICLE cell lines,
+colored by histological subtype (ILC, ILC-like, NST).
 
 ``` r
 ggsave(file.path(DIRS$results_sub$cdh1, "Fig2F_CL_CDH1_AF_Barplot_histology_shape.pdf"), fig2f_cdh1_af, width = 4.5, height = 4)
@@ -1124,9 +1283,16 @@ ggsave(file.path(DIRS$results_sub$cdh1, "Fig2F_CL_CDH1_AF_Barplot_histology_shap
 fig2f_cdh1_af
 ```
 
-<img src="index/figure-gfm/fig2f_cdh1_af-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2f_cdh1_af-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 2G: CDH1 Alterations (Patient Tumors vs Cell Lines)
+### Figure 2G: CDH1 Alteration Type Frequencies (Patient Tumors vs Cell Lines)
+
+Side-by-side barplots comparing the frequency of *CDH1* alteration
+categories — point mutation, LOH, biallelic event (MUT+LOH), dual
+deletion — between integrated BRCA cell lines and TCGA primary BRCA
+tumors, stratified by ILC vs NST. Enrichment of biallelic events in ILC
+assessed by Chi-square test. Accompanying tables report per-event
+p-values.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$cdh1, "Fig2G_CL_CDH1_Alt_barplot.pdf"), fig2g_cl_cdh1_alts, width = 5, height = 5)
@@ -1138,16 +1304,19 @@ suppressMessages({
   gt::gtsave(gt::gt(fig2g_tcga_cdh1_alts_tbl_pval), file.path(DIRS$results_sub$cdh1, "Fig2G_TCGA_CDH1_Alterations_ILCvsNST_Event_pval.pdf"))
 })
 
-ggarrange(plotlist = list(fig2g_cl_cdh1_alts + fig2g_tcga_cdh1_alts), widths = c(1, 0.6))
+ggarrange(plotlist = list(fig2g_tcga_cdh1_alts, fig2g_cl_cdh1_alts), widths = c(0.5, 0.6))
 ```
 
-<img src="index/figure-gfm/fig2g_allele_freq-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2g_allele_freq-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 2H: CDH1 Molecular Alteration Landscape Summary
+### Figure 2H: CDH1 Molecular Alteration Landscape (Patient Tumors vs Cell Lines)
+
+Overview of multi-omic *CDH1* alteration landscape heatmaps in ILC vs
+NST in Patient tumors and cell lines.
 
 ``` r
-write.table(TCGA_CDH1_df, file.path(DIRS$results_sub$cdh1, "Fig2H_TCGA_CDH1_Alteration_Landscape.tsv"), sep = "\t", row.names = FALSE)
-write.table(CL_CDH1_df, file.path(DIRS$results_sub$cdh1, "Fig2HCellLines_CDH1_Alteration_Landscape.tsv"), sep = "\t", row.names = FALSE)
+write.table(TCGA_CDH1_df, file.path(DIRS$results_sub$cdh1, "Fig2H_TCGA_CDH1_Alteration_Landscape.tsv"), sep = "\t", row.names = FALSE)  # → Supplementary Table S10 (TCGA)
+write.table(CL_CDH1_df, file.path(DIRS$results_sub$cdh1, "Fig2H_CellLines_CDH1_Alteration_Landscape.tsv"), sep = "\t", row.names = FALSE)   # → Supplementary Table S10 (cell lines)
 
 pdf(file.path(DIRS$results_sub$cdh1, "Fig2H_TCGA_CDH1_Alteration_Heatmap.pdf"), width = 8, height = 10)
   draw(fig2h_tcga, merge_legends = TRUE)
@@ -1170,28 +1339,29 @@ dev.off()
 draw(fig2h_tcga, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/fig2h_landscape-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2h_landscape-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 draw(fig2h_cl, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/fig2h_landscape-2.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2h_landscape-2.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-## c. SV Analysis
+## c. Optical Genome Mapping Reveals Structural Variations, Chromothripsis and Functional Fusions
 
-Run all Figure 3 and SupFig 8–10 scripts in order (TMB/SV prep, Fig
-3A–3F, SupFig 8–10).
+Runs all Figure 3 and SupFig 8–10 scripts in order via orchestrator
+`14_Fig3_SV_All.R`. This section characterises the structural variant
+(SV) landscape of ICLE cell lines profiled by Bionano Optical Genome
+Mapping (OGM; resolution ≥5 kb). Includes: TMB and SV burden metrics
+(SupFig 8), genome-wide SV distribution and genomic instability metrics
+(Fig 3A), translocation breakpoint topography (Fig 3B), chromothripsis
+detection using ShatterSeek (Fig 3C), circos plot generation (Fig 3D,
+SupFig 9), and functional fusion analysis by integrating RNA-seq
+expression data (Figs 3E–3F, SupFig 10).
 
 ``` r
 source(file.path(DIRS$scripts$helpers, "14_Fig3_SV_All.R"), chdir = TRUE)
 ```
-
-    ## ═══════════════════════════════════════════════════════
-
-    ##   Figure 3 + SupFig 8–10 – running all panels in order
-
-    ## ═══════════════════════════════════════════════════════
 
     ## 
     ## ========================================
@@ -1456,6 +1626,12 @@ source(file.path(DIRS$scripts$helpers, "14_Fig3_SV_All.R"), chdir = TRUE)
 
 ### Figure 3A (left): ICLE Genomic Instability Metrics
 
+Heatmap of genome-wide instability metrics across ICLE cell lines:
+fraction genome altered (FGA; CINmetrics), large-scale state transitions
+(LST), allelic imbalance (AI), homologous recombination deficiency (HRD)
+score, and SV count from OGM. Columns annotated by molecular subtype and
+histology.
+
 ``` r
 pdf(file.path(DIRS$results_sub$ogm, "Fig3A_left_Metrics_of_GenomicInstability.pdf"), width = 4, height = 4)
 draw(fig3a_genomic_instability)
@@ -1469,22 +1645,30 @@ dev.off()
 fig3a_genomic_instability
 ```
 
-<img src="index/figure-gfm/fig3a_left-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3a_left-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 3A (right): ICLE SV Overview
+### Figure 3A (right): ICLE SV Type Distribution
+
+Stacked barplot showing the absolute count and proportional distribution
+of SV classes (DEL, DUP, INV, INS, TRA) per ICLE cell line, ordered by
+total SV burden. Reveals cell line-specific patterns of genomic
+rearrangement.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$ogm, "Fig3A_right_SV_Distribution.pdf"), fig3a_sv_distribution, width = 6, height = 5)
 fig3a_sv_distribution
 ```
 
-<img src="index/figure-gfm/fig3a_right-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3a_right-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### Figure 3B: Chromosomal Topography of Translocation Breakpoints
 
+Heatmap showing the chromosomal distribution of inter-chromosomal
+translocation breakpoints across ICLE cell lines.
+
 ``` r
 pdf(file.path(DIRS$results_sub$ogm, "Fig3B_Translocation_Distribution.pdf"), width = 6.5, height = 5)
-draw(fig3b_transloc_breakpoints_ht, merge_legends = TRUE)
+  draw(fig3b_transloc_breakpoints_ht, merge_legends = TRUE)
 dev.off()
 ```
 
@@ -1495,14 +1679,23 @@ dev.off()
 fig3b_transloc_breakpoints_ht
 ```
 
-<img src="index/figure-gfm/fig3b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### Figure 3C: Chromothripsis Landscape
 
+Heatmap of chromothripsis events identified by ShatterSeek
+(Cortés-Ciriano et al. 2020) in ICLE cell lines. ShatterSeek integrates
+OGM SV and CNV data to detect chromosomes with hallmarks of
+chromothripsis (clustered oscillating CN states with co-localised SVs).
+Rows = chromosomes; columns = ICLE cell lines; tile colour encodes
+chromothripsis classification (high-confidence, low-confidence, absent).
+Full results saved to
+`SupTable11_shatterseek_chromothripsis_results.tsv`.
+
 ``` r
-write.table(shatterseek_outs$chromothripsis_df, file.path(DIRS$results_sub$ogm, "SupTable11_shatterseek_chromothripsis_results.tsv"), sep = "\t", col.names = NA)
+write.table(shatterseek_outs$chromothripsis_df, file.path(DIRS$results_sub$ogm, "SupTable11_shatterseek_chromothripsis_results.tsv"), sep = "\t", col.names = NA)  # → Supplementary Table S11
 pdf(file.path(DIRS$results_sub$ogm, "Fig3C_chromothripsis_heatmap.pdf"), width = 5, height = 5)
-draw(fig3c_thripsis_ht, merge_legends = TRUE)
+  draw(fig3c_thripsis_ht, merge_legends = TRUE)
 dev.off()
 ```
 
@@ -1513,9 +1706,17 @@ dev.off()
 draw(fig3c_thripsis_ht, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/fig3c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 3D: Generate Cricos Plots for BCK4, 600MPE, HCC2185 and ZR7530
+### Figure 3D: OGM Circos Plots — BCK4, 600MPE, HCC2185, ZR7530
+
+Interactive circos plots for four ICLE cell lines with high SV burden or
+clinically relevant rearrangements (BCK4, 600MPE, HCC2185, ZR7530),
+generated using interacCircos (Cui et al. 2021). Each plot shows
+genome-wide SV arcs overlaid on CN tracks. HTML widgets are exported to
+static PDFs using `webshot2` (requires Chromium; see `README.md`). Cell
+lines were selected to illustrate distinct OGM structural complexity
+patterns.
 
 ``` r
 # Load required libraries for HTML widget to PDF conversion
@@ -1564,27 +1765,66 @@ circos_zr7530 <- save_circos_to_pdf(trk_zr, "ZR7530", DIRS$results_sub$ogm)
 circos_bck4
 ```
 
-<img src="index/figure-gfm/unnamed-chunk-13-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+
+<img src="Index/figure-gfm/fig3d_bck4-1.png" alt="Fig 3D — BCK4 OGM circos" width="70%" />
+<p class="caption">
+
+Fig 3D — BCK4 OGM circos
+</p>
+
+</div>
 
 ``` r
 circos_600mpe
 ```
 
-<img src="index/figure-gfm/unnamed-chunk-14-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+
+<img src="Index/figure-gfm/fig3d_600mpe-1.png" alt="Fig 3D — 600MPE OGM circos" width="70%" />
+<p class="caption">
+
+Fig 3D — 600MPE OGM circos
+</p>
+
+</div>
 
 ``` r
 circos_hcc2185
 ```
 
-<img src="index/figure-gfm/unnamed-chunk-15-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+
+<img src="Index/figure-gfm/fig3d_hcc2185-1.png" alt="Fig 3D — HCC2185 OGM circos" width="70%" />
+<p class="caption">
+
+Fig 3D — HCC2185 OGM circos
+</p>
+
+</div>
 
 ``` r
 circos_zr7530
 ```
 
-<img src="index/figure-gfm/unnamed-chunk-16-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
 
-### Figure 3E: Fusions Distribution in Cell Lines vs Patient Tumors
+<img src="Index/figure-gfm/fig3d_zr7530-1.png" alt="Fig 3D — ZR7530 OGM circos" width="70%" />
+<p class="caption">
+
+Fig 3D — ZR7530 OGM circos
+</p>
+
+</div>
+
+### Figure 3E: Fusion Distribution (Patient Tumors vs Cell Lines)
+
+Barplots comparing the distribution of OGM-detected gene fusions in ICLE
+cell lines against fusions reported in the TCGA TumorFusions dataset
+(Zhang et al. 2018). Fusions are classified by functional impact: Gain
+of Expression (GOE, z \> 1) or Loss of Expression (LOE, z \< −1) based
+on z-score normalizd RNA-seq expression of the fusion partner. Full
+fusion annotation table saved to `SupTable12_fusion_df.tsv`.
 
 ``` r
 # Save fusion distribution plots
@@ -1592,17 +1832,22 @@ ggsave(file.path(DIRS$results_sub$ogm, "Fig3E_right_FusionDistribution_ICLE.pdf"
        fig3e_1, width = 3, height = 4)
 ggsave(file.path(DIRS$results_sub$ogm, "Fig3E_right_FusionDistribution_PatientTumor.pdf"), 
        fig3e_2+scale_x_continuous(breaks = c(0,25,50,75), limits = c(0,75)), width = 3, height = 4)
-
+  
 # Save fusion data table
-write.table(fusions_df, file.path(DIRS$results_sub$ogm, "SupTable12_fusion_df.tsv"), 
+write.table(fusions_df, file.path(DIRS$results_sub$ogm, "SupTable12_fusion_df.tsv"),  # → Supplementary Table S12
             quote = FALSE, sep = "\t", row.names = FALSE)
 
 ggarrange(plotlist = list(fig3e_1, fig3e_2))
 ```
 
-<img src="index/figure-gfm/fig3e_fusions-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3e_fusions-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### Figure 3F: GOE and LOE Functional Fusions Circos
+
+Circos plots displaying the chromosomal distribution and partner gene
+pairs of functional OGM fusions classified as GOE (left panel) and LOE
+(right panel) across ICLE cell lines. Arc thickness encodes fusion
+recurrence; arcs are coloured by SV type (DEL, DUP, INV, TRA).
 
 ``` r
 pdf(file = file.path(DIRS$results_sub$ogm, "Fig3F_left_GOE_Fusions.pdf"), width = 7, height = 7)
@@ -1622,7 +1867,24 @@ dev.off()
     ## quartz_off_screen 
     ##                 2
 
-### SupFig 8A: Mutation vs SV Count, Size
+``` r
+plot.new()
+print(fig3f_left_goe_fusions_circos)
+```
+
+<img src="Index/figure-gfm/unnamed-chunk-7-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+``` r
+plot.new()
+print(fig3f_right_loe_fusions_circos)
+```
+
+<img src="Index/figure-gfm/unnamed-chunk-8-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+### SupFig 8A: Mutation Count vs SV Count and SV Size
+
+Scatter plot showign correlation between WES mutation count vs OGM SV
+count across ICLE cell lines.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$ogm, "SupFig8A_TMB_SV_Burden_Correlation.pdf"), SupFig8A, width = 5.5, height = 5)
@@ -1631,48 +1893,57 @@ write.table(sv_tmb_summary, file.path(DIRS$results_sub$ogm, "SupTable_SV_TMB_sum
 SupFig8A
 ```
 
-<img src="index/figure-gfm/supfig8a-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8a-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### SupFig 8B: TMB vs SV Burden
+### SupFig 8B: TMB vs SV Burden (With and Without Outliers)
+
+Scatter plot of TMB versus SV burden with (SupFig8B) and without
+(SupFig8B_no_outliers) extreme outlier cell lines, with per-cell-line
+alteration counts per chromosome saved to
+`SupTable_alt_count_per_chr.tsv`.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$ogm, "SupFig8B_TMB_vs_SV_Burden_Correlation.pdf"), SupFig8B, width = 5.5, height = 5)
-SupFig8B
-```
-
-<img src="index/figure-gfm/supfig8b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
-
-``` r
 ggsave(file.path(DIRS$results_sub$ogm, "SupFig8B_TMB_vs_SV_Burden_Correlation_NoOutliers.pdf"), SupFig8B_no_outliers, width = 5.5, height = 5)
-write.table(alt_count_chr, file.path(DIRS$results_sub$ogm, "SupTable_alt_count_per_chr.tsv"), sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(alt_count_chr, file.path(DIRS$results_sub$ogm, "SupTable_alt_count_per_chr.tsv"), sep = "\t", quote = FALSE, row.names = FALSE) 
 
-ggarrange(plotlist = list(SupFig8B +SupFig8B_no_outliers))
+ggarrange(plotlist = list(SupFig8B, SupFig8B_no_outliers))
 ```
 
-<img src="index/figure-gfm/supfig8b-2.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### SupFig 8C: SV~Chr Size - SV Count by Chr
+### SupFig 8C: SV Count per Chromosome
+
+Bar plot of SV count per chromosome.
 
 ``` r
-ggsave(file.path(DIRS$results_sub$ogm, "SupFig8D_SV_Per_Chr.pdf"), SupFig8C, width = 7, height = 5)
+ggsave(file.path(DIRS$results_sub$ogm, "SupFig8C_SV_Per_Chr.pdf"), SupFig8C, width = 7, height = 5)
 SupFig8C
 ```
 
-<img src="index/figure-gfm/supfig8c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### SupFig 8D: Mutation ~ Chr Size - Mutation Count by Chr
+### SupFig 8D: Somatic Mutation Count per Chromosome
+
+Bar plot of Mutation count per chromosome
 
 ``` r
-ggsave(file.path(DIRS$results_sub$ogm, "SupFig8_Mutations_Per_Chr.pdf"), SupFig8D, width = 4, height = 5)
+ggsave(file.path(DIRS$results_sub$ogm, "SupFig8D_Mutations_Per_Chr.pdf"), SupFig8D, width = 4, height = 5)
 SupFig8D
 ```
 
-<img src="index/figure-gfm/supfig8d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### SupFig 9: Generate Cricos Plots for all ICLE cell lines
+### SupFig 9: OGM Circos Plots
+
+Generates individual OGM circos plots for every ICLE cell line using the
+same `interacCircos`-based pipeline as Fig 3D. All plots are saved as
+PDFs to `SupFig9_OGM_Circos/`. This chunk may take several minutes to
+complete depending on SV count.
 
 ``` r
-draw_circos_plot_for_all(shatterseek_outs$sv_df, shatterseek_outs$cnv_df, shatterseek_outs$chromothripsis_df, out_dir = file.path(DIRS$results_sub$ogm, "SupFig9_OGM_Circos"))
+draw_circos_plot_for_all(shatterseek_outs$sv_df, shatterseek_outs$cnv_df, shatterseek_outs$chromothripsis_df, 
+                         out_dir = file.path(DIRS$results_sub$ogm, "SupFig9_OGM_Circos"))
 ```
 
     ## [1] "Making Circos Plot for: HCC1187"
@@ -1777,12 +2048,16 @@ draw_circos_plot_for_all(shatterseek_outs$sv_df, shatterseek_outs$cnv_df, shatte
 
     ##   Saved PDF for sample: ZR7530
 
-### SupFig 10: Functional Fusions
+### SupFig 10: Functional Fusions Landscape
+
+Chromosomal breakpoint heatmap showing which chromosome pairs are
+recurrently involved in functional (GOE or LOE) fusions across ICLE cell
+lines.
 
 ``` r
 # SupFig 10A: Fusion Breakpoints Heatmap
 pdf(file.path(DIRS$results_sub$ogm, "SupFig10A_Functional_Fusions_Chr_Heatmap.pdf"), width = 6.5, height = 5)
-draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
+  draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
 dev.off()
 ```
 
@@ -1793,7 +2068,11 @@ dev.off()
 draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/supfig10-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig10-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+Expression heatmap of recurring fusion-partner genes (partner genes
+forming fusions in ≥2 cell lines), showing z-score normalized RNA-seq
+expression across the cohort alongside fusion type annotation.
 
 ``` r
 # SupFig 10B: Recurring fusions expression heatmap
@@ -1809,7 +2088,9 @@ dev.off()
 draw(supfig10b_recurring_fusions_ht, merge_legends = TRUE)
 ```
 
-<img src="index/figure-gfm/unnamed-chunk-19-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/unnamed-chunk-9-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+
+Gene-specific circos plots for each recurrently fused gene
 
 ``` r
 # SupFig 10C: Recurring gene circos plots
@@ -1824,9 +2105,18 @@ for (i in seq_along(gene_names)) {
 }
 ```
 
-## d. DNAm Analysis
+## d. Global Methylation Instability and Epigenetic Regulation of ILC Driver Genes
 
-#### SupFig 11: DNAm Index by Across Histological and PAM50 Subtypes
+The orchestrator script `21_Fig4_SupFig11_DNAm_Alterations.R`
+performs: 1. **DMI scoring** — sum of absolute β-value deviations from
+normal-tissue medians across all shared probes (TCGA adjacent-normal as
+reference); pairwise comparisons by two-sided t-test (Holm correction).
+2. **Differential methylation** — limma on M-values comparing Luminal A
+ILC vs NST in tumors and cell lines (FDR \< 0.05, \|log fold-change\| ≥
+0.5). 3. **Differential expression** — DESeq2 on matched RNA-seq (FDR \<
+0.05, \|log₂FC\| ≥ 1). 4. **Consensus DNAm-regulated genes** —
+intersection of significant differential probes and genes with inverse
+DNAm–expression correlation in both tumors and cell lines.
 
 ``` r
 source(file.path(DIRS$scripts$helpers, "21_Fig4_SupFig11_DNAm_Alterations.R"), chdir = TRUE)
@@ -2042,6 +2332,8 @@ source(file.path(DIRS$scripts$helpers, "21_Fig4_SupFig11_DNAm_Alterations.R"), c
 
     ##   - Fig4D: fig4e
 
+### SupFig 11: DNAm Instability Score (DMI) by PAM50 Subtype and Histology
+
 ``` r
 ggsave(file.path(dnam_dir, "SupFig11A_DMI_Tumor_PAM50.pdf"), tumor_pam50, width = 5, height = 3)
 
@@ -2057,7 +2349,7 @@ dev.off()
 tumor_pam50
 ```
 
-<img src="index/figure-gfm/supfig11a_tumor_pam50-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig11a_tumor_pam50-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 ggsave(file.path(dnam_dir, "SupFig11B_DMI_CL_PAM50.pdf"), cl_pam50, width = 5, height = 3)
@@ -2074,7 +2366,7 @@ dev.off()
 cl_pam50
 ```
 
-<img src="index/figure-gfm/supfig11b_cl_pam50-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig11b_cl_pam50-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 ggsave(file.path(dnam_dir, "SupFig11C_DMI_Tumor_CL_Histology.pdf"), tumor_cl_histology_LumA, width = 4, height = 3)
@@ -2091,9 +2383,15 @@ dev.off()
 tumor_cl_histology_LumA
 ```
 
-<img src="index/figure-gfm/supfig11c_tumor_cl_histology-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig11c_tumor_cl_histology-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-#### Figure 4A: DNAm Index by Specimen Type
+### Figure 4A: DNAm Instability Score (DMI) by Specimen Type
+
+Violin/box plot of DMI scores stratified by specimen type: normal breast
+tissue, TCGA primary BRCA tumors (ILC and NST), and integrated BRCA cell
+lines (ILC-like and NST). Demonstrates progressively elevated
+methylation instability from normal tissue through primary tumors to
+cell lines.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4A_DMI_Normal_Tumor_CL.pdf"), 
@@ -2101,15 +2399,21 @@ ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4A_DMI_Normal_Tumor_CL.pd
 gt::gtsave(tissue_dmi_pval, file.path(DIRS$results_sub$dna_methylation, "Fig4A_DMI_Normal_Tumor_CL_pvalue_table.pdf"))
 ```
 
-    ## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//RtmprrgPOq/file180e2548cdb0.html screenshot completed
+    ## file:////var/folders/7y/k10bb0_97t74ng9htslfjpk40000gr/T//Rtmpc117E4/file8db74c397f88.html screenshot completed
 
 ``` r
 tissue_dmi
 ```
 
-<img src="index/figure-gfm/fig4a-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4a-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-#### Figure 4B: DNAm-mRNA Alterations
+### Figure 4B: Consensus DNAm–mRNA Alterations (Patient Tumors and Cell Lines)
+
+Scatter plot of genes with concordant differential methylation and gene
+expression in Luminal A ILC vs NST, comparing results in TCGA tumors and
+integrated BRCA cell lines. Points in the highlighted quadrants
+represent consensus genes with inverse probe methylation and mRNA
+expression changes.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4B_Tumor_RNA_DNAm_Alterations_small_height.pdf"),
@@ -2117,9 +2421,12 @@ ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4B_Tumor_RNA_DNAm_Alterat
 dnma_lfc_plt
 ```
 
-<img src="index/figure-gfm/fig4b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-#### Figure 4C: Consensus DNAm-mRNA Alterations Heatmap
+### Figure 4C: Consensus DNAm-Regulated Genes
+
+Heatmap displaying consensus DNAm-regulated genes (from Fig 4B) across
+TCGA tumors and integrated BRCA cell lines.
 
 ``` r
 pdf(file.path(DIRS$results_sub$dna_methylation, "Fig4C_Alterations_Heatmap.pdf"), width = 10, height = 5)
@@ -2134,20 +2441,31 @@ dev.off()
 draw(fig4c_ht, merge_legends = TRUE, gap = unit(0.1, "cm"))
 ```
 
-<img src="index/figure-gfm/fig4c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-#### Figure 4D: MSI1 & TFAP2B Barplots
+### Figure 4D: Top Consensus DNAm-Regulated Genes — Expression and Methylation Barplots
+
+Paired barplots showing row normalized RNA expression and DNAm for
+*MSI1* and *TFAP2B* across BRCA cell lines.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4D_Top_Alterations_Barplots.pdf"), fig4e, width = 12, height = 10)
 fig4e
 ```
 
-<img src="index/figure-gfm/fig4d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-## e. RNAi Analysis
+## e. Identification of ILC-Specific Gene Dependencies and Nomination of Druggable Targets
 
-### Figure 5B: Consensus Differential Dependencies
+Identifies ILC-specific gene dependencies from the Marcotte et al. RNAi
+loss-of-function screen using a consensus two-pipeline approach: (1)
+**Limma-D2** — DEMETER2-preprocessed RNAi viability scores (DepMap)
+followed by limma differential analysis; (2) **siMEM** — integrated
+preprocessing and differential analysis using the siMEM algorithm
+(Marcotte et al. 2016). Consensus dependencies are defined as genes with
+nominal p ≤ 0.05 in both pipelines. High- and low-dependency gene sets
+are then subjected to KEGG pathway over-representation analysis (hypeR)
+and queried against DGIdb to nominate therapeutic targets.
 
 ``` r
 source(file.path(DIRS$scripts$helpers, "22_Fig5_RNAi_Differential_Dependencies.R"), chdir = TRUE)
@@ -2245,15 +2563,35 @@ source(file.path(DIRS$scripts$helpers, "22_Fig5_RNAi_Differential_Dependencies.R
     ##   - Fig 5D: fig5d_pathway_ht
     ##   - Fig 5E: fig5e_drug_ht
 
+### Figure 5A: ILC-Specific Dependency Analysis — Study Schematic
+
 ``` r
-ggsave(file.path(DIRS$results_sub$dependencies, "Fig5b_Differential_Dependencies.pdf"), 
+# Figure 5A is a schematic/workflow illustration produced in Adobe Illustrator.
+# Overview schematic of the dual-pipeline ILC dependency discovery workflow (Limma-D2 and siMEM) and the downstream druggability Prioritization strategy.
+```
+
+------------------------------------------------------------------------
+
+### Figure 5B: Consensus ILC-Specific Differential Dependencies
+
+Scatter plot showing effect sizes of differential dependencies (ILC vs
+NST cell lines) from Limma-D2 and siMEM pipelines. Point colors
+highlight dependencies identified as significant by both (consensus) or
+only one of the two pipelines.
+
+``` r
+ggsave(file.path(DIRS$results_sub$dependencies, "Fig5b_Differential_Dependencies.pdf"),
        fig5b_consensus_dep_plt, width = 8, height = 4.5)
 fig5b_consensus_dep_plt
 ```
 
-<img src="index/figure-gfm/unnamed-chunk-21-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5b_display-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ### SupFig 12: Consensus Differential Dependencies Heatmap
+
+Hierarchically clustered heatmap of all consensus ILC-specific
+differential dependency genes across Marcotte et al. RNAi cell lines,
+annotated by histological subtype (ILC, NST).
 
 ``` r
 pdf(file.path(DIRS$results_sub$dependencies, "SupFig12_Consensus_Dependencies_Heatmap.pdf"), 
@@ -2269,18 +2607,26 @@ dev.off()
 draw(supfig12_dep_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-<img src="index/figure-gfm/supfig12-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig12-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 5C: Over represented Pathways
+### Figure 5C: KEGG Pathway Over-Representation in ILC-Specific Dependency Genes
+
+Barplot showing hypergeometric over-representation analysis of KEGG
+pathways in ILC vs NST differential dependencies.
 
 ``` r
 ggsave(file.path(DIRS$results_sub$dependencies, "Fig5C_KEGG_ORA.pdf"), fig5c_pathway_plt, width = 6, height = 3.5)
 fig5c_pathway_plt
 ```
 
-<img src="index/figure-gfm/fig5c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 5D: Pathway level Dependencies Heatmap
+### Figure 5D: Pathway-Level Dependency Scores
+
+Heatmap of pathway-level summary dependency scores (mean gene-level
+dependency/viability scores per KEGG pathway) across cell lines,
+stratified by ILC vs NST histology. Condenses gene-level signals into
+interpretable pathway vulnerabilities.
 
 ``` r
 pdf(file.path(DIRS$results_sub$dependencies, "Fig5D_Pathway_Scores.pdf"), width = 7.5, height = 5)
@@ -2295,9 +2641,13 @@ dev.off()
 draw(fig5d_pathway_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-<img src="index/figure-gfm/fig5d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-### Figure 5E: Top Druggable Dependencies Heatmap
+### Figure 5E: Druggable ILC Dependencies — Prioritized Therapeutic Targets
+
+Heatmap of the top ILC-specific dependency genes with annotated drug
+interactions from the Drug Gene Interaction database (DGIdb; Wagner et
+al. 2016).
 
 ``` r
 pdf(file.path(DIRS$results_sub$dependencies, "Fig5E_ILC_Druggable_Dependencies.pdf"), width = 7.5, height = 5)
@@ -2312,11 +2662,31 @@ dev.off()
 draw(fig5e_drug_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-<img src="index/figure-gfm/fig5e-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5e-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
-## f. Cell Line Scoring
+## f. Integrative Multi-omic Benchmarking Framework for ILC Model Selection
 
-### Figure 6: CL-Tumor Concordance/Resemblance Score
+### Figure 6: CL–tumor Concordance / Molecular Resemblance Scores
+
+Implements the two-step multi-omic molecular resemblance framework to
+quantify the fidelity of each ICLE cell line to Luminal A ILC patient
+tumors:
+
+**Step 1 — ILC tumor signatures** (TCGA Luminal A ILC vs NST as
+reference): - *RNA, DNAm, RPPA*: discriminatory features identified by
+differential analysis (DESeq2 / limma); ILC tumor centroids constructed
+by averaging normalizd feature values across TCGA ILC tumors. - *CN*:
+chromosome-level centroid restricted to OncoVar pathogenic cancer driver
+genes. - *MUT*: curated ILC-enriched and NST-enriched alteration lists.
+
+**Step 2 — Cell line concordance scoring**: - *Continuous modalities
+(RNA, DNAm, RPPA)*: bootstrapped Spearman correlation (1,000 iterations,
+80% feature subsampling) between cell line profile and ILC tumor
+centroid; final score = median. - *CN*: bootstrapped correlation (1,000
+iterations, one driver gene randomly sampled per chromosome). - *MUT*:
+frequency-centred score rewarding ILC-enriched and penalising
+NST-enriched events. - All modality scores rank-normalizd to \[0, 1\];
+**Consensus Resemblance Score** = equally weighted mean.
 
 ``` r
 # Generate resemblance scores between cell lines and tumors
@@ -2423,6 +2793,8 @@ source(file.path(DIRS$scripts$helpers, "23_Fig6_Patient_Signatures_Resemblance_S
     ##   ✓ Fig 6 complete (fig6_resemblance_ht and signature heatmaps assigned).
 
 ``` r
+# Save per-modality ILC signature heatmaps (CN, MUT, RNA, DNAm, RPPA)
+# Each heatmap shows the discriminatory features defining the ILC tumor centroid
 pdf(file = file.path(DIRS$results_sub$molecular_resemblance, "Fig6_ILC_CN_Signature.pdf"), width = 6, height = 6)
 draw(cn_sig_ht)
 dev.off()
@@ -2468,7 +2840,8 @@ dev.off()
     ##                 2
 
 ``` r
-# Save Fig 6
+# Consensus resemblance score heatmap — columns = ICLE cell lines; rows = modality scores + consensus
+# Higher scores (yellow) indicate greater fidelity to Luminal A ILC patient tumors
 pdf(file.path(DIRS$results_sub$molecular_resemblance, "Fig6_Resemblance_Scores.pdf"), width = 6, height = 5)
    draw(fig6_resemblance_ht, merge_legends = TRUE, annotation_legend_side = "right", 
         heatmap_legend_side = "right")
@@ -2484,7 +2857,7 @@ draw(fig6_resemblance_ht, merge_legends = TRUE, annotation_legend_side = "right"
      heatmap_legend_side = "right")
 ```
 
-<img src="index/figure-gfm/fig6_display-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig6_display-1.png" alt="" width="70%" style="display: block; margin: auto;" />
 
 ``` r
 sessionInfo()
@@ -2492,7 +2865,7 @@ sessionInfo()
 
     ## R version 4.5.1 (2025-06-13)
     ## Platform: aarch64-apple-darwin20
-    ## Running under: macOS Sequoia 15.7.2
+    ## Running under: macOS Tahoe 26.2
     ## 
     ## Matrix products: default
     ## BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 

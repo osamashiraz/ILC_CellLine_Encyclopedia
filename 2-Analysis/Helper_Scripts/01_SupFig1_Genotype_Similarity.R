@@ -19,6 +19,7 @@
 #   - Clustering results
 #
 # Author: Osama Shiraz Shah
+# Last Updated: 2026-03-02
 # ==============================================================================
 
 ########################################
@@ -151,21 +152,21 @@ plot_genotype_heatmap <- function(similarity_matrix, CL_Annots, annot_cols, heat
   # Highlight samples with high similarity to at least one other
   # highly_similar <- names(which(rowSums(sim_mat > 90) > 1))
   # col_highlight <- ifelse(colnames(sim_mat) %in% highly_similar, "#33691E", "#A1887F")
-  col_highlight <- "black"
+  # col_highlight <- "black"
 
   
   # Generate and draw heatmap
   ht <- Heatmap(
     matrix = t(sim_mat),
     name = "Genotypic Similarity",
-    col = viridis(100),
+    col = viridis(100), row_labels = gsub("-M|-I", "", colnames(sim_mat)),
     border = TRUE, use_raster = T,
     cluster_row_slices = FALSE, cluster_column_slices = FALSE,
     show_row_dend = TRUE, show_column_dend = TRUE,
     column_dend_side = "bottom",
     show_row_names = TRUE, show_column_names = FALSE,
     column_names_gp = gpar(fontsize = 12, fontface = "bold"),
-    row_names_gp = gpar(fontsize = 12, col = col_highlight),
+    row_names_gp = gpar(fontsize = 12, col = annot_cols$Study[study_annot[colnames(sim_mat)]]),
     width = unit(10, "cm"), height = unit(10, "cm"),
     heatmap_legend_param = heatmap_legend_param,
     top_annotation = HeatmapAnnotation(

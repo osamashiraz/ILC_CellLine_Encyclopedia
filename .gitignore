@@ -4,6 +4,7 @@
 1-Datasets/upload
 1-Datasets/README.md
 3-Results/
+4-Figures/
 
 
 # --- Data Sharing & Sensitive Info ---
@@ -17,3 +18,5 @@
 .Rproj.user/
 .vscode
 .cursor
+
+_Backups/
