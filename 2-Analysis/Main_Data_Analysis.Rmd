@@ -82,7 +82,7 @@ SUPPRESS_WARNINGS <- TRUE       # FALSE = show warnings
 SUPPRESS_FEATURE_SELECTION_PLOTS <- TRUE  # FALSE = show intermediate plots from FSbyMAD/FSbyVar
 SUPPRESS_CONSENSUS_CLUSTER_PLOTS <- TRUE  # FALSE = show intermediate plots from ConsensusClusterPlus
 
-knitr::opts_chunk$set(dev = "png", dpi = 300, fig.width = 6, fig.height = 4, out.width = "70%", fig.align = "center")
+knitr::opts_chunk$set(dev = "png", dpi = 300, fig.width = 6, fig.height = 4)
 ```
 
 ```{r setup}

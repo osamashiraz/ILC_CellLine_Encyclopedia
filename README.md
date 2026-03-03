@@ -568,7 +568,7 @@ dev.off()
 draw(supFig_1, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/supfig1_genotype-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig1_genotype-1.png"/>
 
 ### Perform Molecular Subtyping
 
@@ -714,7 +714,7 @@ dev.off()
 draw(mRNA_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
 ```
 
-<img src="Index/figure-gfm/supfig2a_rna_ht-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig2a_rna_ht-1.png"/>
 
 PCA plot of top variable RNA features showing cell clustering/similarity
 annotated by molecular subtypes
@@ -724,7 +724,7 @@ ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig2B_mRNA_pca_subtyp
 supfig2b_mRNA_pca
 ```
 
-<img src="Index/figure-gfm/supfig2b_rna_pca-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig2b_rna_pca-1.png"/>
 
 Sankey plot showing agreement between RNA molecular subtypes and (IMS)
 top calls
@@ -734,7 +734,7 @@ ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig2C_RNA_ims.pdf"), 
 rna_ims
 ```
 
-<img src="Index/figure-gfm/supfig2c_rna_ims-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig2c_rna_ims-1.png"/>
 
 ### SupFig 3: RPPA Consensus Clustering
 
@@ -751,21 +751,21 @@ dev.off()
 draw(rppa_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
 ```
 
-<img src="Index/figure-gfm/supfig3a_rppa_ht-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig3a_rppa_ht-1.png"/>
 
 ``` r
 ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig3B_RPPA_pca_subtypes.pdf"), supfig3b_rppa_pca, width = 7, height = 5)
 supfig3b_rppa_pca
 ```
 
-<img src="Index/figure-gfm/supfig3b_rppa_pca-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig3b_rppa_pca-1.png"/>
 
 ``` r
 ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig3C_RPPA_ims.pdf"), rppa_sankey, width = 7, height = 5)
 rppa_sankey
 ```
 
-<img src="Index/figure-gfm/supfig3c_rppa_ims-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig3c_rppa_ims-1.png"/>
 
 ### SupFig 4: DNAm Consensus Clustering
 
@@ -782,21 +782,21 @@ dev.off()
 draw(dnam_sim_HT, merge_legends = TRUE, heatmap_legend_side = "right")
 ```
 
-<img src="Index/figure-gfm/supfig4a_dnam_ht-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig4a_dnam_ht-1.png"/>
 
 ``` r
 ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig4B_DNAm_pca_subtypes.pdf"), supfig4b_dnam_pca, width = 7, height = 5)
 supfig4b_dnam_pca
 ```
 
-<img src="Index/figure-gfm/supfig4b_dnam_pca-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig4b_dnam_pca-1.png"/>
 
 ``` r
 ggsave(file.path(DIRS$results_sub$molecular_subtyping, "SupFig4C_DNAm_ims.pdf"), dnam_sankey, width = 7, height = 5)
 dnam_sankey
 ```
 
-<img src="Index/figure-gfm/supfig4c_dnam_ims-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig4c_dnam_ims-1.png"/>
 
 ### Figure 1B: Overview of Multiomic Subtypes
 
@@ -809,7 +809,7 @@ ggsave(file.path(DIRS$results_sub$molecular_subtyping, "Fig1B_MolecularSubtypes.
 fig1b_sankey
 ```
 
-<img src="Index/figure-gfm/fig1b_multiomics_sankey-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1b_multiomics_sankey-1.png"/>
 
 ### Figure 1C: SET Signature
 
@@ -830,7 +830,7 @@ dev.off()
 draw(fig1c_setheatmap, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/fig1c_set-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1c_set-1.png"/>
 
 ### Figure 1D: Multiomics Overview
 
@@ -904,7 +904,7 @@ dev.off()
 fig1d_multiomics_overview
 ```
 
-<img src="Index/figure-gfm/fig1d_multiomics-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1d_multiomics-1.png"/>
 
 ### Fig 1E: IGV Plot (Patient Tumors vs Cell Lines)
 
@@ -1040,7 +1040,7 @@ ggsave(filename = output_file, fig1f_alteration_barplot, width = 6, height = 5)
 fig1f_alteration_barplot
 ```
 
-<img src="Index/figure-gfm/fig1f_alterations-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig1f_alterations-1.png"/>
 
 ### SupFig 5: Key ILC vs NST Alterations (Patient Tumors)
 
@@ -1072,7 +1072,7 @@ write.table(freq_tbl, file.path(DIRS$results, "SupFig5_BRCA_Tumor_Top_Alteration
 supfigs5_tumor_alterations
 ```
 
-<img src="Index/figure-gfm/supfig5_ilc_nst-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig5_ilc_nst-1.png"/>
 
 ### SupFig 6: Alterations in Key Pathways (ICLE)
 
@@ -1110,7 +1110,7 @@ write.table(pathway_alt_mat, file.path(DIRS$results, "SupFig6_Pathway_Alteration
 draw(SupFigS6, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/supfig6_pathway-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig6_pathway-1.png"/>
 
 ## b. Recapitulation of the CDH1 Alteration Landscape in ILC Cell Line Models
 
@@ -1229,7 +1229,7 @@ dev.off()
 draw(fig2c_cdh1_exonic_del_heatmap)
 ```
 
-<img src="Index/figure-gfm/fig2c_exonic-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2c_exonic-1.png"/>
 
 ### Figure 2D: CDH1 Alterations in Local Recurrences and Distant Metastases (Patient Tumors)
 
@@ -1259,7 +1259,7 @@ gt::gtsave(gt::gt(fig2d_fmi_alts_tbl_pval) %>%
 fig2d_fmi_alts
 ```
 
-<img src="Index/figure-gfm/fig2d_fmi-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2d_fmi-1.png"/>
 
 ### Figure 2E: CDH1 Mutation Lollipop Plots (Patient Tumors vs Cell Lines)
 
@@ -1283,7 +1283,7 @@ ggsave(file.path(DIRS$results_sub$cdh1, "Fig2F_CL_CDH1_AF_Barplot_histology_shap
 fig2f_cdh1_af
 ```
 
-<img src="Index/figure-gfm/fig2f_cdh1_af-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2f_cdh1_af-1.png"/>
 
 ### Figure 2G: CDH1 Alteration Type Frequencies (Patient Tumors vs Cell Lines)
 
@@ -1307,7 +1307,7 @@ suppressMessages({
 ggarrange(plotlist = list(fig2g_tcga_cdh1_alts, fig2g_cl_cdh1_alts), widths = c(0.5, 0.6))
 ```
 
-<img src="Index/figure-gfm/fig2g_allele_freq-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2g_allele_freq-1.png"/>
 
 ### Figure 2H: CDH1 Molecular Alteration Landscape (Patient Tumors vs Cell Lines)
 
@@ -1339,13 +1339,13 @@ dev.off()
 draw(fig2h_tcga, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/fig2h_landscape-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2h_landscape-1.png"/>
 
 ``` r
 draw(fig2h_cl, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/fig2h_landscape-2.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig2h_landscape-2.png"/>
 
 ## c. Optical Genome Mapping Reveals Structural Variations, Chromothripsis and Functional Fusions
 
@@ -1645,7 +1645,7 @@ dev.off()
 fig3a_genomic_instability
 ```
 
-<img src="Index/figure-gfm/fig3a_left-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3a_left-1.png"/>
 
 ### Figure 3A (right): ICLE SV Type Distribution
 
@@ -1659,7 +1659,7 @@ ggsave(file.path(DIRS$results_sub$ogm, "Fig3A_right_SV_Distribution.pdf"), fig3a
 fig3a_sv_distribution
 ```
 
-<img src="Index/figure-gfm/fig3a_right-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3a_right-1.png"/>
 
 ### Figure 3B: Chromosomal Topography of Translocation Breakpoints
 
@@ -1679,7 +1679,7 @@ dev.off()
 fig3b_transloc_breakpoints_ht
 ```
 
-<img src="Index/figure-gfm/fig3b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3b-1.png"/>
 
 ### Figure 3C: Chromothripsis Landscape
 
@@ -1706,7 +1706,7 @@ dev.off()
 draw(fig3c_thripsis_ht, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/fig3c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3c-1.png"/>
 
 ### Figure 3D: OGM Circos Plots — BCK4, 600MPE, HCC2185, ZR7530
 
@@ -1840,7 +1840,7 @@ write.table(fusions_df, file.path(DIRS$results_sub$ogm, "SupTable12_fusion_df.ts
 ggarrange(plotlist = list(fig3e_1, fig3e_2))
 ```
 
-<img src="Index/figure-gfm/fig3e_fusions-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig3e_fusions-1.png"/>
 
 ### Figure 3F: GOE and LOE Functional Fusions Circos
 
@@ -1872,14 +1872,14 @@ plot.new()
 print(fig3f_left_goe_fusions_circos)
 ```
 
-<img src="Index/figure-gfm/unnamed-chunk-7-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/unnamed-chunk-7-1.png"/>
 
 ``` r
 plot.new()
 print(fig3f_right_loe_fusions_circos)
 ```
 
-<img src="Index/figure-gfm/unnamed-chunk-8-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/unnamed-chunk-8-1.png"/>
 
 ### SupFig 8A: Mutation Count vs SV Count and SV Size
 
@@ -1893,7 +1893,7 @@ write.table(sv_tmb_summary, file.path(DIRS$results_sub$ogm, "SupTable_SV_TMB_sum
 SupFig8A
 ```
 
-<img src="Index/figure-gfm/supfig8a-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8a-1.png"/>
 
 ### SupFig 8B: TMB vs SV Burden (With and Without Outliers)
 
@@ -1910,7 +1910,7 @@ write.table(alt_count_chr, file.path(DIRS$results_sub$ogm, "SupTable_alt_count_p
 ggarrange(plotlist = list(SupFig8B, SupFig8B_no_outliers))
 ```
 
-<img src="Index/figure-gfm/supfig8b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8b-1.png"/>
 
 ### SupFig 8C: SV Count per Chromosome
 
@@ -1921,7 +1921,7 @@ ggsave(file.path(DIRS$results_sub$ogm, "SupFig8C_SV_Per_Chr.pdf"), SupFig8C, wid
 SupFig8C
 ```
 
-<img src="Index/figure-gfm/supfig8c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8c-1.png"/>
 
 ### SupFig 8D: Somatic Mutation Count per Chromosome
 
@@ -1932,7 +1932,7 @@ ggsave(file.path(DIRS$results_sub$ogm, "SupFig8D_Mutations_Per_Chr.pdf"), SupFig
 SupFig8D
 ```
 
-<img src="Index/figure-gfm/supfig8d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig8d-1.png"/>
 
 ### SupFig 9: OGM Circos Plots
 
@@ -2068,7 +2068,7 @@ dev.off()
 draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/supfig10-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig10-1.png"/>
 
 Expression heatmap of recurring fusion-partner genes (partner genes
 forming fusions in ≥2 cell lines), showing z-score normalized RNA-seq
@@ -2088,7 +2088,7 @@ dev.off()
 draw(supfig10b_recurring_fusions_ht, merge_legends = TRUE)
 ```
 
-<img src="Index/figure-gfm/unnamed-chunk-9-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/unnamed-chunk-9-1.png"/>
 
 Gene-specific circos plots for each recurrently fused gene
 
@@ -2349,7 +2349,7 @@ dev.off()
 tumor_pam50
 ```
 
-<img src="Index/figure-gfm/supfig11a_tumor_pam50-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig11a_tumor_pam50-1.png"/>
 
 ``` r
 ggsave(file.path(dnam_dir, "SupFig11B_DMI_CL_PAM50.pdf"), cl_pam50, width = 5, height = 3)
@@ -2366,7 +2366,7 @@ dev.off()
 cl_pam50
 ```
 
-<img src="Index/figure-gfm/supfig11b_cl_pam50-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig11b_cl_pam50-1.png"/>
 
 ``` r
 ggsave(file.path(dnam_dir, "SupFig11C_DMI_Tumor_CL_Histology.pdf"), tumor_cl_histology_LumA, width = 4, height = 3)
@@ -2383,7 +2383,7 @@ dev.off()
 tumor_cl_histology_LumA
 ```
 
-<img src="Index/figure-gfm/supfig11c_tumor_cl_histology-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig11c_tumor_cl_histology-1.png"/>
 
 ### Figure 4A: DNAm Instability Score (DMI) by Specimen Type
 
@@ -2405,7 +2405,7 @@ gt::gtsave(tissue_dmi_pval, file.path(DIRS$results_sub$dna_methylation, "Fig4A_D
 tissue_dmi
 ```
 
-<img src="Index/figure-gfm/fig4a-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4a-1.png"/>
 
 ### Figure 4B: Consensus DNAm–mRNA Alterations (Patient Tumors and Cell Lines)
 
@@ -2421,7 +2421,7 @@ ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4B_Tumor_RNA_DNAm_Alterat
 dnma_lfc_plt
 ```
 
-<img src="Index/figure-gfm/fig4b-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4b-1.png"/>
 
 ### Figure 4C: Consensus DNAm-Regulated Genes
 
@@ -2441,7 +2441,7 @@ dev.off()
 draw(fig4c_ht, merge_legends = TRUE, gap = unit(0.1, "cm"))
 ```
 
-<img src="Index/figure-gfm/fig4c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4c-1.png"/>
 
 ### Figure 4D: Top Consensus DNAm-Regulated Genes — Expression and Methylation Barplots
 
@@ -2453,7 +2453,7 @@ ggsave(file.path(DIRS$results_sub$dna_methylation, "Fig4D_Top_Alterations_Barplo
 fig4e
 ```
 
-<img src="Index/figure-gfm/fig4d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig4d-1.png"/>
 
 ## e. Identification of ILC-Specific Gene Dependencies and Nomination of Druggable Targets
 
@@ -2585,7 +2585,7 @@ ggsave(file.path(DIRS$results_sub$dependencies, "Fig5b_Differential_Dependencies
 fig5b_consensus_dep_plt
 ```
 
-<img src="Index/figure-gfm/fig5b_display-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5b_display-1.png"/>
 
 ### SupFig 12: Consensus Differential Dependencies Heatmap
 
@@ -2607,7 +2607,7 @@ dev.off()
 draw(supfig12_dep_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-<img src="Index/figure-gfm/supfig12-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/supfig12-1.png"/>
 
 ### Figure 5C: KEGG Pathway Over-Representation in ILC-Specific Dependency Genes
 
@@ -2619,7 +2619,7 @@ ggsave(file.path(DIRS$results_sub$dependencies, "Fig5C_KEGG_ORA.pdf"), fig5c_pat
 fig5c_pathway_plt
 ```
 
-<img src="Index/figure-gfm/fig5c-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5c-1.png"/>
 
 ### Figure 5D: Pathway-Level Dependency Scores
 
@@ -2641,7 +2641,7 @@ dev.off()
 draw(fig5d_pathway_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-<img src="Index/figure-gfm/fig5d-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5d-1.png"/>
 
 ### Figure 5E: Druggable ILC Dependencies — Prioritized Therapeutic Targets
 
@@ -2662,7 +2662,7 @@ dev.off()
 draw(fig5e_drug_ht, merge_legends = TRUE, heatmap_legend_side = "bottom")
 ```
 
-<img src="Index/figure-gfm/fig5e-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig5e-1.png"/>
 
 ## f. Integrative Multi-omic Benchmarking Framework for ILC Model Selection
 
@@ -2857,7 +2857,7 @@ draw(fig6_resemblance_ht, merge_legends = TRUE, annotation_legend_side = "right"
      heatmap_legend_side = "right")
 ```
 
-<img src="Index/figure-gfm/fig6_display-1.png" alt="" width="70%" style="display: block; margin: auto;" />
+<img src="Index/figure-gfm/fig6_display-1.png"/>
 
 ``` r
 sessionInfo()
