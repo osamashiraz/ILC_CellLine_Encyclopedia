@@ -593,12 +593,12 @@ fig3f_right_loe_fusions_circos
 dev.off()
 ```
 
-```{r, fig.width=6, fig.height=4}
+```{r fig3f_circos_functional_fusions_GOE, fig.width=6, fig.height=4}
 plot.new()
 print(fig3f_left_goe_fusions_circos)
 ```
 
-```{r, fig.width=6, fig.height=4}
+```{r fig3f_circos_functional_fusions_LOE, fig.width=6, fig.height=4}
 plot.new()
 print(fig3f_right_loe_fusions_circos)
 ```
@@ -673,7 +673,7 @@ draw(supfig10a_fusion_breakpoints_ht, merge_legends = TRUE)
 Expression heatmap of recurring fusion-partner genes (partner genes forming fusions in ≥2 cell lines), showing z-score
 normalized RNA-seq expression across the cohort alongside fusion type annotation.
 
-```{r, fig.width=12, fig.height=5}
+```{r supfig10B_recurring_functional_fusions, fig.width=12, fig.height=5}
 # SupFig 10B: Recurring fusions expression heatmap
 pdf(file.path(DIRS$results_sub$ogm, "SupFig10B_Recurring_Functional_Fusions.pdf"), width = 15, height = 5)
   draw(supfig10b_recurring_fusions_ht, merge_legends = TRUE)
