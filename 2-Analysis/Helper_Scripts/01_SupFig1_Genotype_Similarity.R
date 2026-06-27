@@ -108,7 +108,7 @@ compute_similarity_matrix <- function(geno_mat, random_sample = NULL) {
   # Compute similarity matrix (percentage of matching SNPs between each sample pair)
   
   if (!is.null(random_sample)) {
-    geno_mat <- geno_mat[sample(rownames(geno_mat), random_sample), ]
+    set.seed(123);  geno_mat <- geno_mat[sample(rownames(geno_mat), random_sample), ]
   }
   
   storage.mode(geno_mat) <- "character"

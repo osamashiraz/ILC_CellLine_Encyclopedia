@@ -21,23 +21,20 @@ if (getRversion() < required_r_version) {
 # CRAN Packages
 # ------------------------------------------------------------------------------
 cran_packages <- c(
-  # Data manipulation
   "dplyr",
   "tidyr",
   "data.table",
   "reshape2",
+  "iCluster",
   "plyr",
   "magrittr",
   "vroom",
   "tidytext",
-
-  # Visualization - ggplot2 ecosystem
   "ggplot2",
   "ggpubr",
   "ggrepel",
   "ggthemes",
   "ggbeeswarm",
-  "ggpattern",
   "ggsci",
   "ggsankey",
   "cowplot",
@@ -45,35 +42,18 @@ cran_packages <- c(
   "gridExtra",
   "viridis",
   "scales",
-
-  # Heatmaps and circular plots
   "circlize",
-
-  # Interactive/HTML visualisation
-  "interacCircos",
   "htmlwidgets",
   "webshot2",
-
-  # Tables
   "gt",
-
-  # Statistical utilities
   "matrixStats",
   "EnvStats",
-
-  # File I/O
   "readxl",
-
-  # Parallel processing
   "parallel",
   "doParallel",
-
-  # String manipulation
   "stringr",
   "stringi",
   "forcats",
-
-  # Other utilities
   "devtools",
   "msigdbr"
 )
@@ -82,40 +62,26 @@ cran_packages <- c(
 # Bioconductor Packages
 # ------------------------------------------------------------------------------
 bioc_packages <- c(
-  # Genomics / copy number
   "GenomicRanges",
   "rtracklayer",
   "DNAcopy",
   "CNTools",
-
-  # Mutation / TMB
   "maftools",
-
-  # DNA methylation
   "sesame",
-
-  # Expression analysis
   "limma",
+  "graph",
   "edgeR",
   "DESeq2",
   "sva",
-
-  # Subtyping and clustering
   "ConsensusClusterPlus",
-  "CancerSubtypes",
-
-  # Pathway / enrichment
+  "BreastSubtypeR",
   "clusterProfiler",
   "hypeR",
   "org.Hs.eg.db",
-
-  # Infrastructure
   "SummarizedExperiment",
   "Biobase",
-  "hiAnnotator",
-
-  # Visualization
-  "ComplexHeatmap"
+  "ComplexHeatmap",
+  "interacCircos"
 )
 
 # ------------------------------------------------------------------------------
@@ -123,8 +89,11 @@ bioc_packages <- c(
 # ------------------------------------------------------------------------------
 # Install with: devtools::install_github("user/repo")
 github_packages <- list(
-  "CGATOxford/ShatterSeek",   # Chromothripsis detection
-  "bhklab/BreastSubtypeR"     # Intrinsic breast cancer subtyping
+  "parklab/ShatterSeek",
+  "malnirav/hiAnnotator",
+  "davidsjoberg/ggsankey",
+  "taoshengxu/CancerSubtypes",
+  "cran/iCluster"
 )
 
 # ------------------------------------------------------------------------------
@@ -191,7 +160,7 @@ install_github_packages <- function(packages = github_packages) {
     pkg_name <- basename(pkg)
     if (!requireNamespace(pkg_name, quietly = TRUE)) {
       message("Installing ", pkg, " from GitHub...")
-      devtools::install_github(pkg)
+      devtools::install_github(pkg, upgrade = "always")
     }
   }
 }
@@ -306,51 +275,3 @@ if (sys.nframe() == 0) {
   cat("  load_packages()\n")
 }
 
-# ------------------------------------------------------------------------------
-# Package Documentation
-# ------------------------------------------------------------------------------
-
-#' Package Documentation
-#'
-#' Data Manipulation:
-#'   - dplyr / tidyr / data.table: Core tabular data manipulation
-#'   - reshape2 / plyr: Legacy reshape and split-apply-combine helpers
-#'   - magrittr: Pipe operator
-#'   - vroom: Fast delimited file I/O
-#'
-#' Visualisation (ggplot2 ecosystem):
-#'   - ggplot2: Grammar of graphics
-#'   - ggpubr / cowplot / patchwork / gridExtra: Plot arrangement and annotation
-#'   - ggrepel: Non-overlapping text labels
-#'   - ggthemes / ggsci / viridis / scales: Themes and colour palettes
-#'   - ggbeeswarm / ggpattern: Specialised geoms
-#'   - ggsankey: Sankey / alluvial diagrams
-#'   - circlize / ComplexHeatmap: Circular and heatmap visualisation
-#'   - interacCircos / htmlwidgets / webshot2: Interactive circos → PDF export
-#'
-#' Genomics:
-#'   - GenomicRanges / rtracklayer: Genomic interval handling
-#'   - DNAcopy: Circular binary segmentation for CNV
-#'   - CNTools: Gene-level CNV from segmentation
-#'   - maftools: MAF file parsing and TMB calculation
-#'   - ShatterSeek (GitHub): Chromothripsis detection
-#'
-#' DNA Methylation:
-#'   - sesame: EPIC/HM450K array preprocessing (SeSAMe pipeline)
-#'
-#' Expression Analysis:
-#'   - limma / edgeR / DESeq2: Differential expression
-#'   - sva: Surrogate variable analysis / ComBat batch correction
-#'
-#' Subtyping and Clustering:
-#'   - ConsensusClusterPlus: Consensus clustering
-#'   - CancerSubtypes: Multi-omics cancer subtyping
-#'   - BreastSubtypeR (GitHub): Intrinsic breast cancer subtyping
-#'
-#' Pathway and Enrichment:
-#'   - clusterProfiler: GO / KEGG enrichment
-#'   - hypeR: Gene set over-representation analysis
-#'   - msigdbr: MSigDB gene sets in R
-#'   - org.Hs.eg.db: Human gene annotation
-#'
-#' For detailed help on any package use: help(package = "packageName")

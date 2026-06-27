@@ -70,8 +70,6 @@ DIRS <- list(
   data = file.path(PROJECT_ROOT, "1-Datasets"),
   analysis = file.path(PROJECT_ROOT, "2-Analysis"),
   results = file.path(PROJECT_ROOT, "3-Results"),
-  figures = file.path(PROJECT_ROOT, "4-Figures"),
-  sharing = file.path(PROJECT_ROOT, "5-DataSharing"),
   
   # ICLE subdirectories (use base paths; add subdirs via file.path e.g. bionano + "2_Structural_Variations")
   icle = list(

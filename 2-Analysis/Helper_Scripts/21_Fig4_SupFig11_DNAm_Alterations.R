@@ -1209,33 +1209,33 @@ if (!file.exists(FILES$tcga_limma)) {
 } else {
   message("  Loading existing TCGA Limma results...")
   load(FILES$tcga_limma)
+}
+
+# Add correlation results if not already present
+if (!"RNA_cor" %in% colnames(TCGA_DPM_Results$significant_probes)) {
+  message("  Adding RNA-DNAm correlation results...")
+  commonIDs <- intersect(colnames(TCGA_limma_mat), colnames(TCGA_de_mat))
+  TCGA_RNA_DNAm_Correlation_Res <- correlate_probe_expression(
+    probe_info = TCGA_DPM_Results$significant_probes,
+    beta_matrix = beta_to_M(TCGA_BRCA_DNAm[TCGA_DPM_Results$significant_probes$Probe, commonIDs]),
+    expression_matrix = TCGA_BRCA_Log2CPM[, commonIDs]
+  )
+  rownames(TCGA_RNA_DNAm_Correlation_Res) <- TCGA_RNA_DNAm_Correlation_Res$Probe
+  TCGA_DPM_Results$significant_probes$RNA_cor <- TCGA_RNA_DNAm_Correlation_Res[TCGA_DPM_Results$significant_probes$Probe, "correlation"]
+  TCGA_DPM_Results$significant_probes$RNA_cor_pvalue <- TCGA_RNA_DNAm_Correlation_Res[TCGA_DPM_Results$significant_probes$Probe, "pvalue"]
   
-  # Add correlation results if not already present
-  if (!"RNA_cor" %in% colnames(TCGA_DPM_Results$significant_probes)) {
-    message("  Adding RNA-DNAm correlation results...")
-    commonIDs <- intersect(colnames(TCGA_limma_mat), colnames(TCGA_de_mat))
-    TCGA_RNA_DNAm_Correlation_Res <- correlate_probe_expression(
-      probe_info = TCGA_DPM_Results$significant_probes,
-      beta_matrix = beta_to_M(TCGA_BRCA_DNAm[TCGA_DPM_Results$significant_probes$Probe, commonIDs]),
-      expression_matrix = TCGA_BRCA_Log2CPM[, commonIDs]
-    )
-    rownames(TCGA_RNA_DNAm_Correlation_Res) <- TCGA_RNA_DNAm_Correlation_Res$Probe
-    TCGA_DPM_Results$significant_probes$RNA_cor <- TCGA_RNA_DNAm_Correlation_Res[TCGA_DPM_Results$significant_probes$Probe, "correlation"]
-    TCGA_DPM_Results$significant_probes$RNA_cor_pvalue <- TCGA_RNA_DNAm_Correlation_Res[TCGA_DPM_Results$significant_probes$Probe, "pvalue"]
-    
-    # Rank by lowest p-value, then highest absolute correlation
-    TCGA_RNA_DNAm_Correlation_Res <- TCGA_RNA_DNAm_Correlation_Res[order(
-      TCGA_RNA_DNAm_Correlation_Res$gene,
-      TCGA_RNA_DNAm_Correlation_Res$pvalue,
-      -abs(TCGA_RNA_DNAm_Correlation_Res$correlation)
-    ), ]
-    
-    # Select top entry per gene
-    TCGA_RNA_DNAm_Correlation_Res_unique <- TCGA_RNA_DNAm_Correlation_Res[!duplicated(TCGA_RNA_DNAm_Correlation_Res$gene), ]
-    TCGA_DPM_Results$significant_probes[, "top_cor_probe"] <- ifelse(
-      TCGA_DPM_Results$significant_probes$Probe %in% TCGA_RNA_DNAm_Correlation_Res_unique$Probe, TRUE, FALSE
-    )
-  }
+  # Rank by lowest p-value, then highest absolute correlation
+  TCGA_RNA_DNAm_Correlation_Res <- TCGA_RNA_DNAm_Correlation_Res[order(
+    TCGA_RNA_DNAm_Correlation_Res$gene,
+    TCGA_RNA_DNAm_Correlation_Res$pvalue,
+    -abs(TCGA_RNA_DNAm_Correlation_Res$correlation)
+  ), ]
+  
+  # Select top entry per gene
+  TCGA_RNA_DNAm_Correlation_Res_unique <- TCGA_RNA_DNAm_Correlation_Res[!duplicated(TCGA_RNA_DNAm_Correlation_Res$gene), ]
+  TCGA_DPM_Results$significant_probes[, "top_cor_probe"] <- ifelse(
+    TCGA_DPM_Results$significant_probes$Probe %in% TCGA_RNA_DNAm_Correlation_Res_unique$Probe, TRUE, FALSE
+  )
 }
 
 # Clean up results
@@ -1313,33 +1313,33 @@ if (!file.exists(FILES$cl_limma)) {
 } else {
   message("  Loading existing Cell Line Limma results...")
   load(FILES$cl_limma)
+}
+
+# Add correlation results if not already present
+if (!"RNA_cor" %in% colnames(BRCA_CL_DPM_Results$significant_probes)) {
+  message("  Adding RNA-DNAm correlation results...")
+  commonIDs <- intersect(colnames(limma_mat), colnames(de_mat))
+  BRCA_CL_RNA_DNAm_Correlation_Res <- correlate_probe_expression(
+    probe_info = BRCA_CL_DPM_Results$significant_probes,
+    beta_matrix = beta_to_M(BRCA_CL_DNAm[BRCA_CL_DPM_Results$significant_probes$Probe, commonIDs]),
+    expression_matrix = BRCA_CL_EXP[, commonIDs]
+  )
+  rownames(BRCA_CL_RNA_DNAm_Correlation_Res) <- BRCA_CL_RNA_DNAm_Correlation_Res$Probe
+  BRCA_CL_DPM_Results$significant_probes$RNA_cor <- BRCA_CL_RNA_DNAm_Correlation_Res[BRCA_CL_DPM_Results$significant_probes$Probe, "correlation"]
+  BRCA_CL_DPM_Results$significant_probes$RNA_cor_pvalue <- BRCA_CL_RNA_DNAm_Correlation_Res[BRCA_CL_DPM_Results$significant_probes$Probe, "pvalue"]
   
-  # Add correlation results if not already present
-  if (!"RNA_cor" %in% colnames(BRCA_CL_DPM_Results$significant_probes)) {
-    message("  Adding RNA-DNAm correlation results...")
-    commonIDs <- intersect(colnames(limma_mat), colnames(de_mat))
-    BRCA_CL_RNA_DNAm_Correlation_Res <- correlate_probe_expression(
-      probe_info = BRCA_CL_DPM_Results$significant_probes,
-      beta_matrix = beta_to_M(BRCA_CL_DNAm[BRCA_CL_DPM_Results$significant_probes$Probe, commonIDs]),
-      expression_matrix = BRCA_CL_EXP[, commonIDs]
-    )
-    rownames(BRCA_CL_RNA_DNAm_Correlation_Res) <- BRCA_CL_RNA_DNAm_Correlation_Res$Probe
-    BRCA_CL_DPM_Results$significant_probes$RNA_cor <- BRCA_CL_RNA_DNAm_Correlation_Res[BRCA_CL_DPM_Results$significant_probes$Probe, "correlation"]
-    BRCA_CL_DPM_Results$significant_probes$RNA_cor_pvalue <- BRCA_CL_RNA_DNAm_Correlation_Res[BRCA_CL_DPM_Results$significant_probes$Probe, "pvalue"]
-    
-    # Rank by lowest p-value, then highest absolute correlation
-    BRCA_CL_RNA_DNAm_Correlation_Res <- BRCA_CL_RNA_DNAm_Correlation_Res[order(
-      BRCA_CL_RNA_DNAm_Correlation_Res$gene,
-      BRCA_CL_RNA_DNAm_Correlation_Res$pvalue,
-      -abs(BRCA_CL_RNA_DNAm_Correlation_Res$correlation)
-    ), ]
-    
-    # Select top entry per gene
-    BRCA_CL_RNA_DNAm_Correlation_Res_unique <- BRCA_CL_RNA_DNAm_Correlation_Res[!duplicated(BRCA_CL_RNA_DNAm_Correlation_Res$gene), ]
-    BRCA_CL_DPM_Results$significant_probes[, "top_cor_probe"] <- ifelse(
-      BRCA_CL_DPM_Results$significant_probes$Probe %in% BRCA_CL_RNA_DNAm_Correlation_Res_unique$Probe, TRUE, FALSE
-    )
-  }
+  # Rank by lowest p-value, then highest absolute correlation
+  BRCA_CL_RNA_DNAm_Correlation_Res <- BRCA_CL_RNA_DNAm_Correlation_Res[order(
+    BRCA_CL_RNA_DNAm_Correlation_Res$gene,
+    BRCA_CL_RNA_DNAm_Correlation_Res$pvalue,
+    -abs(BRCA_CL_RNA_DNAm_Correlation_Res$correlation)
+  ), ]
+  
+  # Select top entry per gene
+  BRCA_CL_RNA_DNAm_Correlation_Res_unique <- BRCA_CL_RNA_DNAm_Correlation_Res[!duplicated(BRCA_CL_RNA_DNAm_Correlation_Res$gene), ]
+  BRCA_CL_DPM_Results$significant_probes[, "top_cor_probe"] <- ifelse(
+    BRCA_CL_DPM_Results$significant_probes$Probe %in% BRCA_CL_RNA_DNAm_Correlation_Res_unique$Probe, TRUE, FALSE
+  )
 }
 
 # Clean up results
@@ -1421,26 +1421,36 @@ TCGA_merged_results_bg <- TCGA_DESeq_Results$all_results %>%
   )
 
 # Probe summary for significant probes with RNA correlation
-TCGA_probe_summary <- subset(TCGA_DPM_Results$significant_probes, RNA_cor < -0.2) %>%
+TCGA_probe_summary <- TCGA_DPM_Results$significant_probes %>%
+  filter(RNA_cor < -0.2) %>%
   group_by(gene) %>%
   summarise(
     n_probes = n(),
     probes = paste(Probe, collapse = ","),
     probe_regions = paste(Probe_region, collapse = ","),
+    
+    # Selection based on logFC
     top_probe = Probe[which.max(logFC)],
     top_probe_region = Probe_region[which.max(logFC)],
-    top_probe_logFoldChange = logFC[which.max(logFC)],
-    top_cor_probe = Probe[top_cor_probe],
-    top_cor_probe_region = Probe_region[top_cor_probe],
-    top_cor_probe_RNAcor = RNA_cor[which.max(RNA_cor)],
-    top_cor_probe_RNAcor_CL = RNA_cor_CL[which.max(RNA_cor)],
+    top_probe_logFoldChange = max(logFC, na.rm = TRUE),
+    
+    # Selection based on RNA Correlation (using which.min for strongest negative)
+    top_cor_probe = Probe[which.min(RNA_cor)],
+    top_cor_probe_region = Probe_region[which.min(RNA_cor)],
+    top_cor_probe_RNAcor = min(RNA_cor, na.rm = TRUE),
+    top_cor_probe_RNAcor_CL = RNA_cor_CL[which.min(RNA_cor)],
+    
     avg_delta_beta = mean(delta_beta, na.rm = TRUE),
+    
     consensus_DPM = {
       vals <- consensus_DPM[!is.na(consensus_DPM) & consensus_DPM != FALSE]
       if (length(vals) > 0) vals[1] else NA
     },
-    Probe_Status = ifelse(all(logFC > 0), "hypermethylated",
-                       ifelse(all(logFC < 0), "hypomethylated", "mixed"))
+    Probe_Status = case_when(
+      all(logFC > 0) ~ "hypermethylated",
+      all(logFC < 0) ~ "hypomethylated",
+      TRUE           ~ "mixed"
+    )
   )
 
 TCGA_probe_summary <- as.data.frame(TCGA_probe_summary)
@@ -1551,6 +1561,7 @@ TCGA_DNAm_Regulated_Genes$consensus_DPM <- TCGA_DPM_Results$significant_probes[T
 
 # Define consensus based on multiple criteria
 TCGA_DNAm_Regulated_Genes$Consensus <- ifelse(
+  abs(round(TCGA_DNAm_Regulated_Genes$log2FoldChange,1)) > 1 & 
   (TCGA_DNAm_Regulated_Genes$consensus_DGE == TRUE | TCGA_DNAm_Regulated_Genes$consensus_DPM == TRUE) & 
   !is.na(TCGA_DNAm_Regulated_Genes$top_cor_probe_RNAcor_CL) & 
   !is.na(TCGA_DNAm_Regulated_Genes$EXP_LFC_CL) &

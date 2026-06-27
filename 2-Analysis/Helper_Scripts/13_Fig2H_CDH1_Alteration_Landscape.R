@@ -86,9 +86,9 @@ TCGA_CDH1_df <- data.frame(ID = TCGA_ids, Histology = TCGA_Annots[TCGA_ids,"Fina
                            Mutation_AF = AF_mat[TCGA_ids,"t_AF"], 
                            Mutation_type_broad = AF_mat[TCGA_ids,"Broad_Variant_Classification"], 
                            Mutation_type = AF_mat[TCGA_ids,"Variant_Classification"], 
-                           RNA = scale(TCGA_BRCA_Log2CPM["CDH1",])[match(TCGA_ids, colnames(TCGA_BRCA_Log2CPM)),], 
-                           Protein = scale(as.matrix(TCGA_BRCA_RPPA)["E-CADHERIN",])[match(TCGA_ids, colnames(TCGA_BRCA_RPPA)),],
-                           DNAm = scale(TCGA_BRCA_DNAm[c("cg01251360"), ])[match(TCGA_ids, colnames(TCGA_BRCA_DNAm)), ]) %>% 
+                           RNA = scale(TCGA_BRCA_Log2CPM["CDH1",match(TCGA_ids, colnames(TCGA_BRCA_Log2CPM))]), 
+                           Protein = scale(as.matrix(TCGA_BRCA_RPPA)["E-CADHERIN", match(TCGA_ids, colnames(TCGA_BRCA_RPPA))]),
+                           DNAm = scale(TCGA_BRCA_DNAm[c("cg01251360"), match(TCGA_ids, colnames(TCGA_BRCA_DNAm))])) %>% 
                            mutate(CN = case_when(grepl("AMP", CN) ~ 2, grepl("GAIN", CN) ~ 1, grepl("LOH", CN) ~ -1, grepl("DEL", CN) ~ -2, is.na(CN) ~ NA, grepl("MUT|", CN) ~ 0), 
                                   Mutation = ifelse(grepl("MUT", Mutation), 1, 0)) %>% 
                            filter(Histology %in% c("ILC", "NST"))
@@ -137,9 +137,9 @@ CL_CDH1_df <- data.frame(ID = CL_ids, Histology = CL_Annots[CL_ids, "Histology"]
                          Mutation_AF = CL_AF_mat[CL_ids, "t_AF"],
                          Mutation_type_broad = CL_AF_mat[CL_ids,"Broad_Variant_Classification"], 
                          Mutation_type = CL_AF_mat[CL_ids,"Variant_Classification"], 
-                         RNA = scale(BRCA_CL_EXP["CDH1",])[match(CL_ids, colnames(BRCA_CL_EXP)),], 
-                         Protein = scale(as.matrix(BRCA_CL_RPPA)["E-CADHERIN",])[match(CL_ids, colnames(BRCA_CL_RPPA)),],
-                         DNAm = scale(BRCA_CL_DNAm[c("cg01251360"), ])[match(CL_ids, colnames(BRCA_CL_DNAm)), ]) %>% 
+                         RNA = scale(BRCA_CL_EXP["CDH1",match(CL_ids, colnames(BRCA_CL_EXP))]), 
+                         Protein = scale(as.matrix(BRCA_CL_RPPA)["E-CADHERIN", match(CL_ids, colnames(BRCA_CL_RPPA))]),
+                         DNAm = scale(BRCA_CL_DNAm[c("cg01251360"), match(CL_ids, colnames(BRCA_CL_DNAm))])) %>% 
   mutate(CN = case_when(grepl("AMP", CN) ~ 2, grepl("GAIN", CN) ~ 1, grepl("LOH", CN) ~ -1, grepl("DEL", CN) ~ -2, is.na(CN) ~ NA, grepl("MUT|", CN) ~ 0), 
          Mutation = ifelse(grepl("MUT", Mutation), 1, 0))
 

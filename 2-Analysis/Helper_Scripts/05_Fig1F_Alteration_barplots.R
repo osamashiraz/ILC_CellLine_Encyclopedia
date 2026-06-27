@@ -379,7 +379,7 @@ save_results <- function(plot, pvals, genes) {
     signif(pvals$pvals_numeric, 1)[rev(rownames(pvals$pvals_numeric)), ]
   ))
   
-  pval_file <- file.path(DIRS$results, "Molecular_Resemblance", "Fig1F_Alteration_Barplot_pval.pdf")
+  pval_file <- file.path(DIRS$results, "Molecular_Resemblance", "Fig1F_Alteration_Barplot_pval.html")
   suppressMessages(gt::gtsave(fig1F_pval, filename = pval_file))
   message("  ✓ P-values (numeric) saved: ", pval_file)
   
@@ -389,7 +389,7 @@ save_results <- function(plot, pvals, genes) {
     pvals$pvals_notation[rev(rownames(pvals$pvals_notation)), ]
   ))
   
-  pval_nt_file <- file.path(DIRS$results, "Molecular_Resemblance", "Fig1F_Alteration_Barplot_pval_nt.pdf")
+  pval_nt_file <- file.path(DIRS$results, "Molecular_Resemblance", "Fig1F_Alteration_Barplot_pval_nt.html")
   suppressMessages(gt::gtsave(fig1F_pval_nt, filename = pval_nt_file))
   message("  ✓ P-values (notation) saved: ", pval_nt_file)
   

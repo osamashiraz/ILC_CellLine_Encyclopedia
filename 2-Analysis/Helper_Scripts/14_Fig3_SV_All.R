@@ -17,6 +17,10 @@ if (!exists("DIRS", envir = .GlobalEnv)) {
 
 helpers <- DIRS$scripts$helpers
 
+if (!requireNamespace("ShatterSeek", quietly = TRUE)) {
+  devtools::install_github("parklab/ShatterSeek")
+}
+
 suppressWarnings({
   source(file.path(helpers, "14_SupFig8_TMB_SV_Preparation.R"), chdir = TRUE)
   source(file.path(helpers, "15_Fig3A_Genomic_Instability.R"), chdir = TRUE)
