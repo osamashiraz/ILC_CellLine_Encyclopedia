@@ -36,6 +36,7 @@ June 26, 2026
     - [Figure 3B: Chromosomal Topography of Translocation Breakpoints](#figure-3b-chromosomal-topography-of-translocation-breakpoints)
     - [Figure 3C: Chromothripsis Landscape](#figure-3c-chromothripsis-landscape)
     - [Figure 3D: OGM Circos Plots — BCK4, 600MPE, HCC2185, ZR7530](#figure-3d-ogm-circos-plots--bck4-600mpe-hcc2185-zr7530)
+    - [Figure 3E: Fusion Distribution (Patient Tumors vs Cell Lines)](#figure-3e-fusion-distribution-patient-tumors-vs-cell-lines)
     - [Figure 3F: GOE and LOE Functional Fusions Circos](#figure-3f-goe-and-loe-functional-fusions-circos)
     - [SupFig 8A: Mutation Count vs SV Count and SV Size](#supfig-8a-mutation-count-vs-sv-count-and-sv-size)
     - [SupFig 8B: TMB vs SV Burden (With and Without Outliers)](#supfig-8b-tmb-vs-sv-burden-with-and-without-outliers)
@@ -1433,20 +1434,23 @@ circos_zr7530 <- save_circos_to_pdf(trk_zr, "ZR7530", DIRS$results_sub$ogm)
 ``` r
 circos_bck4
 ```
-![alt text](image-1.png)
+<img src="md_content/figure-gfm/circos_bck4.png"/>
 
 ``` r
 circos_600mpe
 ```
-![alt text](image-3.png)
+<img src="md_content/figure-gfm/circos_600mpe.png"/>
+
 ``` r
 circos_hcc2185
 ```
-![alt text](image-2.png)
+<img src="md_content/figure-gfm/circos_hcc2185.png"/>
+
 ``` r
 circos_zr7530
-``
-![alt text](image-4.png)
+```
+
+<img src="md_content/figure-gfm/circos_zr7530.png"/>
 
 
 ### Figure 3E: Fusion Distribution (Patient Tumors vs Cell Lines)
